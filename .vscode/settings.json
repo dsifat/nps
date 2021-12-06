@@ -1,0 +1,56 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "todo",
+        "scss",
+        "php"
+    ],
+    "intelephense.references.exclude": [],
+    "intelephense.rename.exclude": [],
+    "todo.file.exclude": [
+        "**/.!(todo|todos|task|tasks)/**",
+        "**/_output/**",
+        "**/bower_components/**",
+        "**/build/**",
+        "**/dist/**",
+        "**/venv/**",
+        "**/node_modules/**",
+        "**/out/**",
+        "**/output/**",
+        "**/release/**",
+        "**/releases/**",
+        "**/static/**",
+        "**/target/**",
+        "**/third_party/**"
+    ],
+    "kite.codefinder.enableLineDecoration": false,
+    "kite.enableOptionalCompletionsTriggers": true,
+    "ponicode.testSettings.testLocation.locationType": "Same folder as source file",
+    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}",
+    "cSpell.enabled": true,
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#fa1b49",
+        "activityBar.activeBorder": "#155e02",
+        "activityBar.background": "#fa1b49",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#155e02",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "statusBar.background": "#dd0531",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#fa1b49",
+        "titleBar.activeBackground": "#dd0531",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#dd053199",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "sash.hoverBorder": "#fa1b49",
+        "statusBarItem.remoteBackground": "#dd0531",
+        "statusBarItem.remoteForeground": "#e7e7e7"
+    },
+    "peacock.color": "#dd0531"
+}

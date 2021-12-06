@@ -1,0 +1,588 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Binge ISP Portal APIs",
+        "version": "1.0.0"
+    },
+    "basePath": "/api/v1",
+    "paths": {
+        "/packages": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Get a listing of the Packages.",
+                "description": "Get all Packages",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "skip",
+                        "in": "query",
+                        "description": "number of packages to skip",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "number of packages to limit",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Package"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BaseAPIDoc": []
+                    }
+                ]
+            }
+        },
+        "/packages/{id}": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Display the specified Package",
+                "description": "Get Package",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Package",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Package"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BaseAPIDoc": []
+                    }
+                ]
+            }
+        },
+        "/subscriptions": {
+            "get": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Get a listing of the Subscriptions.",
+                "description": "Get all Subscriptions",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Subscription"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Store a newly created Subscription in storage",
+                "description": "Store Subscription",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Subscription that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Subscription"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Subscription"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{id}": {
+            "get": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Display the specified Subscription",
+                "description": "Get Subscription",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Subscription",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Subscription"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/stopSubscription": {
+            "post": {
+                "tags": [
+                    "Subscription"
+                ],
+                "summary": "Remove a subscription",
+                "description": "Stop Subscription",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Subscription that should be stopped",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Subscription"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Subscription"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/transactions": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get a listing of the Transactions.",
+                "description": "Get all Transactions",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Transaction"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BaseAPIDoc": []
+                    }
+                ]
+            }
+        },
+        "/transactions/{id}": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Display the specified Transaction",
+                "description": "Get Transaction",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Transaction",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Transaction"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "BaseAPIDoc": []
+                    }
+                ]
+            }
+        },
+        "localhost:8000/auth/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Will be used authenticate in the apis.",
+                "description": "Login endpoint",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "email of the user",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "description": "password of the user",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/User"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Package": {
+            "required": [
+                "binge_package_id",
+                "title",
+                "device_type",
+                "payment_mode",
+                "auto_renewal",
+                "no_of_validity_days"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "title": {
+                    "description": "title",
+                    "type": "string"
+                },
+                "device_type": {
+                    "description": "device_type",
+                    "type": "string"
+                },
+                "no_of_validity_days": {
+                    "description": "no_of_validity_days",
+                    "type": "string"
+                }
+            }
+        },
+        "Subscription": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "isp_id": {
+                    "description": "isp_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "package_id": {
+                    "description": "package_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "phone": {
+                    "description": "phone",
+                    "type": "string"
+                },
+                "autorenewal": {
+                    "description": "autorenewal",
+                    "type": "boolean"
+                },
+                "status": {
+                    "description": "status",
+                    "type": "string"
+                },
+                "remarks": {
+                    "description": "remarks",
+                    "type": "string"
+                },
+                "subscription_date": {
+                    "description": "subscription_date",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "expiry_date": {
+                    "description": "expiry_date",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "is_active": {
+                    "description": "is_active",
+                    "type": "boolean"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Transaction": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "transaction_uid": {
+                    "description": "transaction_uid",
+                    "type": "string"
+                },
+                "isp_id": {
+                    "description": "isp_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "subscription_id": {
+                    "description": "subscription_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "amount": {
+                    "description": "amount",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "description": "type",
+                    "type": "string"
+                },
+                "meta": {
+                    "description": "meta",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "User": {
+            "required": [
+                "name",
+                "email",
+                "created_at",
+                "updated_at"
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BaseAPIDoc": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+User management:
+    User Role management
+    Permissions management
+
+Package Management:
+    Admin will configure different binge pack from this module
+
+ISP:
+    Different ISP will be configured from this area
+
+Subscriptions:
+    All Subscriptions related actions will be managed from this module
+
+Schedulers:
+    ...autorenew
+    ...Billing cycle
+    ...10 Days expiry
+
+New change request:
+    1. Deposit - balance - attachment
+    2. Single subscription -- done
+

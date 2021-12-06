@@ -1,0 +1,53 @@
+{
+    "menu": [
+        {
+            "name": "Dashboards",
+            "icon": "home",
+            "slug": "",
+            "url": "/"
+        },
+
+        {
+            "navheader": "Apps & Pages",
+            "slug": ""
+        },
+
+        {
+            "name": "Users",
+            "icon": "user",
+            "slug": "users*|permissions*|roles*",
+            "can": "ReadUser|CreateUser|EditUser|DeleteUser|CreatePermission|EditPermission|DeletePermission|CreateRole|EditRole|DeleteRole",
+            "submenu": [
+                {
+                    "url": "/users",
+                    "name": "Users",
+                    "icon": "circle",
+                    "slug": "users*",
+                    "can": "ReadUser|CreateUser|EditUser|DeleteUser"
+                },
+                {
+                    "url": "/permissions",
+                    "name": "Permissions",
+                    "icon": "circle",
+                    "slug": "permissions*",
+                    "can": "CreatePermission|EditPermission|DeletePermission"
+                },
+                {
+                    "url": "/roles",
+                    "name": "Roles",
+                    "icon": "circle",
+                    "slug": "roles*",
+                    "can": "CreateRole|EditRole|DeleteRole"
+                }
+            ]
+        },
+
+        {
+            "url": "/scheduleTasks",
+            "name": "Schedulers",
+            "icon": "clock",
+            "slug": "scheduleTasks*",
+            "can": "ReadScheduler|CreateScheduler|EditScheduler|DeleteScheduler"
+        }
+    ]
+}
