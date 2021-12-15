@@ -39,3 +39,19 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.subjects.index') }}"
+       class="nav-link {{ Request::is('backend/subjects*') ? 'active' : '' }}">
+        <p>Subjects</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('backend.questions.index') }}"
+       class="nav-link {{ Request::is('backend/questions*') ? 'active' : '' }}">
+        <p>Questions</p>
+    </a>
+</li>
+
+

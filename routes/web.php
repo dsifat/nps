@@ -50,3 +50,13 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/privacy-policy', function () {
     return view('content.privacy-policy.privacyPolicy');
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('questions', 'Backend\QuestionController', ["as" => 'backend']);
+});

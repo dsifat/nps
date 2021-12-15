@@ -29,3 +29,13 @@ Route::group([
 ], function () {
     // Route::post('subscriptions/stopFromBingeCore', 'Backend\SubscriptionAPIController@stopFromBingeCore')->named('api.subscriptions.stopFromBingeCore');
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('subjects', 'Backend\SubjectAPIController');
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('questions', App\Http\Controllers\API\Backend\Backend\QuestionAPIController::class);
+});
