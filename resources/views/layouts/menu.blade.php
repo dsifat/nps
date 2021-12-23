@@ -55,3 +55,11 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.topics.index') }}"
+       class="nav-link {{ Request::is('backend/topics*') ? 'active' : '' }}">
+        <p>Topics</p>
+    </a>
+</li>
+
+

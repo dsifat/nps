@@ -60,3 +60,8 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('questions', 'Backend\QuestionController', ["as" => 'backend']);
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('topics', 'Backend\TopicController', ["as" => 'backend']);
+});

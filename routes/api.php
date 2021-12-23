@@ -39,3 +39,8 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('questions', App\Http\Controllers\API\Backend\Backend\QuestionAPIController::class);
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('topics', App\Http\Controllers\API\Backend\Backend\TopicAPIController::class);
+});
