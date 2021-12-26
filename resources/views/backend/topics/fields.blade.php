@@ -3,14 +3,19 @@
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 @endsection
 
-<div class="form-group col-sm-12">
+<div class="form-group col-sm-6">
     {!! Form::label('topic_type', 'Type:') !!}
     {!! Form::select('topic_type', [1=>'Topic',2=>'Sub Topic'], !empty($data) ? $data->parent_id : '', ['class' => 'form-control select2', 'id'=>'topic_type']) !!}
 </div>
+<div class="form-group col-sm-6">
 
+</div>
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', !empty($data) ? $data->name : '', ['class' => 'form-control']) !!}
+</div>
+<div class="form-group col-sm-6">
+
 </div>
 
 <div class="form-group col-sm-6 hidden" id="parent-topic">
@@ -34,6 +39,9 @@
                 width: '100%',
                 allowClear: true
             });
+            if ($('#topic_type').val()==2){
+                $('#parent-topic').show().removeClass('hidden');
+            }
             $('#topic_type').change(function (){
                 if ($('#topic_type').val()==2){
                     $('#parent-topic').show().removeClass('hidden');
@@ -42,8 +50,6 @@
                     $('#parent-topic').hide().addClass('hidden');
                 }
             });
-            console.log('');
-
         })(window, document, jQuery);
     </script>
 @endsection

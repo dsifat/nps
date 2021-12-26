@@ -4,6 +4,7 @@ namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Backend\Topic;
+use Illuminate\Validation\Rule;
 
 class CreateTopicRequest extends FormRequest
 {
@@ -25,6 +26,11 @@ class CreateTopicRequest extends FormRequest
      */
     public function rules()
     {
-        return Topic::$rules;
+        return [
+            'name' => 'required',
+            'parent_id' => [
+                Rule::unique('topics')->where('name', $this->name)
+            ]
+        ];
     }
 }

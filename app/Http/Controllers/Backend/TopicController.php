@@ -9,6 +9,7 @@ use App\Http\Requests\Backend\UpdateTopicRequest;
 use App\Models\Backend\Topic;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Validation\Rule;
 use Response;
 
 class TopicController extends AppBaseController
@@ -127,7 +128,7 @@ class TopicController extends AppBaseController
             return redirect(route('backend.topics.index'));
         }
         $input = $request->except('_token', '_method');
-//        $topic->save($input);
+//        $request->validate();
         $topic->parent_id = $input['parent_id'];
         $topic->name = $input['name'];
         $topic->save();

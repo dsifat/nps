@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 @endsection
 
-<div class="form-group col-sm-12">
+<div class="form-group col-sm-6">
     {!! Form::label('topic_type', 'Type:') !!}
     @if ($data->parent_id === null)
         {!! Form::select('topic_type', [1=>'Topic',2=>'Sub Topic'], !empty($data) ? $data->parent_id : '', ['class' => 'form-control select2', 'id'=>'topic_type']) !!}
@@ -11,7 +11,9 @@
         {!! Form::select('topic_type', [1=>'Topic',2=>'Sub Topic'], 2, ['class' => 'form-control select2', 'id'=>'topic_type']) !!}
     @endif
 </div>
+<div class="col-sm-6">
 
+</div>
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', !empty($data) ? $data->name : '', ['class' => 'form-control']) !!}
@@ -40,16 +42,18 @@
             });
             if ($('#topic_type').val()==2){
                 $('#parent-topic').show().removeClass('hidden');
+                $('#topic_type').attr('disabled', true);
             }
-            $('#topic_type').change(function (){
-                if ($('#topic_type').val()==2){
-                    $('#parent-topic').show().removeClass('hidden');
-                }
-                else {
-                    $('#parent-topic').hide().addClass('hidden');
-                }
-            });
-            console.log('');
+            else {
+                $('#topic_type').change(function (){
+                    if ($('#topic_type').val()==2){
+                        $('#parent-topic').show().removeClass('hidden');
+                    }
+                    else {
+                        $('#parent-topic').hide().addClass('hidden');
+                    }
+                });
+            }
 
         })(window, document, jQuery);
     </script>

@@ -77,7 +77,7 @@ class Topic extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required|unique:topics,name',
+        'name' => 'required',
     ];
 
     public function topic()
@@ -88,8 +88,5 @@ class Topic extends Model
 //    public function getTopicAttribute(){
 //        $this->pare
 //    }
-
-
-
 
 }
