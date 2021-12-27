@@ -43,12 +43,7 @@ use Eloquent as Model;
  */
 class Topic extends Model
 {
-
-
     public $table = 'topics';
-
-
-
 
     public $fillable = [
         'name',
@@ -82,7 +77,7 @@ class Topic extends Model
 
     public function topic()
     {
-        return $this->belongsTo(\App\Models\Backend\Topic::class, 'topic');
+        return $this->belongsTo(\App\Models\Backend\Topic::class, 'parent_id','id');
     }
 
 //    public function getTopicAttribute(){

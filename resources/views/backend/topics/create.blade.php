@@ -15,7 +15,9 @@
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')
                         <div class="row">
+                            <div class="container">
                             @include('backend.topics.fields')
+                            </div>
                         </div>
                     </div>
 

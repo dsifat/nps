@@ -16,10 +16,11 @@
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')
                         <div class="row">
-                            @include('backend.topics.patchfields')
+                            <div class="container">
+                                @include('backend.topics.patchfields')
+                            </div>
                         </div>
                     </div>
-
                     <div class="card-footer">
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                         <a href="{{ route('backend.topics.index') }}" class="btn btn-outline-secondary waves-effect">Cancel</a>

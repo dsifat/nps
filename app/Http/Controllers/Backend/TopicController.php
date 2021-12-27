@@ -38,10 +38,7 @@ class TopicController extends AppBaseController
      */
     public function create()
     {
-        $data = [
-            'topics'=> Topic::get()->pluck('name', 'id'),
-        ];
-        return view('backend.topics.create', $data);
+        return view('backend.topics.create');
     }
 
     /**
@@ -98,15 +95,14 @@ class TopicController extends AppBaseController
         /** @var Topic $topic */
         $data = Topic::findOrFail($id);
 
-
         if (empty($data)) {
 
             Flash::error('Topic not found');
 
             return redirect(route('backend.topics.index'));
         }
-        $topics = Topic::find($id)->pluck('name', 'id');
-        return view('backend.topics.edit', ['topics'=>$topics, 'id'=>$id, 'data'=>$data]);
+
+        return view('backend.topics.edit', ['id'=>$id, 'data'=>$data]);
     }
 
     /**
@@ -128,7 +124,6 @@ class TopicController extends AppBaseController
             return redirect(route('backend.topics.index'));
         }
         $input = $request->except('_token', '_method');
-//        $request->validate();
         $topic->parent_id = $input['parent_id'];
         $topic->name = $input['name'];
         $topic->save();

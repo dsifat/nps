@@ -33,4 +33,12 @@ class CreateTopicRequest extends FormRequest
             ]
         ];
     }
+    public function messages()
+    {
+        $messages = [
+            'name.required'=>'Name is required',
+            'parent_id.unique'=>'Sub topic name with the topic has already been taken'
+        ];
+        return $messages;
+    }
 }

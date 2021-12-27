@@ -3,6 +3,7 @@
 namespace App\DataTables\Backend;
 
 use App\Models\Backend\Topic;
+use Illuminate\Http\Request;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -17,14 +18,14 @@ class TopicDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
-        $dataTable->addColumn('parent_id',function ($query){
-            if ($query->parent_id == null){
-                return 'Topic';
-            }
-            else {
-                return 'Sub Topic';
-            }
-        });
+//        $dataTable->addColumn('parent_id',function ($query){
+//            if ($query->parent_id == null){
+//                return 'Topic';
+//            }
+//            else {
+//                return 'Sub Topic';
+//            }
+//        });
         return $dataTable->addColumn('action', 'backend.topics.datatables_actions');
     }
 
@@ -34,9 +35,17 @@ class TopicDataTable extends DataTable
      * @param \App\Models\Topic $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Topic $model)
+    public function query(Topic $model, Request $request)
     {
-        return $model->newQuery();
+        $query_builder = $model->newQuery();
+
+        $columns = $request->columns;
+        $search_keyword = isset($columns[1]['search']['value']) ? $columns[1]['search']['value'] : null;
+        if ($search_keyword) {
+            dd($query_builder);
+        }
+
+        return $query_builder;
     }
 
     /**
@@ -100,7 +109,11 @@ class TopicDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name', 'parent_id'
+            'name' => 'name',
+            'parent_id' => [
+                'title' => 'Topic Type',
+//                'data' => 'topic.name'
+            ]
         ];
     }
 
