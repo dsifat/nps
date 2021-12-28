@@ -184,11 +184,12 @@ return [
   "Users" => "Users",
   "Permissions" => "Permissions",
   "Roles" => "Roles",
-  "Users" => "Users",
   "ISPs" => "ISPs",
   "Packages" => "Packages",
   "Subscriptions" => "Subscriptions",
   "Transactions" => "Transactions",
   "Schedulers" => "Schedulers",
   "Partners" => "Partners",
+    "Topics" => "Topics",
+    "Phone Groups" => "Phone Groups",
 ];

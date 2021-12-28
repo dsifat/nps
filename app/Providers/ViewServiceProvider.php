@@ -40,6 +40,7 @@ class ViewServiceProvider extends ServiceProvider
             $roleItems = Role::pluck('role_name', 'id')->toArray();
             $view->with('roleItems', $roleItems);
         });
+
         View::composer(['backend.topics.fields'], function ($view){
             $topics = Topic::whereNull('parent_id')->get()->pluck('name','id');
             $view->with('topics', $topics);
@@ -49,6 +50,7 @@ class ViewServiceProvider extends ServiceProvider
             $topics = Topic::whereNull('parent_id')->get()->pluck('name','id');
             $view->with('topics', $topics);
         });
+
         View::composer(['backend.schedule_tasks.fields'], function ($view) {
             $command_filter = config('schedule-task.artisan.command_filter');
             $whitelist = config('schedule-task.artisan.whitelist', true);

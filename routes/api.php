@@ -44,3 +44,13 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('topics', App\Http\Controllers\API\Backend\Backend\TopicAPIController::class);
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('phone_groups', App\Http\Controllers\API\Backend\Backend\PhoneGroupAPIController::class);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('phones', App\Http\Controllers\API\Backend\Backend\PhoneAPIController::class);
+});

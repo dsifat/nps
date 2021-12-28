@@ -63,3 +63,19 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.phoneGroups.index') }}"
+       class="nav-link {{ Request::is('backend/phoneGroups*') ? 'active' : '' }}">
+        <p>Phone Groups</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('backend.phones.index') }}"
+       class="nav-link {{ Request::is('backend/phones*') ? 'active' : '' }}">
+        <p>Phones</p>
+    </a>
+</li>
+
+

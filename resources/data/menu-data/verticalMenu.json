@@ -41,7 +41,20 @@
                 }
             ]
         },
-
+        {
+            "url": "/backend/topics",
+            "name": "Topics",
+            "icon": "book",
+            "slug": "backend/topics*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
+        {
+            "url": "/backend/phoneGroups",
+            "name": "Phone Groups",
+            "icon": "phone",
+            "slug": "backend/phoneGroups*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
         {
             "url": "/scheduleTasks",
             "name": "Schedulers",

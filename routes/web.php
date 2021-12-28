@@ -65,3 +65,13 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('topics', 'Backend\TopicController', ["as" => 'backend']);
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('phoneGroups', 'Backend\PhoneGroupController', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
+});
