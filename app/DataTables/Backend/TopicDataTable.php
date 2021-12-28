@@ -18,14 +18,14 @@ class TopicDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
-//        $dataTable->addColumn('parent_id',function ($query){
-//            if ($query->parent_id == null){
-//                return 'Topic';
-//            }
-//            else {
-//                return 'Sub Topic';
-//            }
-//        });
+        $dataTable->addColumn('parent_id',function ($query){
+            if ($query->parent_id == null){
+                return 'Topic';
+            }
+            else {
+                return 'Sub Topic';
+            }
+        });
         return $dataTable->addColumn('action', 'backend.topics.datatables_actions');
     }
 
@@ -42,9 +42,16 @@ class TopicDataTable extends DataTable
         $columns = $request->columns;
         $search_keyword = isset($columns[1]['search']['value']) ? $columns[1]['search']['value'] : null;
         if ($search_keyword) {
-            dd($query_builder);
-        }
+            if (preg_match('/(?i)to/', $search_keyword)==1){
+                $query_builder = $query_builder->where('parent_id',null);
+            }
+            elseif (preg_match('/(?i)s/', $search_keyword)==1){
+                $query_builder = $query_builder->whereNotNull('parent_id');
+            }
+            else {
 
+            }
+        }
         return $query_builder;
     }
 
