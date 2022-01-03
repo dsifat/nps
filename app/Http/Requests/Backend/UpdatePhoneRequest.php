@@ -26,7 +26,7 @@ class UpdatePhoneRequest extends FormRequest
     public function rules()
     {
         $rules = Phone::$rules;
-        
+
         return $rules;
     }
 }

@@ -40,7 +40,7 @@ class PhoneGroup extends Model
 
 
     public $table = 'phone_groups';
-    
+
 
 
 
@@ -64,8 +64,9 @@ class PhoneGroup extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+
     ];
 
-    
+
+
 }

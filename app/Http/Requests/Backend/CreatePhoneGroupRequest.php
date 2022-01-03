@@ -25,6 +25,8 @@ class CreatePhoneGroupRequest extends FormRequest
      */
     public function rules()
     {
-        return PhoneGroup::$rules;
+        return [
+            'name' => 'required|unique:phone_groups,name'
+        ];
     }
 }

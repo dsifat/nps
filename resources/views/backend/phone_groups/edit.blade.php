@@ -11,7 +11,7 @@
                         <h4 class="card-title">Edit Phone Group</h4>
                     </div>
 
-                    {!! Form::model($phoneGroup, ['route' => ['backend.phoneGroups.update', $phoneGroup->id], 'method' => 'patch']) !!}
+                    {!! Form::model($phoneGroup, ['route' => ['backend.phoneGroups.update', $phoneGroup->id], 'method' => 'patch','files' => true]) !!}
 
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')

@@ -68,5 +68,9 @@ class Phone extends Model
 
     ];
 
+    public function phoneGroup(){
+        return $this->belongsTo('App\Models\Backend\PhoneGroup','phone_groups_id');
+    }
+
 
 }

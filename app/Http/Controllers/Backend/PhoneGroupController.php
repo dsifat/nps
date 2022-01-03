@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\DataTables\Backend\PhoneByGroupDataTable;
 use App\DataTables\Backend\PhoneGroupDataTable;
-use App\Http\Requests\Backend;
 use App\Http\Requests\Backend\CreatePhoneGroupRequest;
 use App\Http\Requests\Backend\UpdatePhoneGroupRequest;
 use App\Imports\PhoneImport;
+use App\Models\Backend\Phone;
 use App\Models\Backend\PhoneGroup;
 use Flash;
 use App\Http\Controllers\AppBaseController;
@@ -54,7 +55,7 @@ class PhoneGroupController extends AppBaseController
         $input = $request->all();
         /** @var PhoneGroup $phoneGroup */
         $phoneGroup = PhoneGroup::create($input);
-        Excel::import(new PhoneImport(5), $request->file('phone_number')->store('temp'));
+        Excel::import(new PhoneImport($phoneGroup->id), $request->file('phone_number')->store('temp'));
         Flash::success('Phone Group saved successfully.');
         return redirect(route('backend.phoneGroups.index'));
     }
@@ -62,7 +63,7 @@ class PhoneGroupController extends AppBaseController
     /**
      * Display the specified PhoneGroup.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Response
      */
@@ -76,14 +77,17 @@ class PhoneGroupController extends AppBaseController
 
             return redirect(route('backend.phoneGroups.index'));
         }
-
-        return view('backend.phone_groups.show')->with('phoneGroup', $phoneGroup);
+        $phoneByGroupDataTable = new PhoneByGroupDataTable($id);
+        $data = [
+          'phoneGroup' => $phoneGroup
+        ];
+        return $phoneByGroupDataTable->render('backend.phones.index',$data);
     }
 
     /**
      * Show the form for editing the specified PhoneGroup.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Response
      */
@@ -104,7 +108,7 @@ class PhoneGroupController extends AppBaseController
     /**
      * Update the specified PhoneGroup in storage.
      *
-     * @param  int              $id
+     * @param int $id
      * @param UpdatePhoneGroupRequest $request
      *
      * @return Response
@@ -119,35 +123,35 @@ class PhoneGroupController extends AppBaseController
 
             return redirect(route('backend.phoneGroups.index'));
         }
-
-        $phoneGroup->fill($request->all());
+        $input = $request->all();
+        $phoneGroup->fill($input);
+        Excel::import(new PhoneImport($id), $request->file('phone_number')->store('temp2'));
         $phoneGroup->save();
-
         Flash::success('Phone Group updated successfully.');
-
         return redirect(route('backend.phoneGroups.index'));
     }
 
     /**
      * Remove the specified PhoneGroup from storage.
      *
-     * @param  int $id
-     *
-     * @throws \Exception
+     * @param int $id
      *
      * @return Response
+     * @throws \Exception
+     *
      */
     public function destroy($id)
     {
         /** @var PhoneGroup $phoneGroup */
         $phoneGroup = PhoneGroup::find($id);
 
+
         if (empty($phoneGroup)) {
             Flash::error('Phone Group not found');
-
             return redirect(route('backend.phoneGroups.index'));
         }
-
+        $phones = Phone::where('phone_groups_id', $id);
+        $phones->delete();
         $phoneGroup->delete();
 
         Flash::success('Phone Group deleted successfully.');

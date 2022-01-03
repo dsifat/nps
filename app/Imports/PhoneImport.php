@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Imports;
+
 use App\Models\Backend\Phone;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToCollection;
-use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithStartRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
 
-class PhoneImport implements ToCollection,WithStartRow
+class PhoneImport implements ToCollection, WithHeadingRow, WithValidation
 {
     /**
      * @param array $row
@@ -28,12 +28,24 @@ class PhoneImport implements ToCollection,WithStartRow
 
     public function collection(Collection $rows)
     {
-        foreach ($rows as $row)
-        {
+        foreach ($rows as $row) {
             Phone::create([
-                'number' => $row[0],
+                'number' => $row['number'],
                 'phone_groups_id' => $this->group_id
             ]);
         }
+    }
+    public function rules(): array
+    {
+        return [
+            'number' => Rule::unique('phones')->where('phone_groups_id',$this->group_id)
+        ];
+    }
+
+    public function customValidationMessages()
+    {
+        return [
+            'number.unique' => 'Same number has been found in records',
+        ];
     }
 }
