@@ -191,4 +191,5 @@ return [
   "Transactions" => "Transactions",
   "Schedulers" => "Schedulers",
   "Partners" => "Partners",
+    "Email-Groups" => "Email-Groups",
 ];

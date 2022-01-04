@@ -63,3 +63,11 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.emailGroups.index') }}"
+       class="nav-link {{ Request::is('backend/emailGroups*') ? 'active' : '' }}">
+        <p>Email Groups</p>
+    </a>
+</li>
+
+
