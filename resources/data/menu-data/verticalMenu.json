@@ -61,6 +61,22 @@
             "icon": "clock",
             "slug": "scheduleTasks*",
             "can": "ReadScheduler|CreateScheduler|EditScheduler|DeleteScheduler"
+        },
+
+        {
+            "name": "Email-Groups",
+            "icon": "circle",
+            "slug": "emailGroups*",
+            "can": "ReadEmailGroup|CreateEmailGroup|EditEmailGroup|DeleteEmailGroup",
+            "submenu": [
+                {
+                    "url": "/emailGroups",
+                    "name": "Email-Groups",
+                    "icon": "circle",
+                    "slug": "emailGroups*",
+                    "can": "ReadEmailGroup|CreateEmailGroup|EditEmailGroup|DeleteEmailGroup"
+                }
+            ]
         }
     ]
 }

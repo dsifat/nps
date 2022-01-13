@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/roles', 'Backend\RoleController', ["as" => 'backend']);
     Route::resource('/permissions', 'Backend\PermissionController', ["as" => 'backend']);
     Route::resource('/users', 'Backend\UserController', ["as" => 'backend']);
-
+    Route::resource('/emailGroups', 'Backend\EmailGroupController', ["as" => 'backend']);
     Route::post('/scheduleTasks/runTaskNow/{id}', 'Backend\ScheduleTaskController@runTaskNow')->name('backend.scheduleTasks.runTaskNow');
     Route::resource('/scheduleTasks', 'Backend\ScheduleTaskController', ["as" => 'backend']);
 });

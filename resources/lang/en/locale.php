@@ -192,4 +192,5 @@ return [
   "Partners" => "Partners",
     "Topics" => "Topics",
     "Phone Groups" => "Phone Groups",
+    "Email-Groups" => "Email-Groups",
 ];

@@ -47,6 +47,11 @@ Route::group(['prefix' => 'backend'], function () {
 
 
 Route::group(['prefix' => 'backend'], function () {
+    Route::resource('email_groups', App\Http\Controllers\API\Backend\Backend\EmailGroupAPIController::class);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
     Route::resource('phone_groups', App\Http\Controllers\API\Backend\Backend\PhoneGroupAPIController::class);
 });
 
