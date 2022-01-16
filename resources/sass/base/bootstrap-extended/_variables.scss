@@ -22,7 +22,7 @@ $gray-800: #1e1e1e !default; // $gray-dark
 $gray-900: #2a2e30 !default;
 $black: #22292f !default; // 231f48 22292f
 
-$purple: #c61017 !default; //$primary
+$purple: #EC1940 !default; //$primary
 $green: #28c76f !default; //$success
 $blue: #00cfe8 !default; //$info
 $orange: #ff9f43 !default; //$warning
@@ -127,8 +127,8 @@ $box-shadow: 0 4px 24px 0 rgba($black, 0.1) !default;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: "Montserrat", Helvetica, Arial, serif !default;
-$font-family-monospace: "Montserrat", Helvetica, Arial, serif !default;
+$font-family-sans-serif: "Nunito", sans-serif !default;
+$font-family-monospace: "Nunito", sans-serif;
 
 // stylelint-enable value-keyword-case
 $font-size-base: 1rem !default;

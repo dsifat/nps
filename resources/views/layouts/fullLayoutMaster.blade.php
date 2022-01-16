@@ -17,6 +17,7 @@ $configData = Helper::applClasses();
 
   <title>@yield('title') - {{ config('app.full_name') }}</title>
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/logo/favicon.ico')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
   {{-- Include core + vendor Styles --}}
   @include('panels/styles')
@@ -27,7 +28,7 @@ $configData = Helper::applClasses();
 
 
 
-<body class="vertical-layout vertical-menu-modern {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : 'light' }}
+<body class="vertical-layout vertical-menu-modern bg-white {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : 'light' }}
     data-menu=" vertical-menu-modern" data-layout="{{ ($configData['theme'] === 'light') ? '' : $configData['layoutTheme'] }}" style="{{ $configData['bodyStyle'] }}" data-framework="laravel" data-asset-path="{{ asset('/')}}">
 
   <!-- BEGIN: Content-->
@@ -42,7 +43,6 @@ $configData = Helper::applClasses();
     </div>
   </div>
   <!-- End: Content-->
-
   {{-- include default scripts --}}
   @include('panels/scripts')
 
