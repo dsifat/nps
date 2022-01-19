@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'RADMIN'),
-    'full_name' => env('APP_FULL_NAME', 'Generic Admin Panel'),
+    'full_name' => env('APP_FULL_NAME', 'Net Promoter Score'),
     'admin_mail' => env('ADMIN_MAIL', 'imdadul.haque@reddotdigitalit.com'),
 
     /*
