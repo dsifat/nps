@@ -20,6 +20,7 @@
 .vertical-layout {
   &.vertical-menu-modern {
     .main-menu {
+      @include menu-theme($white, $primary);
       transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0s;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;

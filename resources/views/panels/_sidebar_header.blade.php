@@ -3,9 +3,9 @@
         <li class="nav-item mr-auto">
         <a class="navbar-brand" href="{{url('/')}}">
             <div class="brand-logo">
-                <img>
+                <img src="{{ asset('images/logo/logo-sur.png') }}" width="35px">
             </div>
-            <h2 class="brand-text">{{ config('app.name') }}</h2>
+            <div class="brand-text mb-0"><img src="{{ asset('images/logo/ncell.svg') }}" width="40px" alt=""></div>
         </a>
         </li>
         <li class="nav-item nav-toggle">

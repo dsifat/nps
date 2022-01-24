@@ -25,8 +25,6 @@
   {{-- Include core + vendor Styles --}}
   @include('panels/styles')
 
-  {{-- Include core + vendor Styles --}}
-  @include('panels/styles')
 </head>
 
 <body class="vertical-layout vertical-menu-modern bg-white {{ $configData['blankPageClass'] }} {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : 'light' }}"

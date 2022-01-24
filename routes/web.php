@@ -4,6 +4,7 @@
 use App\Http\Controllers\Auth\OTPController;
 use App\Http\Controllers\Auth\UpdatePassController;
 
+use App\Http\Controllers\Backend\CompetitiveSurveyController;
 use App\Http\Controllers\LanguageController;
 
 Auth::routes([
@@ -34,6 +35,9 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
 Route::get('/password/otp/validate',[OTPController::class, 'index']);
 
 Route::get('/password/change',[UpdatePassController::class, 'index']);
+
+Route::get('/survey/competitive',[CompetitiveSurveyController::class, 'index']);
+
 
 // Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth'])->group(function () {
