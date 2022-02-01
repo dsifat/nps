@@ -568,3 +568,70 @@ input[type='number']::-webkit-outer-spin-button {
     background-color: $white;
   }
 }
+
+.form-label-group{
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  // Form-Control-Large in Floating Label Group
+  .form-control-lg{
+    ~ label{
+      font-size: 1.25rem;
+      padding: 1rem;
+    }
+  }
+
+  // Form-Control-Small in Floating Label Group
+  .form-control-sm{
+    ~ label{
+      font-size: 0.7rem;
+    }
+  }
+
+  // Form-label
+  > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    transition: all .25s ease-in-out;
+    padding: .6rem;
+    pointer-events: none;
+    cursor: text;
+    color: rgba($black, 0.4);
+    font-size: .85rem;
+    opacity: 0;
+  }
+  // form-input
+  > input, textarea{
+    padding: .6rem;
+
+    // from-input on focus change label color
+    &:focus, &:not(:active){
+      &:not(:placeholder-shown) ~ label {
+        color: rgba($primary, 1) !important;
+        transition: all .25s ease-in-out;
+        opacity: 1;
+      }
+    }
+    &:not(:focus){
+      &:not(:placeholder-shown) ~ label {
+        color: rgba($black, 0.4) !important;
+      }
+    }
+    // form-label after entering text in input box
+    &:not(:placeholder-shown) ~ label {
+      padding : .25rem 0;
+      font-size: .7rem;
+      top: -20px;
+      left: 3px;
+    }
+  }
+
+  // has-icon left with input
+  &.has-icon-left{
+    > label{
+      left: 36px;
+    }
+  }
+}

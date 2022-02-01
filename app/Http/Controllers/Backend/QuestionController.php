@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\DataTables\Backend\QuestionDataTable;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend;
 use App\Http\Requests\Backend\CreateQuestionRequest;
 use App\Http\Requests\Backend\UpdateQuestionRequest;
@@ -26,9 +27,16 @@ class QuestionController extends AppBaseController
      * @param QuestionDataTable $questionDataTable
      * @return Response
      */
-    public function index(QuestionDataTable $questionDataTable)
+    public function index()
     {
-        return $questionDataTable->render('backend.questions.index');
+        $pageConfigs = [
+            'pageHeader' => false,
+            'contentLayout' => 'content-left-sidebar',
+            'bodyClass' => 'todo-application',
+            'layoutWidth' => 'boxed'
+        ];
+
+        return view('backend.questions.index', ['pageConfigs' => $pageConfigs]);
     }
 
     /**

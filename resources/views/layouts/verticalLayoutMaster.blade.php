@@ -18,18 +18,23 @@
     <div class="header-navbar-shadow"></div>
 
     @if(($configData['contentLayout']!=='default') && isset($configData['contentLayout']))
-    <div class="content-area-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container p-0' : '' }}">
-      <div class="{{ $configData['sidebarPositionClass'] }}">
-        <div class="sidebar">
-          {{-- Include Sidebar Content --}}
-          @yield('content-sidebar')
-        </div>
+    <div class="content-area-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container p-0' : '' }} flex-column">
+      <div>
+        sasdasd
       </div>
-      <div class="{{ $configData['contentsidebarClass'] }}">
-        <div class="content-wrapper">
-          <div class="content-body">
-            {{-- Include Page Content --}}
-            @yield('content')
+      <div>
+        <div class="{{ $configData['sidebarPositionClass'] }}">
+          <div class="sidebar">
+            {{-- Include Sidebar Content --}}
+            @yield('content-sidebar')
+          </div>
+        </div>
+        <div class="{{ $configData['contentsidebarClass'] }}">
+          <div class="content-wrapper">
+            <div class="content-body">
+              {{-- Include Page Content --}}
+              @yield('content')
+            </div>
           </div>
         </div>
       </div>
