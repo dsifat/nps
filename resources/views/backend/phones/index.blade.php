@@ -2,6 +2,10 @@
 
 @section('title', 'All Phones')
 
+@section('page-style')
+  <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
+@endsection
+
 @section('content')
   {{--    <section id="column-search-datatable">--}}
   {{--        <div class="row">--}}
@@ -33,13 +37,15 @@
               <li><a class="btn btn-outline-"><i data-feather="settings"></i></a></li>
               <li><a class="btn btn-outline-dark"><i data-feather="search"></i></a></li>
               <li><a class="btn btn-outline-dark">Report</a></li>
-              <li><a class="btn btn-primary">Add Contact</a></li>
+              <li><button class="btn btn-outline-dark" data-toggle="modal" data-target="#uploadContactList">Import</button></li>
+              <li>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#newContact">Add Contact</button>
+              </li>
             </ul>
             {{--            </div>--}}
           </div>
           <div class="card-datatable">
-            <row>
-              <div class="row">
+            <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12">
                   <div class="card">
                     <div class="card-header d-flex align-items-start pb-0">
@@ -81,7 +87,6 @@
                   </div>
                 </div>
               </div>
-            </row>
             <div class="table-responsive">
               <table class="table row-grouping">
                 <thead>
@@ -327,5 +332,78 @@
       </div>
     </div>
   </section>
+  <div class="modal fade text-left" id="newContact" tabindex="-1" role="dialog" aria-labelledby="newContact" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-text-bold-600" id="emailCompose">New Contact</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pt-1">
+          <form>
+            <div class="form-group">
+              <label for="inputAddress">Email</label>
+              <input type="email" class="form-control" id="inputAddress" placeholder="Email">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputfname">First Name</label>
+                <input type="text" class="form-control" id="inputfname" placeholder="First Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputlname">Last Name</label>
+                <input type="text" class="form-control" id="inputlname" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputphone">Phone Number</label>
+              <input type="text" class="form-control" id="inputphone" placeholder="Phone">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Send" class="btn btn-primary">
+          <input type="Reset" value="Cancel" class="btn btn-white" data-dismiss="modal">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade text-left" id="uploadContactList" tabindex="-1" role="dialog" aria-labelledby="uploadContactList" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title text-text-bold-600" id="uploadContactList">Upload Contact List</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body pt-1">
+            <form action="#" class="dropzone dropzone-area" id="my-awesome-dropzone">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+              </div>
+              <div class="dropzone dropzone-area" id="my-awesome-dropzone">
+                <div class="dz-message">Drop files here or click to upload.</div>
+              </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" value="Import Contact" class="btn btn-primary">
+          <input type="Reset" value="Cancel" class="btn btn-white" data-dismiss="modal">
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
 
+@section('page-script')
+  <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
+  <script>
+      // $('#my-awesome-dropzone').dropzone({
+      //
+      // });
+  </script>
+@endsection

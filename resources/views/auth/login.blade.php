@@ -35,8 +35,8 @@
                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                    aria-describedby="login-password"/>
             <div class="input-group-append">
-                                            <span class="input-group-text cursor-pointer"><i
-                                                      data-feather="eye"></i></span>
+              <span class="input-group-text cursor-pointer">
+                <i data-feather="eye"></i></span>
             </div>
           </div>
         </div>
