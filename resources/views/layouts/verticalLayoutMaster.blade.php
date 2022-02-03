@@ -20,9 +20,6 @@
     @if(($configData['contentLayout']!=='default') && isset($configData['contentLayout']))
     <div class="content-area-wrapper {{ $configData['layoutWidth'] === 'boxed' ? 'container p-0' : '' }} flex-column">
       <div>
-        sasdasd
-      </div>
-      <div>
         <div class="{{ $configData['sidebarPositionClass'] }}">
           <div class="sidebar">
             {{-- Include Sidebar Content --}}

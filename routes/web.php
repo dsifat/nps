@@ -4,7 +4,9 @@
 use App\Http\Controllers\Auth\OTPController;
 use App\Http\Controllers\Auth\UpdatePassController;
 
+use App\Http\Controllers\Backend\AssignSurveyController;
 use App\Http\Controllers\Backend\CompetitiveSurveyController;
+use App\Http\Controllers\Backend\TelephonicSurveyController;
 use App\Http\Controllers\LanguageController;
 
 Auth::routes([
@@ -37,6 +39,12 @@ Route::get('/password/otp/validate',[OTPController::class, 'index']);
 Route::get('/password/change',[UpdatePassController::class, 'index']);
 
 Route::get('/survey/competitive',[CompetitiveSurveyController::class, 'index']);
+
+Route::get('/survey/telephonic',[TelephonicSurveyController::class, 'index']);
+
+Route::get('/survey/assign',[AssignSurveyController::class, 'index']);
+
+//Route::get('/survey/assign/list',[AssignSurveyController::class, 'index']);
 
 
 // Route::middleware(['auth', 'verified'])->group(function () {
