@@ -35,14 +35,20 @@
 {{--                                  </div>--}}
 {{--                              </form>--}}
                               <form action="#" class="dropzone dropzone-area" id="my-awesome-dropzone">
-                                      <div class="dz-message d-flex flex-column">Drop files here or click to upload.
-                                      <p class="p-2" style="background-color: #04AA6D!important; border-radius: 5px;">
-                                          Upload Files</p>
-                                      <p class="p-2">File can't be more than 300kb size</p>
+                                      <div class="dz-message d-flex flex-column">
+                                          <p class="p-1">
+                                              Drop files here or click to upload.
+                                          </p>
+                                          <div class="d-flex justify-content-center">
+                                              <p class="p-1 col-4" style="background-color: #04AA6D!important; border-radius: 5px;">
+                                                  Upload Files</p>
+                                          </div>
+
+                                          <p class="p-1">File can't be more than 300kb size</p>
                                       </div>
                               </form>
                           </div>
-                          <div class="modal-footer d-flex align-items-center">
+                          <div class="modal-footer d-flex align-items-center" style="justify-content: center">
                               <button type="button" class="btn btn-primary">Done</button>
                           </div>
                       </div>
