@@ -2,6 +2,10 @@
 
 @section('title', 'Competitive Survey')
 
+@section('page-style')
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
+@endsection
+
 @section('content')
   <section id="column-search-datatable">
     <div class="row">
@@ -13,9 +17,43 @@
             <ul class="list-inline m-0">
               <li><a class="btn btn-outline-dark"><i data-feather="search"></i></a></li>
               <li><a class="btn btn-outline-dark">Export</a></li>
-              <li><a class="btn btn-primary">Upload Survey</a></li>
+                <li><a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Upload Survey</a></li>
             </ul>
             {{--            </div>--}}
+              <div class="modal fade" id="yourModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header" style="flex-direction: column;">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Upload Survey Files</h4>
+                          </div>
+                          <div class="modal-body">
+{{--                              <form>--}}
+{{--                                  <div class="form-group">--}}
+{{--                                      <label for="recipient-name" class="col-form-label">Recipient:</label>--}}
+{{--                                      <input type="text" class="form-control" id="recipient-name">--}}
+{{--                                  </div>--}}
+{{--                              </form>--}}
+                              <form action="#" class="dropzone dropzone-area" id="my-awesome-dropzone">
+                                      <div class="dz-message d-flex flex-column">
+                                          <p class="p-1">
+                                              Drop files here or click to upload.
+                                          </p>
+                                          <div class="d-flex justify-content-center">
+                                              <p class="p-1 col-4" style="background-color: #04AA6D!important; border-radius: 5px;">
+                                                  Upload Files</p>
+                                          </div>
+
+                                          <p class="p-1">File can't be more than 300kb size</p>
+                                      </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer d-flex align-items-center" style="justify-content: center">
+                              <button type="button" class="btn btn-primary">Done</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
           <div class="card-datatable">
             <div class="table-responsive">
@@ -100,3 +138,11 @@
   </section>
 @endsection
 
+@section('page-script')
+    <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
+    <script>
+        // $('#my-awesome-dropzone').dropzone({
+        //
+        // });
+    </script>
+@endsection

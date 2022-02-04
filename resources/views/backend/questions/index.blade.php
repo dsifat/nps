@@ -4,13 +4,14 @@
 
 @section('page-style')
   <!-- Page css files -->
-  <link rel="stylesheet" href="{{ asset('css/base/pages/app-question-bank.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/base/pages/app-question-bank.scss') }}">
 @endsection
 
 {{-- Include Sidebar Content --}}
 @include('backend/questions/sidebar')
 
 @section('content')
+
   <div class="todo-app-list-wrapper">
     <div class="todo-app-list">
       <div class="app-fixed-search">
@@ -252,7 +253,17 @@
 {{--          </li>--}}
         </ul>
         <div class="no-results">
-          <a href="" class="btn btn-success d-inline-flex align-items-center"><i class="fab fa-whatsapp h1 my-0 pr-2"></i>Whatsapp</a>
+            <div class="d-flex flex-column justify-content-center">
+                <div class="empty-search-item" style="text-align: center">
+                    {{--        <span class="glyphicon glyphicon-inbox"></span>--}}
+                    <i data-feather="inbox"></i>
+                </div>
+                <div class="empty-search-item" style="text-align: center"> <h6 class="text-muted">This is empty</h6></div>
+                <div class="empty-search-item" style="text-align: center"><p>Please select a Category first then select Topic</p></div>
+                <div class="empty-search-item" style="text-align: center"><p>You can see all questions here</p></div>
+                <div class="empty-search-item" style="text-align: center"> <a class="btn btn-primary">Create Question</a></div>
+            </div>
+{{--          <a href="" class="btn btn-success d-inline-flex align-items-center"><i class="fab fa-whatsapp h1 my-0 pr-2"></i>Whatsapp</a>--}}
         </div>
       </div>
     </div>
