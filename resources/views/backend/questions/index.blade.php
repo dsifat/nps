@@ -4,7 +4,7 @@
 
 @section('page-style')
   <!-- Page css files -->
-  <link rel="stylesheet" href="{{ asset('css/base/pages/app-question-bank.scss') }}">
+  <link rel="stylesheet" href="{{ asset('css/base/pages/app-question-bank.css') }}">
 @endsection
 
 {{-- Include Sidebar Content --}}
