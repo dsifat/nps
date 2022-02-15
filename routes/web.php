@@ -95,3 +95,5 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
 });
+
+
