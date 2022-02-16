@@ -6,6 +6,11 @@ use App\Http\Controllers\Auth\UpdatePassController;
 use App\Http\Controllers\Backend\AssignSurveyController;
 use App\Http\Controllers\Backend\CompetitiveSurveyController;
 use App\Http\Controllers\Backend\TelephonicSurveyController;
+use App\Http\Controllers\Backend\AgentController;
+use App\Http\Controllers\Backend\AgentAssignmentsController;
+
+use App\Http\Controllers\Backend\SurveySummaryController;
+
 use App\Http\Controllers\LanguageController;
 
 Auth::routes([
@@ -40,11 +45,16 @@ Route::get('/password/change',[UpdatePassController::class, 'index']);
 Route::get('/survey/competitive',[CompetitiveSurveyController::class, 'index']);
 
 Route::get('/survey/telephonic',[TelephonicSurveyController::class, 'index']);
+Route::get('/survey/telephonic/all',[TelephonicSurveyController::class, 'allTelephonicSurvey']);
+Route::get('/survey/telephonic/assign',[TelephonicSurveyController::class, 'assignSurvey']);
+Route::get('/survey/telephonic/summary',[TelephonicSurveyController::class, 'summary']);
+Route::get('/survey/telephonic/assignee/tasks',[TelephonicSurveyController::class, 'assigneeSurveyList']);
+Route::get('/survey/telephonic/details',[TelephonicSurveyController::class, 'surveyDetails']);
 
-Route::get('/survey/assign',[AssignSurveyController::class, 'index']);
 
-//Route::get('/survey/assign/list',[AssignSurveyController::class, 'index']);
+Route::get('survey/telephonic/agents',[AgentController::class,'index']);
 
+Route::get('/survey/telephonic/agents/assignments',[AgentAssignmentsController::class, 'assigneeSurveyList']);
 
 // Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth'])->group(function () {

@@ -1,0 +1,16 @@
+@import "../bootstrap-extended/variables";
+
+.survey-form-file-upload {
+    border-style: dashed !important;
+
+    .upload-file-text {
+        color: #fff;
+        width: 110px;
+        background-color: #04AA6D !important;
+        border-radius: 5px;
+    }
+}
+.button {
+    width: 110px;
+    margin: 0.5rem;
+}

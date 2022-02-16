@@ -1,0 +1,16 @@
+@import "../bootstrap-extended/variables";
+
+.item-status-completed {
+    border-radius: 15px;
+    width: 112px;
+    height: 35px;
+    padding: 6px;
+    background: rgba(0, 172, 77,0.15);
+}
+.item-status-not-completed {
+    border-radius: 15px;
+    width: 112px;
+    height: 35px;
+    padding: 6px;
+    background: rgba(236, 25, 64,0.15);
+}

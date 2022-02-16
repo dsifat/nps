@@ -9,4 +9,16 @@ class AssignSurveyController extends Controller
     {
         return view('backend.surveys.assign.index');
     }
+
+    public function AllAssignedSurveys()
+    {
+//        dd('here');
+        $pageConfigs = [
+            'pageHeader' => false,
+            'contentLayout' => 'content-left-sidebar',
+            'bodyClass' => 'todo-application',
+            'layoutWidth' => 'boxed'
+        ];
+        return view('backend.surveys.assign.all_assigned');
+    }
 }
