@@ -5,6 +5,7 @@
 @section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-telephonic.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/base/pages/page-assign-survey.css') }}">
 @endsection
 
 @section('content')
@@ -17,16 +18,15 @@
                             <h4 class="card-title">Assign Survey</h4>
                             <span class="ml-1">(Total 25 surveys created)</span>
                         </div>
-                        <div class="heading-elements">
-                            <ul class="list-inline m-0">
-                                <li><a href="{{ url('/survey/telephonic/agents') }}"class="btn btn-primary">View Agent List </a></li>
-                            </ul>
-                        </div>
+                        <ul class="list-inline m-0">
+                            <li><a href="{{ url('/survey/telephonic/agents') }}" class="btn btn-primary">View Agent
+                                    List </a></li>
+                        </ul>
                     </div>
                     <div class="card-content mt-4">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-4 col-12">
+                                <div class="col-md-3 col-12">
                                     <fieldset class="form-group">
                                         <label for="category">Select Category</label>
                                         <select class="form-control" id="category">
@@ -36,23 +36,23 @@
                                         </select>
                                     </fieldset>
                                 </div>
-                                <div class="col-md-4 col-12">
+                                <div class="col-md-3 col-12">
                                     <fieldset class="form-group">
                                         <label for="sub-category">Sub Category</label>
                                         <select class="form-control" id="sub-category">
-                                            <option>Business</option>
-                                            <option>Marketing</option>
-                                            <option>IT</option>
+                                            <option>Business A</option>
+                                            <option>Business B</option>
+                                            <option>Business C</option>
                                         </select>
                                     </fieldset>
                                 </div>
-                                <div class="col-md-4 col-12">
+                                <div class="col-md-6 col-12">
                                     <fieldset class="form-group">
                                         <label for="survey">Select Survey</label>
                                         <select class="form-control" id="survey">
-                                            <option>New survey</option>
-                                            <option>Old survey</option>
-                                            <option>Tt survey</option>
+                                            <option>New Product Development survey 2022</option>
+                                            <option>Marketing Survey TTC</option>
+                                            <option>Product specification survey</option>
                                         </select>
                                     </fieldset>
                                 </div>
@@ -75,34 +75,30 @@
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <form action="#" class="dropzone dropzone-area" id="my-awesome-dropzone">
+                                    <form action="#" class="dropzone dropzone-area survey-form-file-upload"
+                                          id="my-awesome-dropzone">
                                         <div class="dz-message d-flex flex-column">
                                             <p class="p-1">
                                                 Drop files here or click to upload.
                                             </p>
                                             <div class="d-flex justify-content-center">
-                                                <p class="p-1 col-4"
-                                                   style="background-color: #04AA6D!important; border-radius: 5px;">
+                                                <p class="p-1 upload-file-text" style="color: white;">
                                                     Upload Files</p>
                                             </div>
-
                                             <p class="p-1">File can't be more than 300kb size</p>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <div class="p-2">
-                                    <button type="button" class="btn btn-outline-danger">
-                                        Back
-                                    </button>
+                                <div class="">
+                                    <a href="{{ url('/survey/telephonic') }}"
+                                       class="btn btn-outline-danger button">Back
+                                    </a>
                                 </div>
-                                <div class="p-2">
-                                    <button type="button" class="btn btn-primary">
-                                        <a style="color: #fff; "href="{{ url('/survey/telephonic/summary') }}">
-                                            Next
-                                        </a>
-                                    </button>
+                                <div class="">
+                                    <a href="{{ url('/survey/telephonic/summary') }}" class="btn btn-primary button">Next
+                                    </a>
                                 </div>
                             </div>
                         </div>

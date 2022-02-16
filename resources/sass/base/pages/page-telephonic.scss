@@ -1,11 +1,52 @@
 @import "../bootstrap-extended/variables";
-.box-bar{
-  height: 150px;
-  width: 150px;
-  margin: 20px;
-  background-color: #EEF2FF;;
-  border: 1px solid $gray-100;
-  border-radius: 10px;
-  color: #2E3D70;
-;
+@import "bootstrap";
+
+.box-bar {
+    height: 150px;
+    width: 150px;
+
+    margin: 20px;
+    background-color: #EEF2FF;;
+    border: 1px solid $gray-100;
+    border-radius: 10px;
+    color: #2E3D70;
+
+    //padding: 8px;
+    //height: auto;
 }
+
+//.card-columns {
+//    @include media-breakpoint-only(xl) {
+//        column-count: 3;
+//    }
+//
+//    @include media-breakpoint-only(lg) {
+//        column-count: 3;
+//    }
+//
+//    @include media-breakpoint-only(md) {
+//        column-count: 3;
+//    }
+//
+//    @include media-breakpoint-only(sm) {
+//        column-count: 2;
+//    }
+//}
+
+//// Small devices (landscape phones, 576px and up)
+//@media (min-width: 576px) {
+//
+//}
+//
+//// Medium devices (tablets, 768px and up)
+//@media (min-width: 768px) { ... }
+//
+//// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) {
+//    .box-bar {
+//
+//    }
+//}
+//
+//// Extra large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) {  }

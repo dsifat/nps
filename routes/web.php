@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\AssignSurveyController;
 use App\Http\Controllers\Backend\CompetitiveSurveyController;
 use App\Http\Controllers\Backend\TelephonicSurveyController;
 use App\Http\Controllers\Backend\AgentController;
+use App\Http\Controllers\Backend\AgentAssignmentsController;
 
 use App\Http\Controllers\Backend\SurveySummaryController;
 
@@ -51,7 +52,11 @@ Route::get('/survey/telephonic/summary',[TelephonicSurveyController::class, 'sum
 Route::get('/survey/telephonic/assignee/tasks',[TelephonicSurveyController::class, 'assigneeSurveyList']);
 Route::get('/survey/telephonic/details',[TelephonicSurveyController::class, 'surveyDetails']);
 
+
 Route::get('survey/telephonic/agents',[AgentController::class,'index']);
+
+Route::get('/survey/telephonic/agents/assignments',[AgentAssignmentsController::class, 'assigneeSurveyList']);
+
 // Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     // Main Page Route
