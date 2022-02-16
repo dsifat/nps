@@ -37,7 +37,7 @@
   <nav class="header-navbar navbar navbar-expand-lg align-items-center {{ $configData['navbarClass'] }} navbar-light navbar-shadow {{ $configData['navbarColor'] }}">
     @endif
     <div class="navbar-container d-flex content">
-        {{-- @include('panels._navbar_bookmark') --}}
+         @include('panels._navbar_bookmark')
         <ul class="nav navbar-nav align-items-center ml-auto">
             {{-- @include('panels._navbar_language') --}}
             {{-- @include('panels._navbar_colorswitcher') --}}

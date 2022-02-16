@@ -42,7 +42,7 @@
           <div class="col-sm-3 bg-primary">
             <div class="container login-sidebar">
               <img src="{{ asset('images/logo/ncell-dark.png') }}" alt="ncell-dark">
-              <div class="description">
+              <div class="description d-none d-sm-block d-sm-none d-md-block">
                 <div class="title">
                   <span>Everybody can connect</span>
                 </div>
@@ -50,7 +50,7 @@
                   <span class="text-left">Acknowledge customer feedback, and respond quickly to detractors, improve the NPS score. Boost the customer loyalty and retention.</span>
                 </div>
               </div>
-              <div class="img-flavour d-flex justify-content-center">
+              <div class="img-flavour d-lg-flex justify-content-center d-none d-sm-block d-sm-none d-md-block">
                 <img width="80%" src="{{ asset('images/misc/sidebar-flavor.png') }}" alt="ncell-dark">
               </div>
             </div>

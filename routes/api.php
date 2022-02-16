@@ -61,3 +61,10 @@ Route::group(['prefix' => 'backend'], function () {
 });
 
 
+
+
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('surveys', App\Http\Controllers\API\Backend\Backend\SurveyAPIController::class);
+});

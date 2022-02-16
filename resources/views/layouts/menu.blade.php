@@ -88,3 +88,13 @@
 
 
 
+
+
+<li class="nav-item">
+    <a href="{{ route('backend.surveys.index') }}"
+       class="nav-link {{ Request::is('backend/surveys*') ? 'active' : '' }}">
+        <p>Surveys</p>
+    </a>
+</li>
+
+

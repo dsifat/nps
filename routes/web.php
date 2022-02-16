@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Controllers\Auth\OTPController;
 use App\Http\Controllers\Auth\UpdatePassController;
 
@@ -97,3 +96,10 @@ Route::group(['prefix' => 'backend'], function () {
 });
 
 
+
+
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('surveys', 'Backend\SurveyController', ["as" => 'backend']);
+});
