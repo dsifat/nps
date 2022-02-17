@@ -1,9 +1,9 @@
 @extends('layouts.appMaster')
 
-@section('title', 'Telephonic Survey')
+@section('title', 'Survey Summary')
 
 @section('page-style')
-    {{--    <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-telephonic.css') }}">--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-survey-summary.css') }}">
 @endsection
 
 @section('content')
@@ -14,16 +14,18 @@
                     <div class="card-header border-bottom">
                         <div class="d-flex ">
                             <h4 class="card-title">Summary</h4>
-                            <span class="ml-1">(Total 25 surveys created)</span>
+                            <span class="card-title-count-text">(Total 25 surveys created)</span>
                         </div>
-
-                        <ul class="list-inline m-0">
-                            <li><a class="btn btn-primary"> Export </a></li>
+                        <ul class="list-inline m-0 d-none d-sm-none d-md-none d-lg-block">
+                            <li><a href="#" class="btn btn-primary">Export</a></li>
                         </ul>
                     </div>
-                    <div class="card-body d-flex flex-column align-items-center justify-content-center"
-                         style="min-height: 70vh;">
-                        <table class="table table-responsive">
+                    <div class="card-body">
+                        <div class="row d-lg-none d-xl-none mt-2 mr-0 ml-0">
+                            <a class="col-md-12 btn btn-block btn-primary"
+                               href="#">Export</a>
+                        </div>
+                        <table class="table table-responsive mt-2">
                             <thead>
                             <tr>
                                 <th scope="col">Assignee Name</th>
@@ -52,16 +54,12 @@
                         </table>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <div class="p-2">
-                            <button type="button" class="btn btn-outline-danger">
-                                Back
-                            </button>
+                        <div class="py-1">
+                            <a href="{{ url('/survey/telephonic/assign') }}" class="btn btn-outline-danger button">Back
+                            </a>
                         </div>
-                        <div class="p-2">
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModalCenter">
-                                Submit
-                            </button>
+                        <div class="py-1">
+                            <a class="btn btn-primary button" data-toggle="modal" data-target="#exampleModalCenter">Submit</a>
                         </div>
                     </div>
                     <!-- Modal -->
