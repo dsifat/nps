@@ -1,6 +1,6 @@
 <div class="bookmark-wrapper d-flex align-items-center">
     <ul class="nav navbar-nav d-xl-none">
-    <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i data-feather="menu" class="feather-32"></i></a></li>
+    <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i data-feather="menu" class="feather-32 text-primary"></i></a></li>
     </ul>
 {{--    <ul class="nav navbar-nav bookmark-icons">--}}
 {{--    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{url('app/email')}}" data-toggle="tooltip" data-placement="top" title="Email"><i class="ficon" data-feather="mail"></i></a></li>--}}

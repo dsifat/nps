@@ -1,4 +1,4 @@
-@extends('layouts.contentLayoutMaster')
+@extends('layouts.appMaster')
 
 @section('title', 'All Phones')
 
@@ -33,7 +33,7 @@
           <div class="card-header border-bottom">
             <h4 class="card-title">All Contacts</h4>
             {{--            <div class="heading-elements">--}}
-            <ul class="list-inline m-0">
+            <ul class="list-inline m-0 d-none d-sm-none d-md-none d-lg-block">
               <li><a class="btn btn-outline-"><i data-feather="settings"></i></a></li>
               <li><a class="btn btn-outline-dark"><i data-feather="search"></i></a></li>
               <li><a class="btn btn-outline-dark">Report</a></li>
@@ -44,7 +44,14 @@
             </ul>
             {{--            </div>--}}
           </div>
-          <div class="card-datatable">
+          <div class="card-body">
+              <div class="row d-lg-none d-xl-none">
+                  <input type="text" placeholder="Search" class="my-1 col-md-12 form-control">
+                  <a class="btn btn-block btn-outline-dark"><i data-feather="settings"></i></a>
+                  <a class="btn btn-block btn-outline-dark">Report</a>
+                  <button class="btn btn-block btn-outline-dark" data-toggle="modal" data-target="#uploadContactList">Import</button>
+                  <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#newContact">Add Contact</button>
+              </div>
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12">
                   <div class="card">

@@ -38,18 +38,18 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
     )->name('io_generator_builder_generate_from_file');
 });
 
-Route::get('/password/otp/validate',[OTPController::class, 'index']);
+Route::get('password/otp/validate',[OTPController::class, 'index']);
 
-Route::get('/password/change',[UpdatePassController::class, 'index']);
+Route::get('password/change',[UpdatePassController::class, 'index']);
 
-Route::get('/survey/competitive',[CompetitiveSurveyController::class, 'index']);
+Route::get('survey/competitive',[CompetitiveSurveyController::class, 'index']);
 
-Route::get('/survey/telephonic',[TelephonicSurveyController::class, 'index']);
-Route::get('/survey/telephonic/all',[TelephonicSurveyController::class, 'allTelephonicSurvey']);
-Route::get('/survey/telephonic/assign',[TelephonicSurveyController::class, 'assignSurvey']);
-Route::get('/survey/telephonic/summary',[TelephonicSurveyController::class, 'summary']);
-Route::get('/survey/telephonic/assignee/tasks',[TelephonicSurveyController::class, 'assigneeSurveyList']);
-Route::get('/survey/telephonic/details',[TelephonicSurveyController::class, 'surveyDetails']);
+Route::get('survey/telephonic',[TelephonicSurveyController::class, 'index']);
+Route::get('survey/telephonic/all',[TelephonicSurveyController::class, 'allTelephonicSurvey']);
+Route::get('survey/telephonic/assign',[TelephonicSurveyController::class, 'assignSurvey']);
+Route::get('survey/telephonic/summary',[TelephonicSurveyController::class, 'summary']);
+Route::get('survey/telephonic/assignee/tasks',[TelephonicSurveyController::class, 'assigneeSurveyList']);
+Route::get('survey/telephonic/details',[TelephonicSurveyController::class, 'surveyDetails']);
 
 
 Route::get('survey/telephonic/agents',[AgentController::class,'index']);
@@ -103,13 +103,4 @@ Route::group(['prefix' => 'backend'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
-});
-
-
-
-
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('surveys', 'Backend\SurveyController', ["as" => 'backend']);
 });

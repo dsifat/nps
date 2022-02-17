@@ -3,8 +3,8 @@
     Description: Aggrid Table
     --------------------------------------------------------------------------------------
     - Vuejs, HTML & Laravel Admin Dashboard Template
-    
-    
+
+
 ==========================================================================================*/
 
 $(function() {
@@ -19,7 +19,6 @@ $(function() {
       sortable: true,
       filter: true,
       width: 175,
-      filter: true,
       checkboxSelection: true,
       headerCheckboxSelectionFilteredOnly: true,
       headerCheckboxSelection: true,

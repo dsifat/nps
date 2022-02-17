@@ -5,6 +5,7 @@
 @section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/base/pages/app-question-bank.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/forms/select/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -17,111 +18,125 @@
                         <ul class="list-inline m-0 d-none d-sm-none d-md-none d-lg-block">
                             <li><a class="btn btn-outline-dark"><i data-feather="search"></i></a></li>
                             <li><a class="btn btn-outline-dark">Export</a></li>
-                            <li><a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Create Question</a></li>
+                            <li><a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Create
+                                    Question</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="row d-lg-none d-xl-none">
-                                <input type="text" class="my-1 col-md-12 form-control" placeholder="Search">
-                                <a class="col-md-12 btn btn-block btn-outline-dark">Export</a>
-                                <a class="col-md-12 btn btn-block btn-primary" data-toggle="modal" data-target="#yourModal">Create Question</a>
-                            </div>
+                            <input type="text" class="my-1 col-md-12 form-control" placeholder="Search">
+                            <a class="col-md-12 btn btn-block btn-outline-dark">Export</a>
+                            <a class="col-md-12 btn btn-block btn-primary" data-toggle="modal" data-target="#yourModal">Create
+                                Question</a>
                         </div>
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                                   role="tab" aria-controls="nav-home" aria-selected="true">General Survey</a>
-                                <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                                   role="tab" aria-controls="nav-profile" aria-selected="false">Telephonic Survey</a>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                 aria-labelledby="nav-home-tab">
-                                <div class="row p-1 bg-light mx-0">
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <select class="select2 form-control">
-                                                <option value="square">Square</option>
-                                                <option value="rectangle">Rectangle</option>
-                                                <option value="rombo">Rombo</option>
-                                                <option value="romboid">Romboid</option>
-                                                <option value="trapeze">Trapeze</option>
-                                                <option value="traible">Triangle</option>
-                                                <option value="polygon">Polygon</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <select class="select2 form-control">
-                                                <option value="square">Square</option>
-                                                <option value="rectangle">Rectangle</option>
-                                                <option value="rombo">Rombo</option>
-                                                <option value="romboid">Romboid</option>
-                                                <option value="trapeze">Trapeze</option>
-                                                <option value="traible">Triangle</option>
-                                                <option value="polygon">Polygon</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <select class="select2 form-control">
-                                                <option value="square">Square</option>
-                                                <option value="rectangle">Rectangle</option>
-                                                <option value="rombo">Rombo</option>
-                                                <option value="romboid">Romboid</option>
-                                                <option value="trapeze">Trapeze</option>
-                                                <option value="traible">Triangle</option>
-                                                <option value="polygon">Polygon</option>
-                                            </select>
-                                        </div>
+                    </div>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                               role="tab" aria-controls="nav-home" aria-selected="true">General Survey</a>
+                            <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                               role="tab" aria-controls="nav-profile" aria-selected="false">Telephonic Survey</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                             aria-labelledby="nav-home-tab">
+                            <div class="row p-1 bg-light mx-0">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="select2 form-control" id="category">
+                                            <option value="0">Category</option>
+                                            <option value="square">Square</option>
+                                            <option value="rectangle">Rectangle</option>
+                                            <option value="rombo">Rombo</option>
+                                            <option value="romboid">Romboid</option>
+                                            <option value="trapeze">Trapeze</option>
+                                            <option value="traible">Triangle</option>
+                                            <option value="polygon">Polygon</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="card-datatable">
-                                    <div class="table-responsive">
-                                        <table class="table row-grouping">
-                                            <thead>
-                                            <tr>
-                                                <th>Title</th>
-                                                <th>Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>How high or low quality are our products or services?</td>
-                                                <td><i class="feather" data-feather="chevron-down"></i></td>
-                                            </tr>
-
-                                            </tbody>
-                                            <tfoot>
-                                            <tr>
-                                                <th>Title</th>
-                                                <th>Action</th>
-                                            </tr>
-                                            </tfoot>
-                                        </table>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="select2 form-control" id="sub-category">
+                                            <option value="0">Sub Category</option>
+                                            <option value="square">Square</option>
+                                            <option value="rectangle">Rectangle</option>
+                                            <option value="rombo">Rombo</option>
+                                            <option value="romboid">Romboid</option>
+                                            <option value="trapeze">Trapeze</option>
+                                            <option value="traible">Triangle</option>
+                                            <option value="polygon">Polygon</option>
+                                        </select>
                                     </div>
                                 </div>
-
-                                {{--                                <div class="row d-flex flex-column align-items-center justify-content-center" style="min-height: 70vh;">--}}
-                                {{--                                    <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
-                                {{--                                    <p class="m-1">Please select a Category first then select Topic you can see all questions here</p>--}}
-                                {{--                                    <button class="btn btn-primary"><i data-feather="plus"></i> Create Question</button>--}}
-                                {{--                                </div>--}}
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <select class="select2 form-control" id="question-type">
+                                            <option value="0">Question Type</option>
+                                            <option value="square">Square</option>
+                                            <option value="rectangle">Rectangle</option>
+                                            <option value="rombo">Rombo</option>
+                                            <option value="romboid">Romboid</option>
+                                            <option value="trapeze">Trapeze</option>
+                                            <option value="traible">Triangle</option>
+                                            <option value="polygon">Polygon</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                 aria-labelledby="nav-profile-tab">asdsd
+                            <div class="card-datatable">
+                                <div class="table-responsive">
+                                    <table class="table row-grouping">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th><span class="text-lg-left text-darken-4"></span>Marketing <span class="text-sm-left text-muted">(25 Questions)</span></th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>How high or low quality are our products or services?</td>
+                                            <td><i class="feather" data-feather="chevron-down"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>How can you be smart?</td>
+                                            <td><i class="feather" data-feather="chevron-down"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>How high sajek valley is?</td>
+                                            <td><i class="feather" data-feather="chevron-down"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>What is NPS Solution?</td>
+                                            <td><i class="feather" data-feather="chevron-down"></i></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                 aria-labelledby="nav-contact-tab">...
-                            </div>
+                            {{--                                <div class="row d-flex flex-column align-items-center justify-content-center" style="min-height: 70vh;">--}}
+                            {{--                                    <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
+                            {{--                                    <p class="m-1">Please select a Category first then select Topic you can see all questions here</p>--}}
+                            {{--                                    <button class="btn btn-primary"><i data-feather="plus"></i> Create Question</button>--}}
+                            {{--                                </div>--}}
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                             aria-labelledby="nav-profile-tab">asdsd
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                             aria-labelledby="nav-contact-tab">...
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
     <div class="modal fade" id="yourModal" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel">
@@ -158,4 +173,5 @@
 
 @section('page-script')
     <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
+    <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
 @endsection
