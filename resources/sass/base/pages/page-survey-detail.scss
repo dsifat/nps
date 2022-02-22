@@ -1,32 +1,5 @@
 @import "../bootstrap-extended/variables";
 
-.card-header-text {
-    .card-header-icon-reload {
-        padding: 0 10px 8px 8px;
-        @media (min-width: 992px) {
-            padding: 0 16px 16px 13px;
-        }
-    }
-
-    .card-title {
-        color: #2E3D70;
-        font-size: 1rem;
-        @media (min-width: 992px) {
-            font-size: 1.285rem;
-        }
-    }
-
-    .card-title-count-text {
-        color: #622691;
-        font-size: 0.8rem;
-        margin-left: 8px;
-        @media (min-width: 992px) {
-            margin-left: 18px;
-            font-size: 1rem;
-        }
-    }
-}
-
 td {
     a {
         color: #2E3D70 !important;
@@ -59,4 +32,16 @@ td {
     .not-completed-button {
         background: #EC1940;
     }
+
+    .no-answer-button {
+        background: #622691;
+    }
+
+    .busy-button {
+        background: #E22635;
+    }
+}
+
+.time-data {
+    color: #622691;
 }

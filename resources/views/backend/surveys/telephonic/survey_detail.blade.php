@@ -3,12 +3,7 @@
 @section('title', 'Telephonic Survey')
 
 @section('page-style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-assignee-survey-list.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/css/tables/datatable/datatables.min.css') }}">
-@endsection
-
-@section('vendor-style')
-    {{-- vendor css files --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/base/pages/page-survey-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/css/tables/datatable/datatables.min.css') }}">
 @endsection
 
@@ -19,7 +14,8 @@
                 <div class="card">
                     <div class="card-header border-bottom">
                         <div class="d-flex">
-                            <h4 class="card-title">New Product Development & Launch Survey 2022</h4>
+                            <h4 class="card-title" style="color:#2E3D70;">New Product Development & Launch Survey
+                                2022</h4>
                         </div>
                     </div>
                     <div class="card-body">
@@ -39,8 +35,10 @@
                                     <tr>
                                         <td>MD Raminur Rahman</td>
                                         <td>01833184334</td>
-                                        <td>5:30 Min</td>
-                                        <td>Not Completed</td>
+                                        <td class="time-data">5:30 Min</td>
+                                        <td>
+                                            <button class="button not-completed-button">Not Completed</button>
+                                        </td>
                                         <td>
                                             <button type="button" class="btn mr-1 mb-1 waves-effect waves-light"
                                                     style="background: #EEF2FF;">Start Survey
@@ -50,13 +48,9 @@
                                     <tr>
                                         <td>MD Raminur Rahman</td>
                                         <td>01833184334</td>
-                                        <td>0:00 Min</td>
+                                        <td class="time-data">0:00 Min</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button completed-button">Completed</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn mr-1 mb-1 waves-effect waves-light"
@@ -67,13 +61,9 @@
                                     <tr>
                                         <td>MD Abdul Khaleq</td>
                                         <td>01833184335</td>
-                                        <td>--:-- Min</td>
+                                        <td class="time-data">--:-- Min</td>
                                         <td>
-                                            <div class="item-status-not-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button no-answer-button">No Answer</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn mr-1 mb-1 waves-effect waves-light"
@@ -84,13 +74,9 @@
                                     <tr>
                                         <td>MD Sohrab Ali</td>
                                         <td>01833184339</td>
-                                        <td>8:30 Min</td>
+                                        <td class="time-data">8:30 Min</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button busy-button">Busy</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn mr-1 mb-1 waves-effect waves-light"
@@ -99,15 +85,6 @@
                                         </td>
                                     </tr>
                                     </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>MSISDN</th>
-                                        <th>Duration</th>
-                                        <th>Status</th>
-                                        <th>Start</th>
-                                    </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>

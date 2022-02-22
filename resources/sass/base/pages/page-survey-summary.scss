@@ -1,11 +1,26 @@
 @import "../bootstrap-extended/variables";
 
-.box-bar {
-    height: 150px;
-    width: 150px;
-    margin: 20px;
-    background-color: #EEF2FF;
-    border: 1px solid $gray-100;
-    border-radius: 10px;
-    color: #2E3D70;
+.card-header {
+    .card-title {
+        color: #2E3D70;
+        font-size: 1rem;
+        @media (min-width: 992px) {
+            font-size: 1.285rem;
+        }
+    }
+
+    .card-title-count-text {
+        color: #622691;
+        font-size: 0.8rem;
+        margin-left: 8px;
+        @media (min-width: 992px) {
+            margin-left: 18px;
+            font-size: 1rem;
+        }
+    }
+}
+
+.button {
+    width: 110px;
+    margin: 0.5rem;
 }

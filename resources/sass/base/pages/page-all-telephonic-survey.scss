@@ -1,0 +1,40 @@
+@import "../bootstrap-extended/variables";
+
+td {
+    a {
+        color: #2E3D70 !important;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .button {
+        width: 93px;
+        height: 42px;
+        border: none;
+        border-radius: 25px;
+        padding: 8px;
+        color: white;
+        opacity: 0.25;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .active-button {
+        background: #00AC4D;
+    }
+
+    .draft-button {
+        background: #EC1940;
+    }
+}
+
+//.button {
+//    width: 110px;
+//    margin: 0.5rem;
+//}

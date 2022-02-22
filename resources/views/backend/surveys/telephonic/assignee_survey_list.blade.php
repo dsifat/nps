@@ -7,19 +7,14 @@
     <link rel="stylesheet" href="{{ asset('vendors/css/tables/datatable/datatables.min.css') }}">
 @endsection
 
-@section('vendor-style')
-    {{-- vendor css files --}}
-    <link rel="stylesheet" href="{{ asset('vendors/css/tables/datatable/datatables.min.css') }}">
-@endsection
-
 @section('content')
     <section id="column-search-datatable">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header border-bottom">
-                        <div class="d-flex">
-                            <div class="pr-2">
+                        <div class="d-flex card-header-text">
+                            <div class="card-header-icon-reload">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-refresh-cw">
@@ -30,21 +25,25 @@
                                 </svg>
                             </div>
                             <h4 class="card-title">Md Sarkar Ali</h4>
-                            <span class="ml-1">(Total 25 assignment)</span>
+                            <span class="card-title-count-text">(Total 25 assignment)</span>
                         </div>
-                        <ul class="list-inline m-0">
+                        <ul class="list-inline m-0 d-none d-sm-none d-md-none d-lg-block">
                             <li><a class="btn btn-primary" href="{{ url('/survey/telephonic/assign') }}">Assign to</a>
                             </li>
                         </ul>
                     </div>
                     <div class="card-body">
+                        <div class="row d-lg-none d-xl-none mr-0 ml-0">
+                            <a class="col-md-12 btn btn-block btn-primary my-1"
+                               href="{{ url('/survey/telephonic/assign') }}">Assign To</a>
+                        </div>
                         <div class="card-datatable">
                             <div class="table-responsive">
                                 <table class="table zero-configuration">
                                     <thead>
                                     <tr>
                                         <th>Survey Name</th>
-                                        <th>Total Question</th>
+                                        <th>Total Questions</th>
                                         <th>Date</th>
                                         <th>Main Topic</th>
                                         <th>Status</th>
@@ -53,16 +52,12 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>New Product Development & Launch Survey 2022</td>
                                         <td>30</td>
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button not-completed-button">Not Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -83,11 +78,28 @@
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-not-completed">
-                                                <p>
-                                                    Not Completed
-                                                </p>
-                                            </div>
+                                            <button class="button completed-button">Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>New Product Development & Launch Survey 2022</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button not-completed-button">Not Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -108,11 +120,7 @@
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button completed-button">Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -133,11 +141,7 @@
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-not-completed">
-                                                <p>
-                                                    Not Completed
-                                                </p>
-                                            </div>
+                                            <button class="button completed-button">Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -158,11 +162,7 @@
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button not-completed-button">Not Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -183,11 +183,112 @@
                                         <td>05 jan, 2022</td>
                                         <td>Business</td>
                                         <td>
-                                            <div class="item-status-completed">
-                                                <p>
-                                                    Completed
-                                                </p>
-                                            </div>
+                                            <button class="button not-completed-button">Not Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button completed-button">Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button not-completed-button">Not Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button not-completed-button">Not Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button completed-button">Completed</button>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL('/survey/telephonic/details') }}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24"
+                                                     fill="none" stroke="currentColor" stroke-width="2"
+                                                     stroke-linecap="round"
+                                                     stroke-linejoin="round" class="feather feather-eye">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marketing Survey 2021 Mid Level</td>
+                                        <td>30</td>
+                                        <td>05 jan, 2022</td>
+                                        <td>Business</td>
+                                        <td>
+                                            <button class="button not-completed-button">Not Completed</button>
                                         </td>
                                         <td>
                                             <a href="{{ URL('/survey/telephonic/details') }}">
@@ -203,82 +304,10 @@
                                         </td>
                                     </tr>
                                     </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Survey Name</th>
-                                        <th>Total Question</th>
-                                        <th>Date</th>
-                                        <th>Main Topic</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    {{--                    <table class="table table-borderless">--}}
-                    {{--                        <thead>--}}
-                    {{--                        <tr>--}}
-                    {{--                            <th scope="col">Survey Name</th>--}}
-                    {{--                            <th scope="col">Total Question</th>--}}
-                    {{--                            <th scope="col">Total Assigned Survey</th>--}}
-                    {{--                            <th scope="col">Main Topic</th>--}}
-                    {{--                            <th scope="col">Date</th>--}}
-                    {{--                            <th scope="col">Status</th>--}}
-                    {{--                            <th scope="col">Action</th>--}}
-                    {{--                        </tr>--}}
-                    {{--                        </thead>--}}
-                    {{--                        <tbody>--}}
-                    {{--                        <tr>--}}
-                    {{--                            <td>New Product Development & Launch Survey 2022</td>--}}
-                    {{--                            <td>344</td>--}}
-                    {{--                            <td>5</td>--}}
-                    {{--                            <td>Business</td>--}}
-                    {{--                            <td>15 Jan, 2022</td>--}}
-                    {{--                            <td>--}}
-                    {{--                                <div class="item-status-completed">--}}
-                    {{--                                    <p>--}}
-                    {{--                                        Completed--}}
-                    {{--                                    </p>--}}
-                    {{--                                </div>--}}
-                    {{--                            </td>--}}
-                    {{--                            <td>--}}
-                    {{--                                <a href="{{ URL('/survey/telephonic/details') }}">--}}
-                    {{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
-                    {{--                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
-                    {{--                                         stroke-linejoin="round" class="feather feather-eye">--}}
-                    {{--                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>--}}
-                    {{--                                        <circle cx="12" cy="12" r="3"></circle>--}}
-                    {{--                                    </svg>--}}
-                    {{--                                </a>--}}
-
-                    {{--                            </td>--}}
-                    {{--                        </tr>--}}
-                    {{--                        <tr>--}}
-                    {{--                            <td>New Product Development & Launch Survey 2022</td>--}}
-                    {{--                            <td>344</td>--}}
-                    {{--                            <td>5</td>--}}
-                    {{--                            <td>Business</td>--}}
-                    {{--                            <td>15 Jan, 2022</td>--}}
-                    {{--                            <td>--}}
-                    {{--                                <div class="item-status-not-completed">--}}
-                    {{--                                    <p>--}}
-                    {{--                                        Not Completed--}}
-                    {{--                                    </p>--}}
-                    {{--                                </div>--}}
-                    {{--                            </td>--}}
-                    {{--                            <td>--}}
-                    {{--                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
-                    {{--                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
-                    {{--                                     stroke-linejoin="round" class="feather feather-eye">--}}
-                    {{--                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>--}}
-                    {{--                                    <circle cx="12" cy="12" r="3"></circle>--}}
-                    {{--                                </svg>--}}
-                    {{--                            </td>--}}
-                    {{--                        </tr>--}}
-                    {{--                        </tbody>--}}
-                    {{--                    </table>--}}
                 </div>
             </div>
         </div>

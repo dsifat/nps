@@ -1,16 +1,44 @@
 @import "../bootstrap-extended/variables";
 
-.survey-form-file-upload {
-    border-style: dashed !important;
+.card-header {
+    .card-title {
+        color: #2E3D70;
+        font-size: 1rem;
+        @media (min-width: 992px) {
+            font-size: 1.285rem;
+        }
+    }
 
-    .upload-file-text {
-        color: #fff;
-        width: 110px;
-        background-color: #04AA6D !important;
-        border-radius: 5px;
+    .card-title-count-text {
+        color: #622691;
+        font-size: 0.8rem;
+        margin-left: 8px;
+        @media (min-width: 992px) {
+            margin-left: 18px;
+            font-size: 1rem;
+        }
     }
 }
-.button {
-    width: 110px;
-    margin: 0.5rem;
+
+.card-body {
+    .form-input-items {
+        margin-top: 2rem;
+
+        .form-file-upload {
+            border-style: dashed !important;
+            border-radius: 0.357rem;
+
+            .upload-file-text {
+                color: #fff;
+                width: 110px;
+                background-color: #04AA6D !important;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .button {
+        width: 110px;
+        margin: 0.5rem;
+    }
 }

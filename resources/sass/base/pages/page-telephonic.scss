@@ -1,8 +1,46 @@
 @import "../bootstrap-extended/variables";
-.box-bar{
-  margin: 20px;
-  background-color: #EEF2FF;;
-  border: 1px solid $gray-100;
-  border-radius: 10px;
-  color: #2E3D70;
+@import "bootstrap";
+
+.container {
+    width: 100%;
+
+    .row-items-control {
+        margin: 0;
+        padding: 1rem 0;
+        justify-content: center;
+        @media (min-width: 600px) {
+            padding: 2rem;
+        }
+
+        .box-bar {
+            //height: 150px;
+            //width: 150px;
+            margin: 20px;
+            justify-content: space-evenly;
+            background-color: #EEF2FF;;
+            border: 1px solid $gray-100;
+            border-radius: 10px;
+            color: #2E3D70;
+            height: 190px;
+            //margin: 20px 20px 20px 0;
+            //padding: 8px;
+            //height: auto;
+            .item-link {
+                color: #2E3D70;
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                .item-text {
+                    margin: 0;
+                    width: auto;
+                    text-align: center;
+                    @media (min-width: 992px) {
+                        width: max-content;
+                    }
+                }
+            }
+        }
+    }
 }
+

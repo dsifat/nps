@@ -1,0 +1,70 @@
+@import "../bootstrap-extended/variables";
+
+.modal-agent {
+
+    .modal-card {
+        @media (min-width: 992px) {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-card-item {
+            padding: 1rem 0;
+            margin: 1.4rem 0.5rem 1.4rem 0;
+            @media (min-width: 992px) {
+                padding: 1rem 0;
+                margin: 1.4rem 1rem 1.4rem 0;
+            }
+
+            //margin: 1.4rem 1rem 1.4rem 0;
+            background: #EEF2FF;
+            border-radius: 10px;
+
+            .modal-card-icon {
+                padding: 1rem;
+            }
+
+            .card-title {
+                padding: 1rem 0 0.6rem 1rem;
+                margin-bottom: 1rem;
+                @media (min-width: 992px) {
+                    padding: 0.5rem 0 0.3rem 1rem;
+                    margin-bottom: 0.8rem;
+                }
+
+            }
+
+            .card-text {
+                padding: 0 0.5rem 0 1rem;
+                font-size: 0.8rem;
+                @media (min-width: 992px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .modal-card-item-right {
+            margin: 1.4rem 0 1.4rem 0.5rem;
+            @media (min-width: 992px) {
+                margin: 1.4rem 0 1.4rem 1rem;
+            }
+        }
+    }
+
+    .form-file-upload {
+        border-style: dashed !important;
+        border-radius: 0.357rem;
+
+        .upload-file-text {
+            color: #fff;
+            width: 110px;
+            background-color: #04AA6D !important;
+            border-radius: 5px;
+        }
+    }
+
+    .button {
+        width: 110px;
+        margin: 0.5rem;
+    }
+}
+
