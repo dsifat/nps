@@ -20,6 +20,27 @@
     }
 }
 
+.assign-success-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* background: #475B79; */
+    color: #475B79;
+    @media (min-width: 992px) {
+        font-size: 22px;
+    }
+}
+
+.assign-another-survey-text {
+    font-size: 0.8rem;
+    @media (min-width: 992px) {
+        font-size: 1rem;
+    }
+}
+
 .button {
     width: 110px;
     margin: 0.5rem;

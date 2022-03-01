@@ -73,11 +73,7 @@
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
                                     <label>Special Instructions</label>
-                                    <input type='text' placeholder="Write any instructions" class="form-control"/>
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <textarea class="form-control" id="basicTextarea" rows="3"
-                                              placeholder="Special Instructions"></textarea>
+                                    <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-12">
@@ -103,12 +99,12 @@
                             </div>
                         </div>
                     </div>
-{{--                    <div class="card-body d-flex flex-column align-items-center justify-content-center"--}}
-{{--                         style="min-height: 70vh;">--}}
-{{--                        <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
-{{--                        <p class="m-1">Sorry you have not assigned a survey yet</p>--}}
-{{--                        <button class="btn btn-primary"><i data-feather="plus"></i> Add Assign To</button>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="card-body d-flex flex-column align-items-center justify-content-center"--}}
+                    {{--                         style="min-height: 70vh;">--}}
+                    {{--                        <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
+                    {{--                        <p class="m-1">Sorry you have not assigned a survey yet</p>--}}
+                    {{--                        <button class="btn btn-primary"><i data-feather="plus"></i> Add Assign To</button>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
