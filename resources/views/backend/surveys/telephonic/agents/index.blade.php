@@ -21,7 +21,8 @@
                                     Survey</a>
                             </li>
                             <li>
-                                <a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Add Agent</a>
+                                {{--                                <a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Add Agent</a>--}}
+                                <a class="btn btn-primary" onClick="add()" href="javascript:void(0)">Add Agent</a>
                             </li>
                         </ul>
                     </div>
@@ -38,12 +39,17 @@
                     {{--                            </fieldset>--}}
                     {{--                        </div>--}}
                     {{--                    </div>--}}
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <div class="row d-lg-none d-xl-none mr-0 ml-0">
                             <a class="col-md-12 btn btn-block btn-outline-dark my-1"
                                href="{{ url('/survey/telephonic/assign') }}">Assign Survey</a>
                             <a class="col-md-12 btn btn-block btn-primary mb-1"
-                               data-toggle="modal" data-target="#yourModal">Add Agent</a>
+                               onClick="add()" href="javascript:void(0)">Add Agent</a>
                         </div>
                         <div class="row p-1 bg-light mx-0 my-1">
                             <div class="col-lg-4">
@@ -55,350 +61,18 @@
                                         <option>Department</option>
                                     </select>
                                 </fieldset>
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <select class="select2 form-control">--}}
-                                {{--                                        <option value="square">Square</option>--}}
-                                {{--                                        <option value="rectangle">Rectangle</option>--}}
-                                {{--                                        <option value="rombo">Rombo</option>--}}
-                                {{--                                        <option value="romboid">Romboid</option>--}}
-                                {{--                                        <option value="trapeze">Trapeze</option>--}}
-                                {{--                                        <option value="traible">Triangle</option>--}}
-                                {{--                                        <option value="polygon">Polygon</option>--}}
-                                {{--                                    </select>--}}
-                                {{--                                </div>--}}
                             </div>
                         </div>
                         <div class="card-datatable">
                             <div class="table-responsive">
-                                <table class="table zero-configuration">
+                                <table class="table table-bordered" id="ajax-crud-datatable">
                                     <thead>
                                     <tr>
-                                        <th>Assignee Name</th>
-                                        <th>Department</th>
-                                        <th>ID No.</th>
-                                        <th>Phone</th>
-                                        <th>Report To</th>
-                                        <th>Survey Completed</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mohammad Ali</td>
-                                        <td>IT</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Md Mokhter Ali</td>
-                                        <td>Business</td>
-                                        <td>1234rsdaf4</td>
-                                        <td>01833232423</td>
-                                        <td>Abdullah</td>
-                                        <td>32</td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    {{--                                    <tfoot>--}}
-                                    {{--                                    <tr>--}}
-                                    {{--                                        <th>Assignee Name</th>--}}
-                                    {{--                                        <th>Department</th>--}}
-                                    {{--                                        <th>ID No.</th>--}}
-                                    {{--                                        <th>Phone</th>--}}
-                                    {{--                                        <th>Report To</th>--}}
-                                    {{--                                        <th>Survey Completed</th>--}}
-                                    {{--                                        <th>Action</th>--}}
-                                    {{--                                    </tr>--}}
-                                    {{--                                    </tfoot>--}}
                                 </table>
                             </div>
                         </div>
@@ -408,7 +82,7 @@
             </div>
         </div>
     </section>
-    <div class="modal fade modal-agent" id="yourModal" tabindex="-1" role="dialog"
+    <div class="modal fade modal-agent" id="company-modal" aria-hidden="true" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
@@ -421,8 +95,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex flex-column">
-                        <div class="d-flex modal-card justify-content-start">
-                            <div class="col-md-5 col-sm-6 modal-card-item">
+                        <div class="d-flex modal-card justify-content-center">
+                            <div class="col-md-5 col-sm-6 modal-card-item" id="simple-contact-card">
                                 <div class="d-flex flex-column">
                                     <span class="modal-card-icon">
                                         <svg width="22" height="28" viewBox="0 0 22 28" fill="none"
@@ -436,7 +110,7 @@
                                     <h6 class="card-text">Add Simple Contact</h6>
                                 </div>
                             </div>
-                            <div class="col-md-5 col-sm-6 modal-card-item modal-card-item-right">
+                            <div class="col-md-5 col-sm-6 modal-card-item modal-card-item-right" id="file-input-card">
                                 <div class="d-flex flex-column">
                                     <span class="modal-card-icon">
                                         <svg width="30" height="28" viewBox="0 0 30 28" fill="none"
@@ -451,102 +125,104 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input-section">
-                            <div class="row">
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">Name</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
+                        <div class="input-section" id="simple-contact-section">
+                            <form action="javascript:void(0)" id="CompanyForm"
+                                  name="CompanyForm" class="form-horizontal"
+                                  method="POST" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-sm-6 col-12">
+                                        <fieldset class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" id="name" name="name">
+                                        </fieldset>
+                                        {{--                                        {!! Form::label('name', 'Name') !!}--}}
+                                        {{--                                        {!! Form::text('name', null, ['class' => 'form-control']) !!}--}}
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <fieldset class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email">
+                                        </fieldset>
+                                        {{--                                        {!! Form::label('email', 'Email') !!}--}}
+                                        {{--                                        {!! Form::email('email', null, ['class' => 'form-control']) !!}--}}
+                                    </div>
+                                    <div class="col-sm-6 col-12">
+                                        <fieldset class="form-group">
+                                            <label for="phone_no">Phone No.</label>
+                                            <input type="text" class="form-control" id="phone_no" name="phone_no">
+                                        </fieldset>
+                                        {{--                                        {!! Form::label('password', 'Password') !!}--}}
+                                        {{--                                        {!! Form::password('password', ['class' => 'form-control']) !!}--}}
+                                    </div>
+                                    {{--                                    <div class="col-sm-6 col-12">--}}
+                                    {{--                                        <fieldset class="form-group">--}}
+                                    {{--                                            <label for="confirm_password">Confirm Password</label>--}}
+                                    {{--                                            <input type="text" class="form-control">--}}
+                                    {{--                                        </fieldset>--}}
+                                    {{--                                    </div>--}}
                                 </div>
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">Department</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
+                                <div class="modal-footer d-flex align-items-center" style="justify-content: center">
+                                    <button type="submit" class="btn btn-primary button" id="btn-save">Save</button>
                                 </div>
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">Email</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
-                                </div>
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">ID</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
-                                </div>
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">Phone Number</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
-                                </div>
-                                <div class="col-sm-6 col-12">
-                                    <fieldset class="form-group">
-                                        <label for="row_per_page">Brand</label>
-                                        <input type="text" class="form-control">
-                                    </fieldset>
-                                </div>
-                            </div>
+                            </form>
                         </div>
-                        {{--                        <div class="file-input-section">--}}
-                        {{--                            <form action="#" class="dropzone dropzone-area form-file-upload"--}}
-                        {{--                                  id="my-awesome-dropzone">--}}
-                        {{--                                <div class="dz-message d-flex flex-column">--}}
-                        {{--                                    <p class="p-1">--}}
-                        {{--                                        Drop files here or click to upload.--}}
-                        {{--                                    </p>--}}
-                        {{--                                    <div class="d-flex justify-content-center">--}}
-                        {{--                                        <p class="p-1 upload-file-text" style="color: white;">--}}
-                        {{--                                            Upload Files</p>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <p class="p-1">File can't be more than 300kb size</p>--}}
-                        {{--                                </div>--}}
-                        {{--                            </form>--}}
-                        {{--                        </div>--}}
+                        {{--                        file-input--}}
+                        <div class="file-input-section" id="file-input-section">
+                            <form method="POST" enctype="multipart/form-data"
+                                  id="CompanyForm"
+                                  name="CompanyForm"
+                                  action="javascript:void(0)">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="file" name="agent_list" placeholder="Choose File"
+                                                   id="agent_list">
+                                            <span class="text-danger">{{ $errors->first('agent_list') }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                            {{--                            <form class="dropzone dropzone-area form-file-upload"--}}
+                            {{--                                  action="javascript:void(0)" id="CompanyForm"--}}
+                            {{--                                  name="CompanyForm"--}}
+                            {{--                                  method="POST" enctype="multipart/form-data"--}}
+                            {{--                                @csrf>--}}
+                            {{--                                <div class="dz-message d-flex flex-column">--}}
+                            {{--                                    <p class="p-1">--}}
+                            {{--                                        Drop files here or click to upload.--}}
+                            {{--                                    </p>--}}
+                            {{--                                    <div class="d-flex justify-content-center">--}}
+                            {{--                                        <p class="p-1 upload-file-text" style="color: white;">--}}
+                            {{--                                            Upload Files</p>--}}
+                            {{--                                    </div>--}}
+                            {{--                                    <p class="p-1">File can't be more than 300kb size</p>--}}
+                            {{--                                </div>--}}
+                            {{--                            </form>--}}
+                            {{--                            <div class="modal-footer d-flex align-items-center" style="justify-content: center">--}}
+                            {{--                                <button type="submit" class="btn btn-primary button" id="btn-save">Save</button>--}}
+                            {{--                            </div>--}}
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer d-flex align-items-center" style="justify-content: center">
-                    <button type="button" class="btn btn-primary button">Save</button>
-                </div>
+
             </div>
         </div>
     </div>
 
     {{-- Modal --}}
-    <div class="modal fade text-left" id="large" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel17" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel17">Large Modal</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    I love tart cookie cupcake. I love chupa chups biscuit. I love marshmallow apple pie wafer
-                    liquorice. Marshmallow cotton candy chocolate. Apple pie muffin tart. Marshmallow halvah pie
-                    marzipan lemon drops jujubes. Macaroon sugar plum cake icing toffee.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('page-script')
     <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#agents-table').DataTable();
-        });
-    </script>
+    {{--    <script>--}}
+    {{--        $(document).ready(function () {--}}
+    {{--            $('#agents-table').DataTable();--}}
+    {{--        });--}}
+    {{--    </script>--}}
     {{--    @section('vendor-script')--}}
 
     {{--     vendor files --}}
@@ -565,4 +241,100 @@
 
     <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script src="{{ asset('js/scripts/forms/form-select2.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#file-input-section").hide();
+            $("#file-input-card").click(function () {
+                $("#file-input-section").show();
+                $("#simple-contact-section").hide();
+            });
+            $("#simple-contact-card").click(function () {
+                $("#simple-contact-section").show();
+                $("#file-input-section").hide();
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('#ajax-crud-datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ url('survey/telephonic/store-agents') }}",
+                columns: [
+                    {data: 'name', name: 'name'},
+                    {data: 'email', name: 'email'},
+                    {data: 'action', name: 'action', orderable: false},
+                ],
+                order: [[0, 'desc']]
+            });
+        });
+
+        function add() {
+            $('#CompanyForm').trigger("reset");
+            // $('#CompanyModal').html("Add Company");
+            $('#company-modal').modal('show');
+            $('#id').val('');
+        }
+
+        {{--function editFunc(id) {--}}
+        {{--    $.ajax({--}}
+        {{--        type: "POST",--}}
+        {{--        url: "{{ url('edit-company') }}",--}}
+        {{--        data: {id: id},--}}
+        {{--        dataType: 'json',--}}
+        {{--        success: function (res) {--}}
+        {{--            $('#CompanyModal').html("Edit Company");--}}
+        {{--            $('#company-modal').modal('show');--}}
+        {{--            $('#id').val(res.id);--}}
+        {{--            $('#name').val(res.name);--}}
+        {{--            $('#address').val(res.address);--}}
+        {{--            $('#email').val(res.email);--}}
+        {{--        }--}}
+        {{--    });--}}
+        {{--}--}}
+
+        {{--        function deleteFunc(id) {--}}
+        {{--            if (confirm("Delete Record?") == true) {--}}
+        {{--                var id = id;--}}
+        {{--// ajax--}}
+        {{--                $.ajax({--}}
+        {{--                    type: "POST",--}}
+        {{--                    url: "{{ url('delete-company') }}",--}}
+        {{--                    data: {id: id},--}}
+        {{--                    dataType: 'json',--}}
+        {{--                    success: function (res) {--}}
+        {{--                        var oTable = $('#ajax-crud-datatable').dataTable();--}}
+        {{--                        oTable.fnDraw(false);--}}
+        {{--                    }--}}
+        {{--                });--}}
+        {{--            }--}}
+        {{--        }--}}
+
+        $('#CompanyForm').submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ url('survey/telephonic/store-agents')}}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: (data) => {
+                    $("#company-modal").modal('hide');
+                    var oTable = $('#ajax-crud-datatable').dataTable();
+                    oTable.fnDraw(false);
+                    $("#btn-save").html('Submit');
+                    $("#btn-save").attr("disabled", false);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+    </script>
 @endsection
