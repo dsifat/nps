@@ -52,7 +52,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Prepare a date for array / JSON serialization.
      *
-     * @param  \DateTimeInterface  $date
+     * @param \DateTimeInterface $date
      * @return string
      */
     protected function serializeDate(DateTimeInterface $date)
@@ -66,7 +66,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'isp_id',
+        'name', 'email', 'password', 'isp_id', 'phone_number',
     ];
 
     /**
@@ -85,6 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'meta_data' => 'array'
     ];
 
     public function isSuperAdmin()
@@ -103,7 +104,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $role = Role::where('role_name', $role)->firstOrFail();
         }
 
-        if (! $role) {
+        if (!$role) {
             $this->roles()->delete();
         } else {
             $this->roles()->sync($role);

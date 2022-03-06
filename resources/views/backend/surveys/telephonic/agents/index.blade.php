@@ -70,6 +70,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>Phone Number</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -77,7 +78,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -113,12 +113,19 @@
                             <div class="col-md-5 col-sm-6 modal-card-item modal-card-item-right" id="file-input-card">
                                 <div class="d-flex flex-column">
                                     <span class="modal-card-icon">
-                                        <svg width="30" height="28" viewBox="0 0 30 28" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                             <path
-                                                 d="M22.9989 8.2241C22.7728 8.1596 22.5664 8.03959 22.3985 7.87498C22.2306 7.71037 22.1066 7.50639 22.0376 7.2816C21.6548 5.98416 21.0128 4.77786 20.1503 3.73572C19.2879 2.69357 18.223 1.83724 17.02 1.21855C15.8171 0.599853 14.5011 0.231655 13.1517 0.136237C11.8024 0.0408193 10.4477 0.220164 9.16961 0.663419C7.89156 1.10667 6.71673 1.80462 5.7162 2.71503C4.71568 3.62544 3.91027 4.72938 3.34872 5.96004C2.78716 7.19071 2.48113 8.52251 2.44914 9.87487C2.41715 11.2272 2.65988 12.572 3.16262 13.8279C3.27812 14.0921 3.30298 14.3872 3.23335 14.6671C3.16372 14.947 3.00349 15.196 2.77762 15.3754C1.78228 16.1141 1.00518 17.1082 0.52856 18.2524C0.0519421 19.3967 -0.106459 20.6485 0.0701212 21.8753C0.345688 23.534 1.20678 25.0388 2.4971 26.1167C3.78742 27.1947 5.42145 27.7743 7.10262 27.7504H13.7489C14.0804 27.7504 14.3983 27.6187 14.6328 27.3842C14.8672 27.1498 14.9989 26.8319 14.9989 26.5004C14.9989 26.1688 14.8672 25.8509 14.6328 25.6165C14.3983 25.382 14.0804 25.2504 13.7489 25.2504H7.10262C6.02297 25.2766 4.96966 24.9151 4.13357 24.2315C3.29749 23.5479 2.73396 22.5874 2.54512 21.5241C2.42537 20.7425 2.52242 19.9431 2.82571 19.2128C3.129 18.4826 3.62689 17.8496 4.26512 17.3829C4.93552 16.8818 5.42048 16.1722 5.64379 15.3656C5.86711 14.559 5.81613 13.7011 5.49887 12.9266C4.87156 11.27 4.83931 9.44687 5.40762 7.7691C5.86162 6.45482 6.6746 5.29395 7.75448 4.41798C8.83435 3.54202 10.138 2.98598 11.5176 2.81285C11.8376 2.77165 12.16 2.75077 12.4826 2.75035C14.0989 2.74502 15.6735 3.26339 16.9706 4.22784C18.2676 5.19229 19.2174 6.55094 19.6776 8.10035C19.8573 8.69081 20.181 9.22731 20.6196 9.66154C21.0582 10.0958 21.5979 10.4141 22.1901 10.5879C23.6395 11.0165 24.9233 11.8777 25.8697 13.0561C26.8162 14.2346 27.38 15.674 27.4858 17.1817C27.5915 18.6894 27.2342 20.1935 26.4616 21.4925C25.689 22.7915 24.5379 23.8235 23.1626 24.4504C22.9591 24.5546 22.7889 24.7139 22.6716 24.9102C22.5542 25.1064 22.4944 25.3317 22.4989 25.5603V25.5603C22.4964 25.7672 22.546 25.9713 22.643 26.154C22.74 26.3367 22.8814 26.4921 23.0541 26.606C23.2268 26.7198 23.4253 26.7885 23.6314 26.8056C23.8376 26.8228 24.0447 26.7879 24.2339 26.7041C29.4014 24.2204 32.2089 17.6866 27.8339 11.3741C26.6292 9.80275 24.923 8.69112 22.9989 8.2241V8.2241Z"
-                                                 fill="#8F9ABC"/>
-                                        </svg>
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="28px"--}}
+{{--                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                             stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                             class="feather feather-upload-cloud"><polyline--}}
+{{--                                                points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12"--}}
+{{--                                                                                           y2="21"></line><path--}}
+{{--                                                d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline--}}
+{{--                                                points="16 16 12 12 8 16"></polyline></svg>--}}
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.9989 10.1128C23.7728 10.0483 23.5664 9.92826 23.3985 9.76365C23.2306 9.59904 23.1066 9.39506 23.0376 9.17027C22.6548 7.87283 22.0128 6.66653 21.1503 5.62439C20.2879 4.58224 19.223 3.72591 18.02 3.10722C16.8171 2.48852 15.5011 2.12033 14.1517 2.02491C12.8024 1.92949 11.4477 2.10883 10.1696 2.55209C8.89156 2.99534 7.71672 3.69329 6.7162 4.6037C5.71568 5.51411 4.91027 6.61805 4.34872 7.84871C3.78716 9.07938 3.48113 10.4112 3.44914 11.7636C3.41715 13.1159 3.65988 14.4607 4.16262 15.7166C4.27812 15.9808 4.30298 16.2759 4.23335 16.5558C4.16372 16.8357 4.00349 17.0847 3.77762 17.2641C2.78228 18.0028 2.00518 18.9969 1.52856 20.1411C1.05194 21.2854 0.893541 22.5372 1.07012 23.764C1.34569 25.4227 2.20678 26.9275 3.4971 28.0054C4.78742 29.0834 6.42145 29.663 8.10262 29.6391H14.7489C15.0804 29.6391 15.3983 29.5074 15.6328 29.2729C15.8672 29.0385 15.9989 28.7206 15.9989 28.3891C15.9989 28.0575 15.8672 27.7396 15.6328 27.5052C15.3983 27.2707 15.0804 27.1391 14.7489 27.1391H8.10262C7.02297 27.1653 5.96966 26.8038 5.13357 26.1202C4.29749 25.4366 3.73396 24.4761 3.54512 23.4128C3.42537 22.6312 3.52242 21.8318 3.82571 21.1015C4.129 20.3713 4.62689 19.7383 5.26512 19.2716C5.93552 18.7705 6.42048 18.0609 6.64379 17.2543C6.86711 16.4477 6.81613 15.5898 6.49887 14.8153C5.87156 13.1587 5.83931 11.3356 6.40762 9.65777C6.86162 8.34349 7.6746 7.18262 8.75448 6.30665C9.83435 5.43069 11.138 4.87465 12.5176 4.70152C12.8376 4.66032 13.16 4.63944 13.4826 4.63902C15.0989 4.63369 16.6735 5.15206 17.9706 6.11651C19.2676 7.08096 20.2174 8.43961 20.6776 9.98902C20.8573 10.5795 21.181 11.116 21.6196 11.5502C22.0582 11.9845 22.5979 12.3028 23.1901 12.4766C24.6395 12.9052 25.9233 13.7664 26.8697 14.9448C27.8162 16.1233 28.38 17.5627 28.4858 19.0704C28.5916 20.5781 28.2342 22.0822 27.4616 23.3812C26.689 24.6802 25.5379 25.7122 24.1626 26.339C23.9591 26.4433 23.7889 26.6026 23.6716 26.7989C23.5542 26.9951 23.4944 27.2204 23.4989 27.449C23.4964 27.6559 23.546 27.86 23.643 28.0427C23.74 28.2254 23.8814 28.3808 24.0541 28.4947C24.2268 28.6085 24.4253 28.6772 24.6314 28.6943C24.8376 28.7115 25.0447 28.6766 25.2339 28.5928C30.4014 26.1091 33.2089 19.5753 28.8339 13.2628C27.6292 11.6914 25.923 10.5798 23.9989 10.1128Z" fill="#8F9ABC"/>
+<path d="M24.384 21.7698C24.6183 21.5354 24.75 21.2175 24.75 20.8861C24.75 20.5546 24.6183 20.2367 24.384 20.0023L22.4015 18.0198C21.6983 17.3168 20.7446 16.9219 19.7503 16.9219C18.7559 16.9219 17.8022 17.3168 17.099 18.0198L15.1165 20.0023C14.8888 20.2381 14.7628 20.5538 14.7657 20.8816C14.7685 21.2093 14.9 21.5228 15.1317 21.7546C15.3635 21.9863 15.677 22.1178 16.0048 22.1206C16.3325 22.1235 16.6483 21.9975 16.884 21.7698L18.5003 20.1536V29.6361C18.5003 29.9676 18.632 30.2855 18.8664 30.5199C19.1008 30.7544 19.4187 30.8861 19.7503 30.8861C20.0818 30.8861 20.3997 30.7544 20.6341 30.5199C20.8686 30.2855 21.0003 29.9676 21.0003 29.6361V20.1536L22.6165 21.7698C22.8509 22.0041 23.1688 22.1358 23.5003 22.1358C23.8317 22.1358 24.1496 22.0041 24.384 21.7698Z" fill="#8F9ABC"/>
+</svg>
+
                                     </span>
                                     <h4 class="card-title">Import File</h4>
                                     <h6 class="card-text">Import file with contacts (csv,xlsx)</h6>
@@ -126,8 +133,8 @@
                             </div>
                         </div>
                         <div class="input-section" id="simple-contact-section">
-                            <form action="javascript:void(0)" id="CompanyForm"
-                                  name="CompanyForm" class="form-horizontal"
+                            <form action="javascript:void(0)" id="company-form"
+                                  name="company-form" class="form-horizontal"
                                   method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-sm-6 col-12">
@@ -135,6 +142,7 @@
                                             <label for="name">Name</label>
                                             <input type="text" class="form-control" id="name" name="name">
                                         </fieldset>
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
                                         {{--                                        {!! Form::label('name', 'Name') !!}--}}
                                         {{--                                        {!! Form::text('name', null, ['class' => 'form-control']) !!}--}}
                                     </div>
@@ -143,6 +151,7 @@
                                             <label for="email">Email</label>
                                             <input type="email" class="form-control" id="email" name="email">
                                         </fieldset>
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
                                         {{--                                        {!! Form::label('email', 'Email') !!}--}}
                                         {{--                                        {!! Form::email('email', null, ['class' => 'form-control']) !!}--}}
                                     </div>
@@ -151,6 +160,7 @@
                                             <label for="phone_no">Phone No.</label>
                                             <input type="text" class="form-control" id="phone_no" name="phone_no">
                                         </fieldset>
+                                        <span class="text-danger">{{ $errors->first('phone_no') }}</span>
                                         {{--                                        {!! Form::label('password', 'Password') !!}--}}
                                         {{--                                        {!! Form::password('password', ['class' => 'form-control']) !!}--}}
                                     </div>
@@ -166,48 +176,67 @@
                                 </div>
                             </form>
                         </div>
+
                         {{--                        file-input--}}
-                        <div class="file-input-section" id="file-input-section">
-                            <form method="POST" enctype="multipart/form-data"
-                                  id="CompanyForm"
-                                  name="CompanyForm"
-                                  action="javascript:void(0)">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="file" name="agent_list" placeholder="Choose File"
-                                                   id="agent_list">
-                                            <span class="text-danger">{{ $errors->first('agent_list') }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                            {{--                            <form class="dropzone dropzone-area form-file-upload"--}}
-                            {{--                                  action="javascript:void(0)" id="CompanyForm"--}}
-                            {{--                                  name="CompanyForm"--}}
-                            {{--                                  method="POST" enctype="multipart/form-data"--}}
-                            {{--                                @csrf>--}}
-                            {{--                                <div class="dz-message d-flex flex-column">--}}
-                            {{--                                    <p class="p-1">--}}
-                            {{--                                        Drop files here or click to upload.--}}
-                            {{--                                    </p>--}}
-                            {{--                                    <div class="d-flex justify-content-center">--}}
-                            {{--                                        <p class="p-1 upload-file-text" style="color: white;">--}}
-                            {{--                                            Upload Files</p>--}}
+                        <div class="file-input-section" id="file-input-section"
+                             style="display: flex; flex-direction: column">
+                            {{--                            <form method="POST" enctype="multipart/form-data"--}}
+                            {{--                                  id="company-form"--}}
+                            {{--                                  name="company-form"--}}
+                            {{--                                  action="javascript:void(0)">--}}
+                            {{--                                <div class="row">--}}
+                            {{--                                    <div class="col-md-12">--}}
+                            {{--                                        <div class="form-group">--}}
+                            {{--                                            <input type="file" name="agent_list" placeholder="Choose File"--}}
+                            {{--                                                   id="agent_list">--}}
+                            {{--                                            <a class="btn btn-outline-dark mx-1"--}}
+                            {{--                                               href="{{ url('/download/sample_agent.xlsx') }}">Download Sample File</a>--}}
+                            {{--                                            <span class="text-danger">{{ $errors->first('agent_list') }}</span>--}}
+                            {{--                                        </div>--}}
                             {{--                                    </div>--}}
-                            {{--                                    <p class="p-1">File can't be more than 300kb size</p>--}}
+                            {{--                                    <div class="col-md-12">--}}
+                            {{--                                        <button type="submit" class="btn btn-primary">Submit</button>--}}
+                            {{--                                    </div>--}}
                             {{--                                </div>--}}
                             {{--                            </form>--}}
-                            {{--                            <div class="modal-footer d-flex align-items-center" style="justify-content: center">--}}
-                            {{--                                <button type="submit" class="btn btn-primary button" id="btn-save">Save</button>--}}
-                            {{--                            </div>--}}
+                            <form class="dropzone form-file-upload"
+                                  action="{{ url('survey/telephonic/store-agents') }}"
+                                  id="company-form"
+                                  name="company-form"
+                                  method="POST"
+                                  enctype="multipart/form-data">
+                                <div class="dz-message d-flex flex-column">
+                                    {{--                                    <input name="agent_list" type="hidden"--}}
+                                    {{--                                           id="agent_list">--}}
+                                    <p class="p-1">
+                                        Drop files here or click to upload.
+                                    </p>
+                                    <div class="d-flex justify-content-center">
+                                        <p class="p-1 upload-file-text" style="color: white;">
+                                            Upload Files</p>
+                                    </div>
+                                    <p class="p-1">File can't be more than 300kb size</p>
+                                </div>
+                            </form>
+                            <div class="d-flex justify-content-end my-1">
+                                <a class="btn btn-outline-dark mx-1"
+                                   href="{{ url('/download/sample_agent.xlsx') }}">
+                                    Download Sample File
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-download">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+{{--                            <div class="modal-footer d-flex align-items-center" style="justify-content: center">--}}
+{{--                                <button type="submit" class="btn btn-primary button" id="btn-save">Save</button>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -216,7 +245,6 @@
 @endsection
 
 @section('page-script')
-    <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
 
     {{--    <script>--}}
     {{--        $(document).ready(function () {--}}
@@ -238,20 +266,57 @@
 
     {{-- Page js files --}}
     <script src="{{ asset('js/scripts/tables/datatable.js') }}"></script>
-
     <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script src="{{ asset('js/scripts/forms/form-select2.js') }}"></script>
+    <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
 
+    <script>
+
+        Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone(".dropzone", {
+            maxFilesize: 2, // 2 mb
+            acceptedFiles: ".xlsx, .xlx",
+        });
+        myDropzone.on("sending", function (file, xhr, formData) {
+            // console.log("came inside sending")
+            formData.append("_token", "{{ csrf_token() }}");
+        });
+        myDropzone.on("success", function (file, response) {
+            // console.log("came inside success");
+            if (response.success == 0) { // Error
+                alert(response.error);
+            }
+
+        });
+
+        // Dropzone.options.companyForm = { // camelized version of the `id`
+        //     paramName: "file", // The name that will be used to transfer the file
+        //     maxFilesize: 2, // MB
+        //
+        //     accept: function(file, done) {
+        //         console.log('came here');
+        //         if (file.name == "justinbieber.jpg") {
+        //             done("Naha, you don't.");
+        //         }
+        //         else { done(); }
+        //     }
+        // };
+    </script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#file-input-section").hide();
+            $('#simple-contact-card').addClass('selected-card');
             $("#file-input-card").click(function () {
                 $("#file-input-section").show();
                 $("#simple-contact-section").hide();
+                $('#file-input-card').addClass('selected-card');
+                $('#simple-contact-card').removeClass('selected-card');
             });
             $("#simple-contact-card").click(function () {
                 $("#simple-contact-section").show();
                 $("#file-input-section").hide();
+                $('#simple-contact-card').addClass('selected-card');
+                $('#file-input-card').removeClass('selected-card');
             });
 
             $.ajaxSetup({
@@ -261,20 +326,23 @@
             });
 
             $('#ajax-crud-datatable').DataTable({
-                processing: true,
+                processing: false,
                 serverSide: true,
-                ajax: "{{ url('survey/telephonic/store-agents') }}",
+                ajax: "{{ url('survey/telephonic/agents') }}",
+                type: 'GET',
                 columns: [
                     {data: 'name', name: 'name'},
                     {data: 'email', name: 'email'},
+                    {data: 'phone_number', name: 'phone_no'},
                     {data: 'action', name: 'action', orderable: false},
                 ],
                 order: [[0, 'desc']]
             });
+
         });
 
         function add() {
-            $('#CompanyForm').trigger("reset");
+            $('#company-form').trigger("reset");
             // $('#CompanyModal').html("Add Company");
             $('#company-modal').modal('show');
             $('#id').val('');
@@ -314,7 +382,8 @@
         {{--            }--}}
         {{--        }--}}
 
-        $('#CompanyForm').submit(function (e) {
+
+        $('#company-form').submit(function (e) {
             e.preventDefault();
             var formData = new FormData(this);
             $.ajax({
@@ -325,6 +394,7 @@
                 contentType: false,
                 processData: false,
                 success: (data) => {
+                    console.log(data);
                     $("#company-modal").modal('hide');
                     var oTable = $('#ajax-crud-datatable').dataTable();
                     oTable.fnDraw(false);

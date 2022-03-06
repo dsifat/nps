@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1> Hello {{$name}}</h1>
-<p>{{ $password }}</p>
+<p>Please login to <a href="https://www.google.com/"> this website</a> using this password: {{ $password }}</p>
 
-<p>Please login </p>
+<p> </p>
 
 <p>Thank you</p>
 <p>Admin</p>
