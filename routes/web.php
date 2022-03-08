@@ -38,23 +38,27 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
     )->name('io_generator_builder_generate_from_file');
 });
 
-Route::get('password/otp/validate',[OTPController::class, 'index']);
+Route::get('password/otp/validate', [OTPController::class, 'index']);
 
-Route::get('password/change',[UpdatePassController::class, 'index']);
+Route::get('password/change', [UpdatePassController::class, 'index']);
 
-Route::get('survey/competitive',[CompetitiveSurveyController::class, 'index']);
+Route::get('survey/competitive', [CompetitiveSurveyController::class, 'index']);
 
-Route::get('survey/telephonic',[TelephonicSurveyController::class, 'index']);
-Route::get('survey/telephonic/all',[TelephonicSurveyController::class, 'allTelephonicSurvey']);
-Route::get('survey/telephonic/assign',[TelephonicSurveyController::class, 'assignSurvey']);
-Route::get('survey/telephonic/summary',[TelephonicSurveyController::class, 'summary']);
-Route::get('survey/telephonic/assignee/tasks',[TelephonicSurveyController::class, 'assigneeSurveyList']);
-Route::get('survey/telephonic/details',[TelephonicSurveyController::class, 'surveyDetails']);
+Route::get('survey/telephonic', [TelephonicSurveyController::class, 'index']);
+Route::get('survey/telephonic/all', [TelephonicSurveyController::class, 'allTelephonicSurvey']);
+Route::get('survey/telephonic/assign', [TelephonicSurveyController::class, 'assignSurvey']);
+Route::get('survey/telephonic/summary', [TelephonicSurveyController::class, 'summary']);
+Route::get('survey/telephonic/assignee/tasks', [TelephonicSurveyController::class, 'assigneeSurveyList']);
+Route::get('survey/telephonic/details', [TelephonicSurveyController::class, 'surveyDetails']);
 
 
-Route::get('survey/telephonic/agents',[AgentController::class,'index']);
+Route::get('survey/telephonic/agents', [AgentController::class, 'index']);
+Route::post('survey/telephonic/store-agents', [AgentController::class, 'store'])->name('peal.something');
+Route::post('survey/telephonic/edit-agents', [AgentController::class, 'edit']);
+Route::post('survey/telephonic/delete-agents', [AgentController::class, 'destroy']);
+Route::get('/download/{file}', [AgentController::class, 'downloadSampleFile']);
 
-Route::get('/survey/telephonic/agents/assignments',[AgentAssignmentsController::class, 'assigneeSurveyList']);
+Route::get('/survey/telephonic/agents/assignments', [AgentAssignmentsController::class, 'assigneeSurveyList']);
 
 // Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth'])->group(function () {
