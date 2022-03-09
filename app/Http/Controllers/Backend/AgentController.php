@@ -41,7 +41,6 @@ class AgentController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('agent_list')) {
-//            $headings = (new HeadingRowImport())->toArray('users.xlsx');
             $validator = \Validator::make($request->all(), [
                 'agent_list' => 'required|max:5000|mimes:xls,xlsx',
             ]);
@@ -55,6 +54,19 @@ class AgentController extends Controller
             $filename = $file->getClientOriginalName();
             $file->move($location, $filename);
             $filepath = public_path($location . "/" . $filename);
+
+            $headings = (new HeadingRowImport())->toArray($filepath);
+
+            foreach ($headings[0] as $heading) {
+                $count = 0;
+                if (in_array('name', $heading) && in_array('email', $heading)) {
+                    $count++;
+                }
+            }
+            if ($count != 1) {
+                $errors = array('Please upload the excel file in sample file format');
+                return response()->json(['errors' => $errors]);
+            }
 
             $items = \Excel::toArray(new UsersImport(), $filepath);
             foreach ($items[0] as $item) {
