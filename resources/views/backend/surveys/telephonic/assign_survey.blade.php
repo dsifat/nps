@@ -60,14 +60,18 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
-                                    <label>Deadline</label>
-                                    <input type='text' class="form-control pickadate"/>
+                                    <label for="assignee_name">Select Assignee Name</label>
+                                    <select class="form-control" id="assignee_name">
+                                        <option>Team A</option>
+                                        <option>Team B</option>
+                                        <option>Team C</option>
+                                    </select>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
-                                    <label class="form-label" for="customFile">Upload MSISDN</label>
-                                    <input type="file" class="form-control" id="customFile"/>
+                                    <label>Deadline</label>
+                                    <input type='text' class="form-control pickadate"/>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-12">
@@ -75,21 +79,6 @@
                                     <label>Special Instructions</label>
                                     <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
                                 </fieldset>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <form action="#" class="dropzone dropzone-area form-file-upload"
-                                      id="my-awesome-dropzone">
-                                    <div class="dz-message d-flex flex-column">
-                                        <p class="p-1">
-                                            Drop files here or click to upload.
-                                        </p>
-                                        <div class="d-flex justify-content-center">
-                                            <p class="p-1 upload-file-text" style="color: white;">
-                                                Upload Files</p>
-                                        </div>
-                                        <p class="p-1">File can't be more than 300kb size</p>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mt-2">

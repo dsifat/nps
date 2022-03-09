@@ -42,11 +42,82 @@
             ]
         },
         {
+            "url": "/backend/questions",
+            "name": "Question Bank",
+            "icon": "book-open",
+            "slug": "questions*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
+        {
             "url": "/backend/topics",
             "name": "Topics",
             "icon": "book",
             "slug": "backend/topics*",
             "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
+        {
+            "url": "/backend/subjects",
+            "name": "Subjects",
+            "icon": "file-text",
+            "slug": "subjects*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
+        {
+            "url": "/survey/competitive",
+            "name": "Competitive Survey",
+            "icon": "file",
+            "slug": "competitive-survey*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
+        },
+        {
+            "name": "Telephonic Survey",
+            "icon": "phone-call",
+            "slug": "users*|permissions*|roles*",
+            "can": "ReadUser|CreateUser|EditUser|DeleteUser|CreatePermission|EditPermission|DeletePermission|CreateRole|EditRole|DeleteRole",
+            "submenu": [
+                {
+                    "url": "/",
+                    "name": "Create Blank Survey",
+                    "icon": "circle",
+                    "slug": "create-blank-survey*",
+                    "can": "ReadUser|CreateUser|EditUser|DeleteUser"
+                },
+                {
+                    "url": "/",
+                    "name": "Using Template",
+                    "icon": "circle",
+                    "slug": "using-template*",
+                    "can": "CreatePermission|EditPermission|DeletePermission"
+                },
+                {
+                    "url": "/survey/telephonic/assign",
+                    "name": "Assign Survey",
+                    "icon": "circle",
+                    "slug": "assign-survey*",
+                    "can": "CreateRole|EditRole|DeleteRole"
+                },
+                {
+                    "url": "/survey/telephonic/all",
+                    "name": "All Survey Details",
+                    "icon": "circle",
+                    "slug": "all-survey-details*",
+                    "can": "CreateRole|EditRole|DeleteRole"
+                },
+                {
+                    "url": "/survey/telephonic/agents",
+                    "name": "Agent List",
+                    "icon": "circle",
+                    "slug": "agent-list*",
+                    "can": "CreateRole|EditRole|DeleteRole"
+                },
+                {
+                    "url": "/",
+                    "name": "Report",
+                    "icon": "circle",
+                    "slug": "report*",
+                    "can": "CreateRole|EditRole|DeleteRole"
+                }
+            ]
         },
         {
             "url": "/backend/phoneGroups",
