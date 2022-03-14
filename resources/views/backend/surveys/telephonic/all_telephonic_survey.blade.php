@@ -62,13 +62,6 @@
                                 <table class="table zero-configuration">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </th>
                                         <th>Survey Name</th>
                                         <th>Assignee Name</th>
                                         <th>Date</th>
@@ -79,13 +72,6 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
                                         <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Product Development & Launch Survey 2022
@@ -127,12 +113,79 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                New Business Survey 2022
+                                            </a>
                                         </td>
+                                        <td>
+                                            <p style="color:#ec1940;">Not Assigned</p>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button draft-button">Draft</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                Marketing Survey 2022
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
+                                                Md Arif Ali
+                                            </a>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button active-button">Active</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022
@@ -170,12 +223,153 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                Marketing Survey 2022
+                                            </a>
                                         </td>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
+                                                Md Arif Ali
+                                            </a>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button active-button">Active</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                New Business Survey 2022
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <p style="color:#ec1940;">Not Assigned</p>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button draft-button">Draft</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                Marketing Survey 2022
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
+                                                Md Arif Ali
+                                            </a>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button active-button">Active</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="{{ url('/survey/telephonic/details') }}">
+                                                New Business Survey 2022
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <p style="color:#ec1940;">Not Assigned</p>
+                                        </td>
+                                        <td>15 Jan, 2022</td>
+                                        <td>Marketing</td>
+                                        <td>
+                                            <button class="button draft-button">Draft</button>
+                                        </td>
+                                        <td>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-edit">
+                                                <path
+                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path
+                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round"
+                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                <circle cx="12" cy="12" r="1"></circle>
+                                                <circle cx="19" cy="12" r="1"></circle>
+                                                <circle cx="5" cy="12" r="1"></circle>
+                                            </svg>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 Marketing Survey 2022
@@ -258,58 +452,6 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                Marketing Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
-                                                Md Arif Ali
-                                            </a>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button active-button">Active</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022
                                             </a>
@@ -345,232 +487,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                Marketing Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
-                                                Md Arif Ali
-                                            </a>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button active-button">Active</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                New Business Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <p style="color:#ec1940;">Not Assigned</p>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button draft-button">Draft</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                Marketing Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/assignee/tasks') }}">
-                                                Md Arif Ali
-                                            </a>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button active-button">Active</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                New Business Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <p style="color:#ec1940;">Not Assigned</p>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button draft-button">Draft</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="{{ url('/survey/telephonic/details') }}">
-                                                New Business Survey 2022
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <p style="color:#ec1940;">Not Assigned</p>
-                                        </td>
-                                        <td>15 Jan, 2022</td>
-                                        <td>Marketing</td>
-                                        <td>
-                                            <button class="button draft-button">Draft</button>
-                                        </td>
-                                        <td>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-edit">
-                                                <path
-                                                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path
-                                                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24"
-                                                 fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round" class="feather feather-more-horizontal">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
                                         <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022

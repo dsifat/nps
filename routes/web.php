@@ -43,6 +43,7 @@ Route::get('password/otp/validate', [OTPController::class, 'index']);
 Route::get('password/change', [UpdatePassController::class, 'index']);
 
 Route::get('survey/competitive', [CompetitiveSurveyController::class, 'index']);
+Route::post('survey/competitive/store', [CompetitiveSurveyController::class, 'store']);
 
 Route::get('survey/telephonic', [TelephonicSurveyController::class, 'index']);
 Route::get('survey/telephonic/all', [TelephonicSurveyController::class, 'allTelephonicSurvey']);
@@ -53,7 +54,7 @@ Route::get('survey/telephonic/details', [TelephonicSurveyController::class, 'sur
 
 
 Route::get('survey/telephonic/agents', [AgentController::class, 'index']);
-Route::post('survey/telephonic/store-agents', [AgentController::class, 'store'])->name('peal.something');
+Route::post('survey/telephonic/store-agents', [AgentController::class, 'store']);
 Route::post('survey/telephonic/edit-agents', [AgentController::class, 'edit']);
 Route::post('survey/telephonic/delete-agents', [AgentController::class, 'destroy']);
 Route::get('/download/{file}', [AgentController::class, 'downloadSampleFile']);
@@ -83,7 +84,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/privacy-policy', function () {
     return view('content.privacy-policy.privacyPolicy');
 });
-
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
