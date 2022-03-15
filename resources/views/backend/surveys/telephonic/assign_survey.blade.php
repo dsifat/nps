@@ -5,6 +5,7 @@
 @section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/base/pages/page-assign-survey.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/forms/select/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -61,10 +62,32 @@
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
                                     <label for="assignee_name">Select Assignee Name</label>
-                                    <select class="form-control" id="assignee_name">
+                                    <select class="form-control" id="survey">
                                         <option>Team A</option>
                                         <option>Team B</option>
                                         <option>Team C</option>
+                                    </select>
+                                </fieldset>
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label for="assignee_name">Select Assignee Name</label>--}}
+                                {{--                                    <select class="select2 form-control" multiple="multiple">--}}
+                                {{--                                        <option value="square">Square</option>--}}
+                                {{--                                        <option value="rectangle" selected>Rectangle</option>--}}
+                                {{--                                        <option value="rombo">Rombo</option>--}}
+                                {{--                                        <option value="romboid">Romboid</option>--}}
+                                {{--                                        <option value="trapeze">Trapeze</option>--}}
+                                {{--                                        <option value="traible" selected>Triangle</option>--}}
+                                {{--                                        <option value="polygon">Polygon</option>--}}
+                                {{--                                    </select>--}}
+                                {{--                                </div>--}}
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <fieldset class="form-group">
+                                    <label for="assignee_name">Customer Group</label>
+                                    <select class="form-control" id="survey">
+                                        <option>Banani</option>
+                                        <option>Gulshan</option>
+                                        <option>Malibagh</option>
                                     </select>
                                 </fieldset>
                             </div>
@@ -108,9 +131,15 @@
     {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/legacy.js')) }}"></script>--}}
     <script src="{{ asset('js/scripts/pickers/dateTime/pick-a-datetime.js') }}"></script>
     <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
+    {{--    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--}}
+    <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
+    <script src="{{ asset('js/scripts/forms/select/form-select2.js') }}"></script>
     <script>
-        // $('#my-awesome-dropzone').dropzone({
-        //
-        // });
+        // Select2 Multiple
+        $('.select2-multiple').select2({
+            placeholder: "",
+            allowClear: true,
+            tags: true
+        });
     </script>
 @endsection
