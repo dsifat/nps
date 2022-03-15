@@ -98,3 +98,11 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.competitiveSurveys.index') }}"
+       class="nav-link {{ Request::is('backend/competitiveSurveys*') ? 'active' : '' }}">
+        <p>Competitive Surveys</p>
+    </a>
+</li>
+
+

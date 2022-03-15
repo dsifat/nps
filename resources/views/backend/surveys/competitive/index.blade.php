@@ -4,7 +4,6 @@
 
 @section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
-
 @endsection
 
 @section('vendor-style')
@@ -23,7 +22,6 @@
                             <li><a class="btn btn-outline-dark">Export</a></li>
                             <li><a class="btn btn-primary" data-toggle="modal" data-target="#yourModal">Upload Survey</a></li>
                         </ul>
-
                     </div>
                     <div class="card-body">
                         <div class="row d-lg-none d-xl-none">

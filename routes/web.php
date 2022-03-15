@@ -41,6 +41,7 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
 Route::get('password/otp/validate',[OTPController::class, 'index']);
 
 Route::get('password/change',[UpdatePassController::class, 'index']);
+Route::post('password/change',[UpdatePassController::class, 'store'])->name('change-password');
 
 Route::get('survey/competitive',[CompetitiveSurveyController::class, 'index']);
 
@@ -103,4 +104,9 @@ Route::group(['prefix' => 'backend'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('competitiveSurveys', 'Backend\CompetitiveSurveyController', ["as" => 'backend']);
 });

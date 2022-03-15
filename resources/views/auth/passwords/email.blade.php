@@ -28,19 +28,7 @@
               </span>
           @enderror
         </div>
-        <div class="form-group">
-          <label for="forgot-password-mobile" class="form-label">Mobile No</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">+997</span>
-            </div>
-            <input type="text" id="forgot-password-mobile" class="form-control" aria-label="Mobile No" aria-describedby="basic-addon1">
-          </div>
-        </div>
-        <div class="mb-2 text-sm-center mt-0" style="font-size: 11px">
-          Mobile number must contains 10 digits and start with 16 or 18. Example: 18xxxxxxxx or 16xxxxxxxx
-        </div>
-        <button type="submit" class="btn btn-primary btn-block" tabindex="2">Send OTP</button>
+        <button type="submit" class="btn btn-primary btn-block" tabindex="2">Send Reset Link</button>
       </form>
       <p class="text-right mt-2">
         @if (Route::has('login'))
