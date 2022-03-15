@@ -2,183 +2,79 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\DataTables\Backend\CompetitiveSurveyDataTable;
-use App\Http\Requests\Backend;
-use App\Http\Requests\Backend\CreateCompetitiveSurveyRequest;
-use App\Http\Requests\Backend\UpdateCompetitiveSurveyRequest;
+use App\Http\Controllers\Controller;
+use App\Imports\CompetitiveSurveyImport;
+use App\Imports\UsersImport;
+use App\Jobs\SendAgentCreationEmailJob;
 use App\Models\Backend\CompetitiveSurvey;
-use Flash;
-use App\Http\Controllers\AppBaseController;
+use App\Models\Backend\User;
 use Illuminate\Http\Request;
-use Response;
+use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\HeadingRowImport;
 
-class CompetitiveSurveyController extends AppBaseController
+class CompetitiveSurveyController extends Controller
 {
-    public function __construct()
+    public function index()
     {
-        $this->resource_str = 'CompetitiveSurvey';
-        $this->setCrudPermissions();
-    }
-
-    /**
-     * Display a listing of the CompetitiveSurvey.
-     *
-     * @param CompetitiveSurveyDataTable $competitiveSurveyDataTable
-     * @return Response
-     */
-    public function index(CompetitiveSurveyDataTable $competitiveSurveyDataTable)
-    {
-        return $competitiveSurveyDataTable->render('backend.competitive_surveys.index');
-    }
-
-    /**
-     * Show the form for creating a new CompetitiveSurvey.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('backend.competitive_surveys.create');
-    }
-
-    /**
-     * Store a newly created CompetitiveSurvey in storage.
-     *
-     * @param CreateCompetitiveSurveyRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateCompetitiveSurveyRequest $request)
-    {
-        $input = $request->all();
-
-
-        /** @var CompetitiveSurvey $competitiveSurvey */
-        $competitiveSurvey = CompetitiveSurvey::create($input);
-
-        Flash::success('Competitive Survey saved successfully.');
-
-        return redirect(route('backend.competitiveSurveys.index'));
-    }
-
-//    public function store(Request $request)
-//    {
-//        $this->validate($request, [
-//            'filenames' => 'required',
-//            'filenames.*' => 'mimes:doc,pdf,docx,zip,png,jpge,jpg'
-//        ]);
-//        if($request->hasfile('filenames'))
-//        {
-//            foreach($request->file('filenames') as $file)
-//            {
-//                $name = time().'.'.$file->extension();
-//                $file->move(base_path() . '/storage/app/public', $name);
-//                $data[] = $name;
+        if (request()->ajax()) {
+//            $users = User::whereHas(
+//                'roles', function ($q) {
+//                $q->where('role_name', 'Agent');
 //            }
-//        }
-//
-//
-//        $file= new CompetitiveSurvey();
-//        $file->filenames=json_encode($data);
-//        $file->save();
-//
-//
-//        return back()->with('success', 'Your files has been send successfully');
-//    }
-
-    /**
-     * Display the specified CompetitiveSurvey.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        /** @var CompetitiveSurvey $competitiveSurvey */
-        $competitiveSurvey = CompetitiveSurvey::find($id);
-
-        if (empty($competitiveSurvey)) {
-            Flash::error('Competitive Survey not found');
-
-            return redirect(route('backend.competitiveSurveys.index'));
+//            )->get();
+//            dd('he');
+            return datatables()->of(CompetitiveSurvey::all())
+                ->addColumn('action', '')
+                ->rawColumns(['action'])
+                ->addIndexColumn()
+                ->make(true);
         }
 
-        return view('backend.competitive_surveys.show')->with('competitiveSurvey', $competitiveSurvey);
+        return view('backend.surveys.competitive.index');
     }
 
-    /**
-     * Show the form for editing the specified CompetitiveSurvey.
-     *
-     * @param  int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
+    public function store(Request $request)
     {
-        /** @var CompetitiveSurvey $competitiveSurvey */
-        $competitiveSurvey = CompetitiveSurvey::find($id);
+//        dd($request->all());
+        $validator = \Validator::make($request->all(), [
+            'survey_list' => 'required|max:5000|mimes:xls,xlsx',
+        ]);
 
-        if (empty($competitiveSurvey)) {
-            Flash::error('Competitive Survey not found');
-
-            return redirect(route('backend.competitiveSurveys.index'));
+        if ($validator->fails()) {
+//            dd($validator->errors());
+            return response()->json(['errors' => $validator->errors()->all()]);
         }
 
-        return view('backend.competitive_surveys.edit')->with('competitiveSurvey', $competitiveSurvey);
+        $file = $request->file('survey_list');
+        $location = 'uploads';
+        $filename = $file->getClientOriginalName();
+        $file->move($location, $filename);
+        $filepath = public_path($location . "/" . $filename);
+
+        $items = \Excel::toArray(new CompetitiveSurveyImport(), $filepath);
+        foreach ($items[0] as $item) {
+//            dd($item);
+            CompetitiveSurvey::create([
+                'customer_msisdn' => $item['customer_msisdn'],
+                'customer_email' => $item['customer_email'],
+                'survey_topic' => $item['survey_topic'],
+                'survey_name' => $item['survey_name'],
+                'question' => $item['question'],
+                'user_response' => $item['user_response'],
+                'survey_date' => $this->transformDate($item['survey_date']),
+                'nps_status' => $item['nps_status']
+            ]);
+        }
+//dd('here');
+        return response()->json(['success' => 'Data is successfully added']);
     }
 
-    /**
-     * Update the specified CompetitiveSurvey in storage.
-     *
-     * @param  int              $id
-     * @param UpdateCompetitiveSurveyRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateCompetitiveSurveyRequest $request)
+    public function transformDate($value, $format = 'Y-m-d')
     {
-        /** @var CompetitiveSurvey $competitiveSurvey */
-        $competitiveSurvey = CompetitiveSurvey::find($id);
-
-        if (empty($competitiveSurvey)) {
-            Flash::error('Competitive Survey not found');
-
-            return redirect(route('backend.competitiveSurveys.index'));
+        try {
+            return \Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($value));
+        } catch (\ErrorException $e) {
+            return \Carbon\Carbon::createFromFormat($format, $value);
         }
-
-        $competitiveSurvey->fill($request->all());
-        $competitiveSurvey->save();
-
-        Flash::success('Competitive Survey updated successfully.');
-
-        return redirect(route('backend.competitiveSurveys.index'));
-    }
-
-    /**
-     * Remove the specified CompetitiveSurvey from storage.
-     *
-     * @param  int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        /** @var CompetitiveSurvey $competitiveSurvey */
-        $competitiveSurvey = CompetitiveSurvey::find($id);
-
-        if (empty($competitiveSurvey)) {
-            Flash::error('Competitive Survey not found');
-
-            return redirect(route('backend.competitiveSurveys.index'));
-        }
-
-        $competitiveSurvey->delete();
-
-        Flash::success('Competitive Survey deleted successfully.');
-
-        return redirect(route('backend.competitiveSurveys.index'));
     }
 }

@@ -15,8 +15,6 @@ td {
         border: none;
         border-radius: 25px;
         padding: 2px;
-        color: white;
-        opacity: 0.25;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -26,19 +24,18 @@ td {
     }
 
     .completed-button {
-        background: #00AC4D;
+        color: #00AC4D;
+        background: rgba(0, 172, 77, 0.15);
     }
 
     .not-completed-button {
-        background: #EC1940;
+        color: #EC1940 !important;
+        background: rgba(236, 25, 64, 0.15);
     }
 
     .no-answer-button {
-        background: #622691;
-    }
-
-    .busy-button {
-        background: #E22635;
+        color: #622691;
+        background: rgba(98, 38, 145, 0.15);
     }
 }
 

@@ -15,8 +15,8 @@ td {
         border: none;
         border-radius: 25px;
         padding: 8px;
-        color: white;
-        opacity: 0.25;
+        //color: white;
+        //opacity: 0.25;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -26,11 +26,13 @@ td {
     }
 
     .active-button {
-        background: #00AC4D;
+        color: #00AC4D;
+        background: rgba(0, 172, 77, 0.15);
     }
 
     .draft-button {
-        background: #EC1940;
+        color: #EC1940 !important;
+        background: rgba(236, 25, 64, 0.15);
     }
 }
 

@@ -85,17 +85,18 @@
                                             </svg>
                                         </div>
                                         <div class="my-2">
-                                            <p>You have successfully assigned 3 surveys</p>
+                                            <p class="assign-success-text">You have successfully <br> assigned 03 surveys</p>
                                         </div>
                                         <div class="d-inline my-2">
-                                            <a href="{{ url('/survey/telephonic/assign') }}">
-                                                <svg width="19" height="8" viewBox="0 0 19 8" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M0.646446 3.64645C0.451185 3.84171 0.451185 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM19 3.5L1 3.5V4.5L19 4.5V3.5Z"
-                                                        fill="#622691"/>
+                                            <a href="{{ url('/survey/telephonic/assign') }}" class="btn btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-arrow-left">
+                                                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                    <polyline points="12 19 5 12 12 5"></polyline>
                                                 </svg>
-                                                <span style="color:#622691;">Assign another survey</span>
+                                                <span class="assign-another-survey-text">Assign another survey</span>
                                             </a>
                                         </div>
                                     </div>

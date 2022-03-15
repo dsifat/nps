@@ -25,7 +25,8 @@
         margin-top: 2rem;
 
         .form-file-upload {
-            border-style: dashed !important;
+            border: 2px dashed rgba(216, 214, 222, 1);
+            //border-style: dashed !important;
             border-radius: 0.357rem;
 
             .upload-file-text {

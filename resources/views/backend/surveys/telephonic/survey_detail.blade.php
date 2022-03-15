@@ -76,7 +76,7 @@
                                         <td>01833184339</td>
                                         <td class="time-data">8:30 Min</td>
                                         <td>
-                                            <button class="button busy-button">Busy</button>
+                                            <button class="button not-completed-button">Busy</button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn mr-1 mb-1 waves-effect waves-light"

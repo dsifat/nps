@@ -5,6 +5,7 @@
 @section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/file-uploaders/dropzone.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/base/pages/page-assign-survey.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/css/forms/select/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -60,40 +61,47 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
+                                    <label for="assignee_name">Select Assignee Name</label>
+                                    <select class="form-control" id="survey">
+                                        <option>Team A</option>
+                                        <option>Team B</option>
+                                        <option>Team C</option>
+                                    </select>
+                                </fieldset>
+                                {{--                                <div class="form-group">--}}
+                                {{--                                    <label for="assignee_name">Select Assignee Name</label>--}}
+                                {{--                                    <select class="select2 form-control" multiple="multiple">--}}
+                                {{--                                        <option value="square">Square</option>--}}
+                                {{--                                        <option value="rectangle" selected>Rectangle</option>--}}
+                                {{--                                        <option value="rombo">Rombo</option>--}}
+                                {{--                                        <option value="romboid">Romboid</option>--}}
+                                {{--                                        <option value="trapeze">Trapeze</option>--}}
+                                {{--                                        <option value="traible" selected>Triangle</option>--}}
+                                {{--                                        <option value="polygon">Polygon</option>--}}
+                                {{--                                    </select>--}}
+                                {{--                                </div>--}}
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <fieldset class="form-group">
+                                    <label for="assignee_name">Customer Group</label>
+                                    <select class="form-control" id="survey">
+                                        <option>Banani</option>
+                                        <option>Gulshan</option>
+                                        <option>Malibagh</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <fieldset class="form-group">
                                     <label>Deadline</label>
                                     <input type='text' class="form-control pickadate"/>
                                 </fieldset>
                             </div>
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
-                                    <label class="form-label" for="customFile">Upload MSISDN</label>
-                                    <input type="file" class="form-control" id="customFile"/>
-                                </fieldset>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <fieldset class="form-group">
                                     <label>Special Instructions</label>
-                                    <input type='text' placeholder="Write any instructions" class="form-control"/>
+                                    <textarea class="form-control" id="basicTextarea" rows="3"></textarea>
                                 </fieldset>
-                                <fieldset class="form-group">
-                                    <textarea class="form-control" id="basicTextarea" rows="3"
-                                              placeholder="Special Instructions"></textarea>
-                                </fieldset>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <form action="#" class="dropzone dropzone-area form-file-upload"
-                                      id="my-awesome-dropzone">
-                                    <div class="dz-message d-flex flex-column">
-                                        <p class="p-1">
-                                            Drop files here or click to upload.
-                                        </p>
-                                        <div class="d-flex justify-content-center">
-                                            <p class="p-1 upload-file-text" style="color: white;">
-                                                Upload Files</p>
-                                        </div>
-                                        <p class="p-1">File can't be more than 300kb size</p>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mt-2">
@@ -103,12 +111,12 @@
                             </div>
                         </div>
                     </div>
-{{--                    <div class="card-body d-flex flex-column align-items-center justify-content-center"--}}
-{{--                         style="min-height: 70vh;">--}}
-{{--                        <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
-{{--                        <p class="m-1">Sorry you have not assigned a survey yet</p>--}}
-{{--                        <button class="btn btn-primary"><i data-feather="plus"></i> Add Assign To</button>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="card-body d-flex flex-column align-items-center justify-content-center"--}}
+                    {{--                         style="min-height: 70vh;">--}}
+                    {{--                        <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
+                    {{--                        <p class="m-1">Sorry you have not assigned a survey yet</p>--}}
+                    {{--                        <button class="btn btn-primary"><i data-feather="plus"></i> Add Assign To</button>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -123,9 +131,15 @@
     {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/legacy.js')) }}"></script>--}}
     <script src="{{ asset('js/scripts/pickers/dateTime/pick-a-datetime.js') }}"></script>
     <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
+    {{--    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--}}
+    <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
+    <script src="{{ asset('js/scripts/forms/select/form-select2.js') }}"></script>
     <script>
-        // $('#my-awesome-dropzone').dropzone({
-        //
-        // });
+        // Select2 Multiple
+        $('.select2-multiple').select2({
+            placeholder: "",
+            allowClear: true,
+            tags: true
+        });
     </script>
 @endsection
