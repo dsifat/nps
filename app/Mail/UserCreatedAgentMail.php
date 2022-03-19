@@ -4,13 +4,13 @@ namespace App\Mail;
 
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 class UserCreatedAgentMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $name;
     public $password;
@@ -34,7 +34,7 @@ class UserCreatedAgentMail extends Mailable
     public function build()
     {
         return $this->subject('A new agent was created' . ' at ' . Carbon::now()->toDayDateTimeString())
-            ->view('emails.new_user_agent_mail',[
+            ->view('emails.new_user_agent_mail', [
                 'name' => $this->name,
                 'password' => $this->password,
             ]);

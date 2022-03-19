@@ -2,8 +2,8 @@
 
 namespace App\Models\Backend;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class EmailList extends Model
 {
@@ -11,7 +11,7 @@ class EmailList extends Model
     public $table = 'email_lists';
 
     public $fillable = [
-        'name', 'email_group_id'
+        'name', 'email_group_id',
     ];
 
     /**
@@ -21,7 +21,7 @@ class EmailList extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -30,12 +30,11 @@ class EmailList extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
     ];
 
     public function emailGroup()
     {
-        return $this->belongsTo(EmailGroup::class,'email_group_id');
+        return $this->belongsTo(EmailGroup::class, 'email_group_id');
     }
-
 }

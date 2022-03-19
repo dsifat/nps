@@ -2,13 +2,9 @@
 
 namespace App\Imports;
 
-use App\Models\User;
-use Barryvdh\Reflection\DocBlock\Type\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
-use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithStartRow;
-use Illuminate\Support\Str;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class UsersImport implements ToCollection, WithStartRow, WithHeadingRow
 {

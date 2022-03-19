@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreatePhoneAPIRequest;
-use App\Http\Requests\API\Backend\UpdatePhoneAPIRequest;
-use App\Models\Backend\Phone;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\Phone;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\PhoneResource;
-use Response;
+use App\Http\Requests\API\Backend\CreatePhoneAPIRequest;
+use App\Http\Requests\API\Backend\UpdatePhoneAPIRequest;
 
 /**
  * Class PhoneController

@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\Backend;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Backend\PhoneGroup;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UpdatePhoneGroupRequest extends FormRequest
 {

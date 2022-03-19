@@ -1,17 +1,24 @@
 <?php
 namespace App\Jobs;
-use App\Mail\UserCreatedAgentMail;
+
+use Mail;
 use Illuminate\Bus\Queueable;
+use App\Mail\UserCreatedAgentMail;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Log;
-use Mail;
+
 class SendAgentCreationEmailJob implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    protected $details, $password, $name;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
+    protected $details;
+    protected $password;
+    protected $name;
     /**
      * Create a new job instance.
      *
@@ -34,6 +41,5 @@ class SendAgentCreationEmailJob implements ShouldQueue
         Log::debug($this->name .'   '. $this->password);
         $email = new UserCreatedAgentMail($this->name, $this->password);
         Mail::to($this->details['email'])->send($email);
-
     }
 }

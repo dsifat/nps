@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\MatchOldPassword;
 use App\Models\Backend\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Backend\MatchOldPassword;
 
-class UpdatePassController extends Controller {
+class UpdatePassController extends Controller
+{
     /**
      * Create a new controller instance.
      *
@@ -40,8 +41,7 @@ class UpdatePassController extends Controller {
             'confirm_password' => ['same:new_password'],
         ]);
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
         dd('Password change successfully.');
-
     }
 }

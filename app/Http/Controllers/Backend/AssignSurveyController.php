@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
+
 use App\Http\Controllers\Controller;
 
 class AssignSurveyController extends Controller
@@ -17,8 +18,9 @@ class AssignSurveyController extends Controller
             'pageHeader' => false,
             'contentLayout' => 'content-left-sidebar',
             'bodyClass' => 'todo-application',
-            'layoutWidth' => 'boxed'
+            'layoutWidth' => 'boxed',
         ];
+
         return view('backend.surveys.assign.all_assigned');
     }
 }

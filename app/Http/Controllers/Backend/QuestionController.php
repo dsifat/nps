@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\DataTables\Backend\QuestionDataTable;
-use App\Http\Controllers\Controller;
+use Flash;
+use Response;
 use App\Http\Requests\Backend;
+use App\Models\Backend\Subject;
+use App\Models\Backend\Question;
+use App\Http\Controllers\Controller;
+use App\DataTables\Backend\QuestionDataTable;
 use App\Http\Requests\Backend\CreateQuestionRequest;
 use App\Http\Requests\Backend\UpdateQuestionRequest;
-use App\Models\Backend\Question;
-use App\Models\Backend\Subject;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class QuestionController extends Controller
 {

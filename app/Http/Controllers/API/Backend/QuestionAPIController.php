@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreateQuestionAPIRequest;
-use App\Http\Requests\API\Backend\UpdateQuestionAPIRequest;
-use App\Models\Backend\Question;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\Question;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\QuestionResource;
-use Response;
+use App\Http\Requests\API\Backend\CreateQuestionAPIRequest;
+use App\Http\Requests\API\Backend\UpdateQuestionAPIRequest;
 
 /**
  * Class QuestionController

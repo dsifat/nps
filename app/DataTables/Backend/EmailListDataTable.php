@@ -2,11 +2,10 @@
 
 namespace App\DataTables\Backend;
 
-use App\Models\Backend\EmailGroup;
-use App\Models\Backend\EmailList;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Services\DataTable;
+use App\Models\Backend\EmailList;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class EmailListDataTable extends DataTable
 {
@@ -33,6 +32,7 @@ class EmailListDataTable extends DataTable
     {
         $builder = $model->newQuery();
         $builder->with(['emailGroup'])->where('email_group_id', $request->route()->parameter('emailGroup'));
+
         return $builder;
     }
 
@@ -48,12 +48,12 @@ class EmailListDataTable extends DataTable
             ->minifiedAjax()
 //            ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'responsive'  => true,
+                'responsive' => true,
                 'fixedHeader' => true,
-                'stateSave'   => true,
-                'dom'         => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
-                'order'       => [[0, 'desc']],
-                'buttons'     => [
+                'stateSave' => true,
+                'dom' => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
+                'order' => [[0, 'desc']],
+                'buttons' => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -101,8 +101,8 @@ class EmailListDataTable extends DataTable
             'Email Group' => new \Yajra\DataTables\Html\Column([
                 'title' => 'Group Name',
                 'data' => 'emailGroup.name',
-                'name' => 'emailGroup.name'
-        ])
+                'name' => 'emailGroup.name',
+        ]),
         ];
     }
 

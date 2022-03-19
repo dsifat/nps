@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\DataTables\Backend\EmailGroupDataTable;
-use App\DataTables\Backend\EmailListDataTable;
-use App\Http\Requests\Backend;
-use App\Http\Requests\Backend\CreateEmailGroupRequest;
-use App\Http\Requests\Backend\UpdateEmailGroupRequest;
-use App\Models\Backend\EmailGroup;
-use App\Models\Backend\EmailList;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use DB;
 use Excel;
-use Illuminate\Http\Request;
+use Flash;
 use Response;
 use stdClass;
+use Illuminate\Http\Request;
+use App\Http\Requests\Backend;
+use App\Models\Backend\EmailList;
+use App\Models\Backend\EmailGroup;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Backend\EmailListDataTable;
+use App\DataTables\Backend\EmailGroupDataTable;
+use App\Http\Requests\Backend\CreateEmailGroupRequest;
+use App\Http\Requests\Backend\UpdateEmailGroupRequest;
 
 class EmailGroupController extends AppBaseController
 {
@@ -60,12 +59,13 @@ class EmailGroupController extends AppBaseController
 
         /** @var EmailGroup $emailGroup */
         $emailGroup = EmailGroup::where('name', $name)->first();
-        if(!is_null($emailGroup)){
+        if (! is_null($emailGroup)) {
             Flash::error('Email Group already exists');
+
             return redirect(route('backend.emailGroups.index'));
         }
         $emailGroup = EmailGroup::create([
-            'name' => $name
+            'name' => $name,
         ]);
         $this->save($emailGroup, $file);
         Flash::success('Email Group saved successfully.');
@@ -84,7 +84,7 @@ class EmailGroupController extends AppBaseController
 //        $emailList =  EmailGroup::find($id)->emailLists();
 
         /** @var EmailGroup $emailGroup */
-        $emailListDataTable->query(app()->make(EmailList::class),$request);
+        $emailListDataTable->query(app()->make(EmailList::class), $request);
 //        if (empty($emailGroup)) {
 //            Flash::error('Email Group not found');
 //
@@ -127,16 +127,17 @@ class EmailGroupController extends AppBaseController
         $emailGroup = EmailGroup::find($id);
         if (empty($emailGroup)) {
             Flash::error('Email Group not found');
+
             return redirect(route('backend.emailGroups.index'));
         }
 
         $name = strtolower($request['name']);
         $file = $request->file('excel_file');
-        if($emailGroup->name != $name){
-
+        if ($emailGroup->name != $name) {
             $newGroup = EmailGroup::where('name', $name)->first();
-            if(!is_null($newGroup)){
+            if (! is_null($newGroup)) {
                 Flash::error('Email Group already exists');
+
                 return redirect(route('backend.emailGroups.index'));
             }
 
@@ -145,6 +146,7 @@ class EmailGroupController extends AppBaseController
         }
         $this->save($emailGroup, $file);
         Flash::success('Email Group updated successfully.');
+
         return redirect(route('backend.emailGroups.index'));
     }
 
@@ -177,7 +179,7 @@ class EmailGroupController extends AppBaseController
 
     private function save($emailGroup, $file)
     {
-        if($file) {
+        if ($file) {
             $location = 'uploads';
             $filename = $file->getClientOriginalName();
             $file->move($location, $filename);
@@ -186,13 +188,13 @@ class EmailGroupController extends AppBaseController
             $excelItemCollections = Excel::toArray(new stdClass(), $filepath);
             $excelItemCollections = $excelItemCollections[0];
             $emailIndex = 0;
-            foreach($excelItemCollections[0] as $col) {
-                if( strtolower($col) == 'email') {
+            foreach ($excelItemCollections[0] as $col) {
+                if (strtolower($col) == 'email') {
                     break;
                 }
                 $emailIndex++;
             }
-            if(count($excelItemCollections[0]) <= $emailIndex) {
+            if (count($excelItemCollections[0]) <= $emailIndex) {
                 //validation_error
                 throw new \Exception("Please upload exel required email column");
             }
@@ -203,13 +205,12 @@ class EmailGroupController extends AppBaseController
                 $validEmails[] = $excelItems[$emailIndex];
             }
             $validEmails = array_slice($validEmails, 1);
-            foreach ( $validEmails as $validEmail) {
+            foreach ($validEmails as $validEmail) {
                 EmailList::updateOrCreate([
                     'name' => $validEmail,
-                    'email_group_id' => $emailGroup->id
+                    'email_group_id' => $emailGroup->id,
                 ], []);
             }
         }
-
     }
 }

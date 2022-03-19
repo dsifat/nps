@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreatePhoneGroupAPIRequest;
-use App\Http\Requests\API\Backend\UpdatePhoneGroupAPIRequest;
-use App\Models\Backend\PhoneGroup;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\PhoneGroup;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\PhoneGroupResource;
-use Response;
+use App\Http\Requests\API\Backend\CreatePhoneGroupAPIRequest;
+use App\Http\Requests\API\Backend\UpdatePhoneGroupAPIRequest;
 
 /**
  * Class PhoneGroupController

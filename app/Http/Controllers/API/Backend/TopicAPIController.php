@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreateTopicAPIRequest;
-use App\Http\Requests\API\Backend\UpdateTopicAPIRequest;
-use App\Models\Backend\Topic;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\Topic;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\TopicResource;
-use Response;
+use App\Http\Requests\API\Backend\CreateTopicAPIRequest;
+use App\Http\Requests\API\Backend\UpdateTopicAPIRequest;
 
 /**
  * Class TopicController
