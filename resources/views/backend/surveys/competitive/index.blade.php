@@ -170,7 +170,7 @@
                             });
                         } else {
                             jQuery('#file-error').hide();
-                            $('#company-modal').modal('hide');
+                            $('#uploadModal').modal('hide');
 
                             $("#btn-save").html('Submit');
                             $("#btn-save").attr("disabled", false);

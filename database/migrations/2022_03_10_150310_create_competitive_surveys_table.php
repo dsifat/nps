@@ -15,14 +15,14 @@ class CreateCompetitiveSurveysTable extends Migration
     {
         Schema::create('competitive_surveys', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_msisdn');
-            $table->string('customer_email')->unique();
-            $table->string('survey_topic');
-            $table->string('survey_name');
-            $table->string('question');
-            $table->string('user_response');
-            $table->string('nps_status');
-            $table->timestamp('survey_date');
+            $table->string('customer_msisdn')->nullable();
+            $table->string('customer_email')->nullable();
+            $table->string('survey_topic')->nullable();
+            $table->string('survey_name')->nullable();
+            $table->string('question')->nullable();
+            $table->string('user_response')->nullable();
+            $table->string('nps_status')->nullable();
+            $table->date('survey_date')->nullable();
             $table->timestamps();
         });
     }

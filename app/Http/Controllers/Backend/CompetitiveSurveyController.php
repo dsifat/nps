@@ -53,7 +53,6 @@ class CompetitiveSurveyController extends Controller
 
         $items = \Excel::toArray(new CompetitiveSurveyImport(), $filepath);
         foreach ($items[0] as $item) {
-//            dd($item);
             CompetitiveSurvey::create([
                 'customer_msisdn' => $item['customer_msisdn'],
                 'customer_email' => $item['customer_email'],

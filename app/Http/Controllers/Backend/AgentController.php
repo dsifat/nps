@@ -106,7 +106,7 @@ class AgentController extends Controller
             $user = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
-                'phone_number' => $request['phone_no'],
+                'phone_number' => $request['phone_number'],
                 'password' => \Illuminate\Support\Facades\Hash::make($password),
             ]);
 
