@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 class PasswordRessetedOrNot
 {
@@ -19,12 +18,12 @@ class PasswordRessetedOrNot
     public function handle(Request $request, Closure $next)
     {
         $route_name = $request->route()->getName();
-        if (Auth::check() and ($route_name!='change-password' and $route_name !='change-password-post')) {
-            if($request->user()->password_resetted == 0){
+        if (Auth::check() and ($route_name != 'change-password' and $route_name != 'change-password-post')) {
+            if ($request->user()->password_resetted == 0) {
                 return redirect('/password/change');
             }
-               
         }
+
         return $next($request);
     }
 }

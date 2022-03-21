@@ -22,7 +22,6 @@ class UpdatePassController extends Controller
 
     public function index()
     {
-     
         return view('auth.passwords.change');
     }
 
@@ -35,7 +34,7 @@ class UpdatePassController extends Controller
             'confirm_password' => ['same:new_password'],
         ]);
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
 
         $user = $request->user();
 
