@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\Backend;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Backend\EmailGroup;
+use Illuminate\Foundation\Http\FormRequest;
 
 class CreateEmailGroupRequest extends FormRequest
 {

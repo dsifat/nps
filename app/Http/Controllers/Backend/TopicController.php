@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Flash;
+use Response;
+use App\Models\Backend\Topic;
 use App\DataTables\Backend\TopicDataTable;
-use App\Http\Requests\Backend;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Backend\CreateTopicRequest;
 use App\Http\Requests\Backend\UpdateTopicRequest;
-use App\Models\Backend\Topic;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Validation\Rule;
-use Response;
 
 class TopicController extends AppBaseController
 {
@@ -96,13 +94,12 @@ class TopicController extends AppBaseController
         $data = Topic::findOrFail($id);
 
         if (empty($data)) {
-
             Flash::error('Topic not found');
 
             return redirect(route('backend.topics.index'));
         }
 
-        return view('backend.topics.edit', ['id'=>$id, 'data'=>$data]);
+        return view('backend.topics.edit', ['id' => $id, 'data' => $data]);
     }
 
     /**

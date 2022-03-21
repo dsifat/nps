@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Flash;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\MatchOldPassword;
 use App\Models\Backend\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Backend\MatchOldPassword;
 
-class UpdatePassController extends Controller {
+class UpdatePassController extends Controller
+{
     /**
      * Create a new controller instance.
      *

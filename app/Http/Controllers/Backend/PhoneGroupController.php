@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\DataTables\Backend\PhoneByGroupDataTable;
-use App\DataTables\Backend\PhoneGroupDataTable;
-use App\Http\Requests\Backend\CreatePhoneGroupRequest;
-use App\Http\Requests\Backend\UpdatePhoneGroupRequest;
+use Flash;
+use Response;
 use App\Imports\PhoneImport;
 use App\Models\Backend\Phone;
 use App\Models\Backend\PhoneGroup;
-use Flash;
-use App\Http\Controllers\AppBaseController;
 use Maatwebsite\Excel\Facades\Excel;
-use Response;
+use App\Http\Controllers\AppBaseController;
+use App\DataTables\Backend\PhoneGroupDataTable;
+use App\DataTables\Backend\PhoneByGroupDataTable;
+use App\Http\Requests\Backend\CreatePhoneGroupRequest;
+use App\Http\Requests\Backend\UpdatePhoneGroupRequest;
 
 class PhoneGroupController extends AppBaseController
 {
@@ -57,6 +57,7 @@ class PhoneGroupController extends AppBaseController
         $phoneGroup = PhoneGroup::create($input);
         Excel::import(new PhoneImport($phoneGroup->id), $request->file('phone_number')->store('temp'));
         Flash::success('Phone Group saved successfully.');
+
         return redirect(route('backend.phoneGroups.index'));
     }
 
@@ -79,9 +80,10 @@ class PhoneGroupController extends AppBaseController
         }
         $phoneByGroupDataTable = new PhoneByGroupDataTable($id);
         $data = [
-          'phoneGroup' => $phoneGroup
+          'phoneGroup' => $phoneGroup,
         ];
-        return $phoneByGroupDataTable->render('backend.phones.index',$data);
+
+        return $phoneByGroupDataTable->render('backend.phones.index', $data);
     }
 
     /**
@@ -128,6 +130,7 @@ class PhoneGroupController extends AppBaseController
         Excel::import(new PhoneImport($id), $request->file('phone_number')->store('temp2'));
         $phoneGroup->save();
         Flash::success('Phone Group updated successfully.');
+
         return redirect(route('backend.phoneGroups.index'));
     }
 
@@ -148,6 +151,7 @@ class PhoneGroupController extends AppBaseController
 
         if (empty($phoneGroup)) {
             Flash::error('Phone Group not found');
+
             return redirect(route('backend.phoneGroups.index'));
         }
         $phones = Phone::where('phone_groups_id', $id);

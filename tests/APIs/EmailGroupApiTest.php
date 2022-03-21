@@ -1,14 +1,16 @@
 <?php namespace Tests\APIs;
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use Tests\ApiTestTrait;
 use App\Models\Backend\EmailGroup;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class EmailGroupApiTest extends TestCase
 {
-    use ApiTestTrait, WithoutMiddleware, DatabaseTransactions;
+    use ApiTestTrait;
+    use WithoutMiddleware;
+    use DatabaseTransactions;
 
     /**
      * @test
@@ -19,7 +21,8 @@ class EmailGroupApiTest extends TestCase
 
         $this->response = $this->json(
             'POST',
-            '/api/backend/email_groups', $emailGroup
+            '/api/backend/email_groups',
+            $emailGroup
         );
 
         $this->assertApiResponse($emailGroup);
@@ -66,8 +69,8 @@ class EmailGroupApiTest extends TestCase
 
         $this->response = $this->json(
             'DELETE',
-             '/api/backend/email_groups/'.$emailGroup->id
-         );
+            '/api/backend/email_groups/'.$emailGroup->id
+        );
 
         $this->assertApiSuccess();
         $this->response = $this->json(

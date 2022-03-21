@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests\Backend;
 
-use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Backend\Topic;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
 class CreateTopicRequest extends FormRequest
 {
@@ -29,16 +28,17 @@ class CreateTopicRequest extends FormRequest
         return [
             'name' => 'required',
             'parent_id' => [
-                Rule::unique('topics')->where('name', $this->name)
-            ]
+                Rule::unique('topics')->where('name', $this->name),
+            ],
         ];
     }
     public function messages()
     {
         $messages = [
-            'name.required'=>'Name is required',
-            'parent_id.unique'=>'Sub topic name with the topic has already been taken'
+            'name.required' => 'Name is required',
+            'parent_id.unique' => 'Sub topic name with the topic has already been taken',
         ];
+
         return $messages;
     }
 }

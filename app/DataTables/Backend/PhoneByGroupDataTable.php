@@ -3,8 +3,8 @@
 namespace App\DataTables\Backend;
 
 use App\Models\Backend\Phone;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class PhoneByGroupDataTable extends DataTable
 {
@@ -36,6 +36,7 @@ class PhoneByGroupDataTable extends DataTable
     {
         $query = $model->newQuery();
         $query = $query->where('phone_groups_id', $this->group_id);
+
         return $query;
     }
 
@@ -100,7 +101,7 @@ class PhoneByGroupDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'number'
+            'number',
         ];
     }
 

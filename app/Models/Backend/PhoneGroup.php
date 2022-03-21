@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * @SWG\Definition(
  *      definition="PhoneGroup",
@@ -37,15 +35,13 @@ use Eloquent as Model;
  */
 class PhoneGroup extends Model
 {
-
-
     public $table = 'phone_groups';
 
 
 
 
     public $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -55,7 +51,7 @@ class PhoneGroup extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -66,7 +62,4 @@ class PhoneGroup extends Model
     public static $rules = [
 
     ];
-
-
-
 }

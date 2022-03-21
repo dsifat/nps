@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * @SWG\Definition(
  *      definition="Phone",
@@ -37,8 +35,6 @@ use Eloquent as Model;
  */
 class Phone extends Model
 {
-
-
     public $table = 'phones';
 
 
@@ -46,7 +42,7 @@ class Phone extends Model
 
     public $fillable = [
         'number',
-        'phone_groups_id'
+        'phone_groups_id',
     ];
 
     /**
@@ -56,7 +52,7 @@ class Phone extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'number' => 'string'
+        'number' => 'string',
     ];
 
     /**
@@ -68,9 +64,8 @@ class Phone extends Model
 
     ];
 
-    public function phoneGroup(){
-        return $this->belongsTo('App\Models\Backend\PhoneGroup','phone_groups_id');
+    public function phoneGroup()
+    {
+        return $this->belongsTo('App\Models\Backend\PhoneGroup', 'phone_groups_id');
     }
-
-
 }

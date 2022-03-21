@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Backend\PhoneGroup;
 
 class CreatePhoneGroupRequest extends FormRequest
 {
@@ -26,7 +25,7 @@ class CreatePhoneGroupRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:phone_groups,name'
+            'name' => 'required|unique:phone_groups,name',
         ];
     }
 }

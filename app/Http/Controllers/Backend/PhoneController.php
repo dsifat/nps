@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Flash;
+use Response;
+use App\Models\Backend\Phone;
 use App\DataTables\Backend\PhoneDataTable;
-use App\Http\Requests\Backend;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Backend\CreatePhoneRequest;
 use App\Http\Requests\Backend\UpdatePhoneRequest;
-use App\Models\Backend\Phone;
-use Flash;
-use App\Http\Controllers\AppBaseController;
-use Response;
 
 class PhoneController extends AppBaseController
 {

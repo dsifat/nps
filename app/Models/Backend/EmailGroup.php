@@ -37,7 +37,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class EmailGroup extends Model
 {
-
     use HasFactory;
 
     public $table = 'email_groups';
@@ -46,7 +45,7 @@ class EmailGroup extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -56,7 +55,7 @@ class EmailGroup extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -65,7 +64,7 @@ class EmailGroup extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
     ];
 
     public function emailLists()

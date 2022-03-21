@@ -3,8 +3,8 @@
 namespace App\Imports;
 
 use App\Models\Backend\Phone;
-use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
@@ -31,14 +31,14 @@ class PhoneImport implements ToCollection, WithHeadingRow, WithValidation
         foreach ($rows as $row) {
             Phone::create([
                 'number' => $row['number'],
-                'phone_groups_id' => $this->group_id
+                'phone_groups_id' => $this->group_id,
             ]);
         }
     }
     public function rules(): array
     {
         return [
-            'number' => Rule::unique('phones')->where('phone_groups_id',$this->group_id)
+            'number' => Rule::unique('phones')->where('phone_groups_id', $this->group_id),
         ];
     }
 

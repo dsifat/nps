@@ -2,10 +2,10 @@
 
 namespace App\DataTables\Backend;
 
-use App\Models\Backend\Topic;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Services\DataTable;
+use App\Models\Backend\Topic;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class TopicDataTable extends DataTable
 {
@@ -18,14 +18,14 @@ class TopicDataTable extends DataTable
     public function dataTable($query)
     {
         $dataTable = new EloquentDataTable($query);
-        $dataTable->addColumn('parent_id',function ($query){
-            if ($query->parent_id == null){
+        $dataTable->addColumn('parent_id', function ($query) {
+            if ($query->parent_id == null) {
                 return 'Topic';
-            }
-            else {
+            } else {
                 return 'Sub Topic';
             }
         });
+
         return $dataTable->addColumn('action', 'backend.topics.datatables_actions');
     }
 
@@ -42,16 +42,14 @@ class TopicDataTable extends DataTable
         $columns = $request->columns;
         $search_keyword = isset($columns[1]['search']['value']) ? $columns[1]['search']['value'] : null;
         if ($search_keyword) {
-            if (preg_match('/(?i)to/', $search_keyword)==1){
-                $query_builder = $query_builder->where('parent_id',null);
-            }
-            elseif (preg_match('/(?i)s/', $search_keyword)==1){
+            if (preg_match('/(?i)to/', $search_keyword) == 1) {
+                $query_builder = $query_builder->where('parent_id', null);
+            } elseif (preg_match('/(?i)s/', $search_keyword) == 1) {
                 $query_builder = $query_builder->whereNotNull('parent_id');
-            }
-            else {
-
+            } else {
             }
         }
+
         return $query_builder;
     }
 
@@ -67,12 +65,12 @@ class TopicDataTable extends DataTable
             ->minifiedAjax()
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'responsive'  => true,
+                'responsive' => true,
                 'fixedHeader' => true,
-                'stateSave'   => true,
-                'dom'         => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
-                'order'       => [[0, 'desc']],
-                'buttons'     => [
+                'stateSave' => true,
+                'dom' => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
+                'order' => [[0, 'desc']],
+                'buttons' => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -120,7 +118,7 @@ class TopicDataTable extends DataTable
             'parent_id' => [
                 'title' => 'Topic Type',
 //                'data' => 'topic.name'
-            ]
+            ],
         ];
     }
 

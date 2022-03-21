@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * Class Question
  * @package App\Models\Backend
@@ -17,8 +15,6 @@ use Eloquent as Model;
  */
 class Question extends Model
 {
-
-
     public $table = 'questions';
     
 
@@ -26,7 +22,7 @@ class Question extends Model
 
     public $fillable = [
         'title',
-        'answer'
+        'answer',
     ];
 
     /**
@@ -37,7 +33,7 @@ class Question extends Model
     protected $casts = [
         'id' => 'integer',
         'title' => 'string',
-        'answer' => 'string'
+        'answer' => 'string',
     ];
 
     /**

@@ -19,7 +19,7 @@ class TopicResource extends JsonResource
             'parent_id' => $this->parent_id,
             'name' => $this->name,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ];
     }
 }

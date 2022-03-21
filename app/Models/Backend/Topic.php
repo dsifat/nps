@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * @SWG\Definition(
  *      definition="Topic",
@@ -47,7 +45,7 @@ class Topic extends Model
 
     public $fillable = [
         'name',
-        'parent_id'
+        'parent_id',
     ];
 
     /**
@@ -58,12 +56,12 @@ class Topic extends Model
     protected $casts = [
         'id' => 'integer',
         'parent_id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     protected $hidden = [
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     /**
@@ -77,11 +75,10 @@ class Topic extends Model
 
     public function topic()
     {
-        return $this->belongsTo(\App\Models\Backend\Topic::class, 'parent_id','id');
+        return $this->belongsTo(\App\Models\Backend\Topic::class, 'parent_id', 'id');
     }
 
 //    public function getTopicAttribute(){
 //        $this->pare
 //    }
-
 }

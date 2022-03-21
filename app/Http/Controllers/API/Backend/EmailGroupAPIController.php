@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreateEmailGroupAPIRequest;
-use App\Http\Requests\API\Backend\UpdateEmailGroupAPIRequest;
-use App\Models\Backend\EmailGroup;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\EmailGroup;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\EmailGroupResource;
-use Response;
+use App\Http\Requests\API\Backend\CreateEmailGroupAPIRequest;
+use App\Http\Requests\API\Backend\UpdateEmailGroupAPIRequest;
 
 /**
  * Class EmailGroupController
