@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Flash;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\MatchOldPassword;
 use App\Models\Backend\User;
@@ -21,27 +22,29 @@ class UpdatePassController extends Controller {
 
     public function index()
     {
-        $pageConfigs = [
-            'bodyClass' => "bg-full-screen-image",
-            'blankPage' => true,
-        ];
-
-        return view('/auth/passwords/change', [
-            'pageConfigs' => $pageConfigs,
-        ]);
+     
+        return view('auth.passwords.change');
     }
 
     public function store(Request $request)
     {
 //        dd("asdasd");
         $request->validate([
-            'old_password' => ['required', new MatchOldPassword],
+            // 'old_password' => ['required', new MatchOldPassword],
             'new_password' => ['required'],
             'confirm_password' => ['same:new_password'],
         ]);
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-        dd('Password change successfully.');
 
+        $user = $request->user();
+
+        $user->password_resetted = 1;
+        
+        $user->save();
+
+        Flash::success('Password changed successfully');
+
+        return redirect(route('change-password'));
     }
 }

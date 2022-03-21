@@ -40,8 +40,8 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
 
 Route::get('password/otp/validate',[OTPController::class, 'index']);
 
-Route::get('password/change',[UpdatePassController::class, 'index']);
-Route::post('password/change',[UpdatePassController::class, 'store'])->name('change-password');
+Route::get('password/change',[UpdatePassController::class, 'index'])->name('change-password');
+Route::post('password/change',[UpdatePassController::class, 'store'])->name('change-password-post');
 
 Route::get('survey/competitive', [CompetitiveSurveyController::class, 'index']);
 Route::post('survey/competitive/store', [CompetitiveSurveyController::class, 'store']);
