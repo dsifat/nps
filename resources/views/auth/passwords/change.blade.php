@@ -10,11 +10,11 @@
                     <div class="card-header border-bottom">
                         <h4 class="card-title">Update Password</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body container">
                         @include('flash::message')
                         @include('adminlte-templates::common.errors')
-                        <div class="row">
-                        <form class="auth-login-form mt-2" method="POST" action="{{ route('change-password') }}">
+                        <div class="row align-items-center">
+                        <form class="col-sm-8 mt-2 mx-auto" method="POST" action="{{ route('change-password') }}">
                               @csrf
                               <div class="form-group">
                                 <div class="d-flex justify-content-between">
