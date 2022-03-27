@@ -73,3 +73,8 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('competitive_surveys', App\Http\Controllers\API\Backend\Backend\CompetitiveSurveyAPIController::class);
 });
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('settings', App\Http\Controllers\API\Backend\Backend\SettingsAPIController::class);
+});

@@ -1231,8 +1231,49 @@ if (typeof jQuery.validator === "function") {
           .removeClass("is-invalid");
       }
     },
-  });
+  }); 
 }
+
+function setSideMenuInit() {
+  var state = {
+    "menuStyle": localStorage.menuStyle
+  }; // var myVariable = "{{ $configData['sidebarClass'] }}";
+  // console.log(myVariable);
+  if (state.menuStyle === undefined) {
+    localStorage.setItem("menuStyle", "");
+  }
+  if (state.menuStyle === ""){
+    if (document.body.classList.contains("menu-expanded")){
+      localStorage.setItem("menuStyle", "menu-expanded");
+    }
+    else{
+      localStorage.setItem("menuStyle", "menu-collapsed");
+    }
+  }
+  else{
+    console.log("hello");
+    document.body.classList.remove("menu-collapsed", "menu-expanded");
+    document.body.classList.add(localStorage.getItem("menuStyle"));
+  }
+}
+setSideMenuInit(); // Add validation class to input-group (input group validation fix, currently disabled but will be useful in future)
+function setSideMenuToggle(){
+  menuStyle = localStorage.getItem("menuStyle");
+  if (menuStyle == "menu-expanded"){
+    document.body.classList.remove("menu-expanded");
+    document.body.classList.add("menu-collapsed");
+    localStorage.setItem("menuStyle", "menu-collapsed");
+  }
+  else{
+    document.body.classList.remove("menu-collapsed");
+    document.body.classList.add("menu-expanded");
+    localStorage.setItem("menuStyle", "menu-expanded");
+  }
+}
+const modernNav = document.querySelector('.modern-nav-toggle');
+modernNav.addEventListener('click', event => {
+  setSideMenuToggle();
+})
 
 // Add validation class to input-group (input group validation fix, currently disabled but will be useful in future)
 /* function inputGroupValidation(el) {

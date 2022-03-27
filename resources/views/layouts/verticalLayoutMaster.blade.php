@@ -45,6 +45,7 @@
 
       <div class="content-body">
         {{-- Include Page Content --}}
+        {{ $configData['sidebarClass'] }}
         @yield('content')
       </div>
     </div>
@@ -71,6 +72,7 @@
   @yield('third_party_scripts')
 
   <script type="text/javascript">
+    console.log(<?php $configData ?>);
     $(window).on('load', function() {
       if (feather) {
         feather.replace({
