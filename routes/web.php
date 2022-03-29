@@ -77,7 +77,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/permissions', 'Backend\PermissionController', ["as" => 'backend']);
     Route::resource('/users', 'Backend\UserController', ["as" => 'backend']);
     Route::resource('/emailGroups', 'Backend\EmailGroupController', ["as" => 'backend']);
-    Route::resource('/customers', 'Backend\CustomerGroupController', ["as" => 'backend']);
     Route::post('/scheduleTasks/runTaskNow/{id}', 'Backend\ScheduleTaskController@runTaskNow')->name('backend.scheduleTasks.runTaskNow');
     Route::resource('/scheduleTasks', 'Backend\ScheduleTaskController', ["as" => 'backend']);
 });
@@ -108,4 +107,15 @@ Route::group(['prefix' => 'backend'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('customerGroups', 'Backend\CustomerGroupController', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('teams', 'Backend\TeamController', ["as" => 'backend']);
+    Route::get('teams/create/bulk', 'Backend\TeamController@createBulkTeam', ["as" => 'backend']);
 });

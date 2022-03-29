@@ -63,31 +63,21 @@
                                 <fieldset class="form-group">
                                     <label for="assignee_name">Select Assignee Name</label>
                                     <select class="form-control" id="survey">
-                                        <option>Team A</option>
-                                        <option>Team B</option>
-                                        <option>Team C</option>
+                                        <option>Robi WIC</option>
+                                        <option>Robi SMS</option>
+                                        <option>Robi IT</option>
+                                        <option>Software Development -4</option>
                                     </select>
                                 </fieldset>
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label for="assignee_name">Select Assignee Name</label>--}}
-                                {{--                                    <select class="select2 form-control" multiple="multiple">--}}
-                                {{--                                        <option value="square">Square</option>--}}
-                                {{--                                        <option value="rectangle" selected>Rectangle</option>--}}
-                                {{--                                        <option value="rombo">Rombo</option>--}}
-                                {{--                                        <option value="romboid">Romboid</option>--}}
-                                {{--                                        <option value="trapeze">Trapeze</option>--}}
-                                {{--                                        <option value="traible" selected>Triangle</option>--}}
-                                {{--                                        <option value="polygon">Polygon</option>--}}
-                                {{--                                    </select>--}}
-                                {{--                                </div>--}}
                             </div>
                             <div class="col-md-6 col-12">
                                 <fieldset class="form-group">
                                     <label for="assignee_name">Customer Group</label>
                                     <select class="form-control" id="survey">
-                                        <option>Banani</option>
-                                        <option>Gulshan</option>
-                                        <option>Malibagh</option>
+                                        <option>Robi High Value Customer Group</option>
+                                        <option>Binge High Value Customers</option>
+                                        <option>Binge Monthly Customers</option>
+                                        <option>Robi WIC Customers</option>
                                     </select>
                                 </fieldset>
                             </div>
@@ -111,12 +101,6 @@
                             </div>
                         </div>
                     </div>
-                    {{--                    <div class="card-body d-flex flex-column align-items-center justify-content-center"--}}
-                    {{--                         style="min-height: 70vh;">--}}
-                    {{--                        <button class="btn btn-outline-dark"><i data-feather="x" class="feather-32"></i></button>--}}
-                    {{--                        <p class="m-1">Sorry you have not assigned a survey yet</p>--}}
-                    {{--                        <button class="btn btn-primary"><i data-feather="plus"></i> Add Assign To</button>--}}
-                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -125,13 +109,8 @@
 
 @section('page-script')
     <!-- Page js files -->
-    {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.js')) }}"></script>--}}
-    {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.date.js')) }}"></script>--}}
-    {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/picker.time.js')) }}"></script>--}}
-    {{--    <script src="{{ asset(mix('vendors/js/pickers/pickadate/legacy.js')) }}"></script>--}}
     <script src="{{ asset('js/scripts/pickers/dateTime/pick-a-datetime.js') }}"></script>
     <script src="{{ asset('vendors/js/extensions/dropzone.min.js') }}"></script>
-    {{--    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>--}}
     <script src="{{ asset('vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script src="{{ asset('js/scripts/forms/select/form-select2.js') }}"></script>
     <script>

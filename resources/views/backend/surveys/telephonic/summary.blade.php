@@ -28,7 +28,7 @@
                         <table class="table table-responsive mt-2">
                             <thead>
                             <tr>
-                                <th scope="col">Assignee Name</th>
+                                <th scope="col">Assignee Team</th>
                                 <th scope="col">Assigned Survey List</th>
                                 <th scope="col">Deadline</th>
                                 <th scope="col">Special Instructions</th>
@@ -37,7 +37,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Md Mokhter Hossain</td>
+                                <td>Robi IT</td>
                                 <td>
                                     <div class="d-flex flex-row justify-content-around">
                                         <div class="d-flex flex-column pb-2">

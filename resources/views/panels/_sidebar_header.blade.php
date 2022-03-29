@@ -5,7 +5,8 @@
             <div class="brand-logo">
                 <img src="{{ asset('images/logo/logo-sur.png') }}" width="35px">
             </div>
-            <div class="brand-text mb-0"><img src="{{ asset('images/logo/ncell.svg') }}" width="40px" alt=""></div>
+{{--            <div class="brand-text mb-0"><img src="{{ asset('images/logo/ncell.svg') }}" width="40px" alt=""></div>--}}
+            <div class="brand-text mb-0"><span style="color:white; font-size: 1.3rem;">CFM Solution</span></div>
         </a>
         </li>
         <li class="nav-item nav-toggle">

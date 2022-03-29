@@ -204,4 +204,6 @@ return [
     "Competitive Survey" => "Competitive Survey",
     "Question Bank" => "Question Bank",
     "Subjects" => "Subjects",
+    "Customer Management" => "Customer Management",
+    "Teams" => "Teams",
 ];

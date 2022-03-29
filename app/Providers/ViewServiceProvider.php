@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Backend\Topic;
+use App\Models\Backend\User;
 use View;
 use App\Models\Backend\Role;
 use App\Models\Backend\Permission;
@@ -79,6 +80,11 @@ class ViewServiceProvider extends ServiceProvider
             });
 
             $view->with('commands', $ret)->with('frequencies', config('schedule-task.frequencies'));
+        });
+
+        View::composer(['backend.teams.fields'], function ($view) {
+            $allUsers = User::pluck('name', 'id')->toArray();
+            $view->with('allUsers', $allUsers);
         });
     }
 }

@@ -409,13 +409,6 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022
                                             </a>
@@ -524,13 +517,6 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
-                                        <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022
                                             </a>
@@ -566,13 +552,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                       checked>
-                                                <label class="custom-control-label" for="customCheck1"></label>
-                                            </div>
-                                        </td>
                                         <td>
                                             <a href="{{ url('/survey/telephonic/details') }}">
                                                 New Business Survey 2022

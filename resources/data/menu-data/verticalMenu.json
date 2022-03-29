@@ -26,6 +26,13 @@
                     "can": "ReadUser|CreateUser|EditUser|DeleteUser"
                 },
                 {
+                    "url": "/backend/teams",
+                    "name": "Teams",
+                    "icon": "circle",
+                    "slug": "teams*",
+                    "can": "ReadUser|CreateUser|EditUser|DeleteUser"
+                },
+                {
                     "url": "/permissions",
                     "name": "Permissions",
                     "icon": "circle",
@@ -40,6 +47,13 @@
                     "can": "CreateRole|EditRole|DeleteRole"
                 }
             ]
+        },
+        {
+            "url": "/backend/customerGroups",
+            "name": "Customer Management",
+            "icon": "users",
+            "slug": "backend/customerGroups*",
+            "can": "CreateTopic|EditTopic|DeleteTopic"
         },
         {
             "url": "/backend/questions",
@@ -120,34 +134,11 @@
             ]
         },
         {
-            "url": "/backend/phoneGroups",
-            "name": "Phone Groups",
-            "icon": "phone",
-            "slug": "backend/phoneGroups*",
-            "can": "CreateTopic|EditTopic|DeleteTopic"
-        },
-        {
             "url": "/scheduleTasks",
             "name": "Schedulers",
             "icon": "clock",
             "slug": "scheduleTasks*",
             "can": "ReadScheduler|CreateScheduler|EditScheduler|DeleteScheduler"
-        },
-
-        {
-            "name": "Email-Groups",
-            "icon": "circle",
-            "slug": "emailGroups*",
-            "can": "ReadEmailGroup|CreateEmailGroup|EditEmailGroup|DeleteEmailGroup",
-            "submenu": [
-                {
-                    "url": "/emailGroups",
-                    "name": "Email-Groups",
-                    "icon": "circle",
-                    "slug": "emailGroups*",
-                    "can": "ReadEmailGroup|CreateEmailGroup|EditEmailGroup|DeleteEmailGroup"
-                }
-            ]
         }
     ]
 }

@@ -92,8 +92,8 @@
                                                                    fill="#8F9ABC"/>
                                         </svg>
                                     </span>
-                                    <h4 class="card-title">Simple</h4>
-                                    <h6 class="card-text">Add Simple Contact</h6>
+                                    <h4 class="card-title">Individual</h4>
+                                    <h6 class="card-text">Add Individual Contact</h6>
                                 </div>
                             </div>
                             <div class="col-md-5 col-sm-6 modal-card-item modal-card-item-right" id="file-input-card">

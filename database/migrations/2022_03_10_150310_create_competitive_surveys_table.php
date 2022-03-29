@@ -14,7 +14,7 @@ class CreateCompetitiveSurveysTable extends Migration
     public function up()
     {
         Schema::create('competitive_surveys', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('customer_msisdn')->nullable();
             $table->string('customer_email')->nullable();
             $table->string('survey_topic')->nullable();

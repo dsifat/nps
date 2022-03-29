@@ -98,3 +98,19 @@
 </li>
 
 
+<li class="nav-item">
+    <a href="{{ route('backend.customerGroups.index') }}"
+       class="nav-link {{ Request::is('backend/customerGroups*') ? 'active' : '' }}">
+        <p>Customer Groups</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('backend.teams.index') }}"
+       class="nav-link {{ Request::is('backend/teams*') ? 'active' : '' }}">
+        <p>Teams</p>
+    </a>
+</li>
+
+

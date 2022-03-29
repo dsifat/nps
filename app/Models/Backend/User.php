@@ -97,6 +97,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany('App\Models\Backend\Role')->withTimestamps();
     }
 
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class);
+    }
+
     public function assignRole($role)
     {
         if (is_string($role)) {
