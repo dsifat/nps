@@ -3,8 +3,8 @@
 namespace App\DataTables\Backend;
 
 use App\Models\Backend\Subject;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class SubjectDataTable extends DataTable
 {
@@ -44,12 +44,12 @@ class SubjectDataTable extends DataTable
             ->minifiedAjax()
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'responsive'  => true,
+                'responsive' => true,
                 'fixedHeader' => true,
-                'stateSave'   => true,
-                'dom'         => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
-                'order'       => [[0, 'desc']],
-                'buttons'     => [
+                'stateSave' => true,
+                'dom' => "<'d-flex justify-content-between align-items-center mx-0 row'<'col-sm-4'l><'col-sm-4'B><'col-sm-4'f>>" . "<'row'<'col-sm-12'tr>>" . "<'d-flex justify-content-between mx-0 row'<'col-sm-4'i><'col-sm-4'><'col-sm-4 searchStyle'p>>",
+                'order' => [[0, 'desc']],
+                'buttons' => [
                     ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
                     ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
@@ -94,7 +94,7 @@ class SubjectDataTable extends DataTable
     {
         return [
             'name',
-            'logo'
+            'logo',
         ];
     }
 
