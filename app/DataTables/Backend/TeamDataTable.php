@@ -2,11 +2,11 @@
 
 namespace App\DataTables\Backend;
 
-use App\Models\Backend\Phone;
+use App\Models\Backend\Team;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Services\DataTable;
 
-class PhoneDataTable extends DataTable
+class TeamDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -18,16 +18,16 @@ class PhoneDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'backend.phones.datatables_actions');
+        return $dataTable->addColumn('action', 'backend.teams.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Phone $model
+     * @param \App\Models\Team $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Phone $model)
+    public function query(Team $model)
     {
         return $model->newQuery();
     }
@@ -70,7 +70,7 @@ class PhoneDataTable extends DataTable
                         if(title == 'Action') {
                             return ;
                         }
-                        
+
                         var input = document.createElement( 'input');
                         input.setAttribute('type', 'text');
                         input.setAttribute('class', 'form-control form-control-sm');
@@ -93,7 +93,7 @@ class PhoneDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'number',
+            'name',
         ];
     }
 
@@ -104,6 +104,6 @@ class PhoneDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'phones_datatable_' . time();
+        return 'teams_datatable_' . time();
     }
 }
