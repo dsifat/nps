@@ -15,7 +15,6 @@ use App\Http\Requests\Backend\CreateTeamRequest;
 use App\Http\Requests\Backend\UpdateTeamRequest;
 use App\DataTables\Backend\TeamMembersListDataTable;
 
-
 class TeamController extends AppBaseController
 {
     public function __construct()
@@ -72,7 +71,7 @@ class TeamController extends AppBaseController
             $team->name = $request->name;
             $team->save();
 
-            $ids = array();
+            $ids = [];
             foreach ($items[0] as $item) {
                 $user = User::where('email', '=', $item['email'])->first();
                 if ($user === null) {

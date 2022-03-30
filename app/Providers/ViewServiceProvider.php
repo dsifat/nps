@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Backend\Topic;
-use App\Models\Backend\User;
 use View;
 use App\Models\Backend\Role;
+use App\Models\Backend\User;
+use App\Models\Backend\Topic;
 use App\Models\Backend\Permission;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
@@ -42,13 +42,13 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('roleItems', $roleItems);
         });
 
-        View::composer(['backend.topics.fields'], function ($view){
-            $topics = Topic::whereNull('parent_id')->get()->pluck('name','id');
+        View::composer(['backend.topics.fields'], function ($view) {
+            $topics = Topic::whereNull('parent_id')->get()->pluck('name', 'id');
             $view->with('topics', $topics);
         });
 
-        View::composer(['backend.topics.edit'], function ($view){
-            $topics = Topic::whereNull('parent_id')->get()->pluck('name','id');
+        View::composer(['backend.topics.edit'], function ($view) {
+            $topics = Topic::whereNull('parent_id')->get()->pluck('name', 'id');
             $view->with('topics', $topics);
         });
 

@@ -2,9 +2,8 @@
 
 namespace App\Imports;
 
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithStartRow;
-
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class TeamMembersListImport implements WithStartRow, WithHeadingRow
 {

@@ -3,8 +3,8 @@
 namespace App\DataTables\Backend;
 
 use App\Models\Backend\CustomerGroup;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class CustomerGroupDataTable extends DataTable
 {
@@ -93,7 +93,7 @@ class CustomerGroupDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'name'
+            'name',
         ];
     }
 

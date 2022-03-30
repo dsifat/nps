@@ -5,7 +5,6 @@ namespace App\Models\Backend;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
 class CustomerList extends Model
 {
     use HasFactory;
@@ -13,7 +12,7 @@ class CustomerList extends Model
     public $table = 'customer_lists';
 
     public $fillable = [
-        'name', 'email', 'phone_number', 'customer_group_id'
+        'name', 'email', 'phone_number', 'customer_group_id',
     ];
 
     public function customerGroup()

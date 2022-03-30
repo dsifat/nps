@@ -4,7 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
 /**
  * Class Team
  * @package App\Models\Backend
@@ -17,7 +16,7 @@ class Team extends Model
     public $table = 'teams';
 
     public $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -27,7 +26,7 @@ class Team extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -51,7 +50,7 @@ class Team extends Model
             $user = User::where('name', $user)->firstOrFail();
         }
 
-        if (!$user) {
+        if (! $user) {
             $this->users()->delete();
         } else {
             $this->users()->sync($user);

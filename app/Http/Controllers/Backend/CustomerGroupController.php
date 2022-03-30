@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 use App\Imports\CustomerListImport;
 use App\Models\Backend\CustomerList;
 use App\Models\Backend\CustomerGroup;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\AppBaseController;
-use App\DataTables\Backend\CustomerGroupDataTable;
 use App\DataTables\Backend\CustomerListDataTable;
+use App\DataTables\Backend\CustomerGroupDataTable;
 use App\Http\Requests\Backend\CreateCustomerGroupRequest;
 use App\Http\Requests\Backend\UpdateCustomerGroupRequest;
-use Illuminate\Support\Facades\Redirect;
-
 
 class CustomerGroupController extends AppBaseController
 {
@@ -61,17 +60,17 @@ class CustomerGroupController extends AppBaseController
         $filepath = public_path($location . "/" . $filename);
 
         $items = \Excel::toArray(new CustomerListImport(), $filepath);
-        $foo = True;
+        $foo = true;
         foreach ($items[0] as $item) {
-            if (!isset($item['phone_number']) && !isset($item['email'])) {
+            if (! isset($item['phone_number']) && ! isset($item['email'])) {
                 return Redirect::back()->withErrors(['file' => 'Email or Phone Number column in the file is required'])
                     ->withInput();
             } else {
                 if ($foo) {
                     $customerGroup = CustomerGroup::create([
-                        'name' => $request['name']
+                        'name' => $request['name'],
                     ]);
-                    $foo = False;
+                    $foo = false;
                 }
                 CustomerList::create([
                     'name' => $item['name'],
@@ -141,21 +140,22 @@ class CustomerGroupController extends AppBaseController
         $filepath = public_path($location . "/" . $filename);
 
         $items = \Excel::toArray(new CustomerListImport(), $filepath);
-        $isCustomerGroupUpdated = False;
+        $isCustomerGroupUpdated = false;
         foreach ($items[0] as $item) {
-            if (!isset($item['phone_number']) && !isset($item['email'])) {
+            if (! isset($item['phone_number']) && ! isset($item['email'])) {
                 return Redirect::back()->withErrors(['file' => 'Email or Phone Number column in the file is required'])
                     ->withInput();
             } else {
-                if (!$isCustomerGroupUpdated) {
+                if (! $isCustomerGroupUpdated) {
                     $customerGroup = CustomerGroup::find($id);
                     if (empty($customerGroup)) {
                         Flash::error('Customer Group not found');
+
                         return redirect(route('backend.customerGroups.index'));
                     }
                     $customerGroup->name = $request['name'];
                     $customerGroup->save();
-                    $isCustomerGroupUpdated = True;
+                    $isCustomerGroupUpdated = true;
                 }
 
                 CustomerList::create([

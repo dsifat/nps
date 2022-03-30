@@ -5,7 +5,6 @@ namespace App\Models\Backend;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
 /**
  * @SWG\Definition(
  *      definition="CustomerGroup",
@@ -37,13 +36,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class CustomerGroup extends Model
 {
-
     use HasFactory;
 
     public $table = 'customer_groups';
 
     public $fillable = [
-        'name'
+        'name',
     ];
 
 

@@ -5,7 +5,6 @@ namespace App\Http\Requests\Backend;
 use App\Models\Backend\Team;
 use Illuminate\Foundation\Http\FormRequest;
 
-
 class UpdateTeamRequest extends FormRequest
 {
     /**

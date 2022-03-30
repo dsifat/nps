@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 
-class UpdatePassController extends Controller {
+class UpdatePassController extends Controller
+{
     /**
      * Create a new controller instance.
      *

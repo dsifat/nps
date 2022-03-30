@@ -24,7 +24,6 @@ class CreateCustomerGroupRequest extends FormRequest
      */
     public function rules()
     {
-
         return CustomerGroup::$rules;
     }
 

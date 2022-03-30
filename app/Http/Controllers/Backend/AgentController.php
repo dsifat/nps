@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\CreateUserRequest;
-use App\Imports\UsersImport;
-use App\Jobs\SendAgentCreationEmailJob;
-use App\Mail\UserCreatedAgentMail;
-use App\Models\Backend\EmailList;
-use App\Models\Backend\Role;
-use App\Models\Backend\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Hash;
+use App\Imports\UsersImport;
+use App\Models\Backend\User;
+use Illuminate\Http\Request;
+use App\Mail\UserCreatedAgentMail;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendAgentCreationEmailJob;
 use Maatwebsite\Excel\HeadingRowImport;
 
 class AgentController extends Controller
@@ -24,10 +18,12 @@ class AgentController extends Controller
     {
         if (request()->ajax()) {
             $users = User::whereHas(
-                'roles', function ($q) {
-                $q->where('role_name', 'Agent');
-            }
+                'roles',
+                function ($q) {
+                    $q->where('role_name', 'Agent');
+                }
             )->get();
+
             return datatables()->of($users)
                 ->addColumn('action', '')
                 ->rawColumns(['action'])
@@ -64,7 +60,8 @@ class AgentController extends Controller
                 }
             }
             if ($count != 1) {
-                $errors = array('Please upload the excel file in sample file format');
+                $errors = ['Please upload the excel file in sample file format'];
+
                 return response()->json(['errors' => $errors]);
             }
 
@@ -89,6 +86,7 @@ class AgentController extends Controller
                 $details['email'] = $email;
                 dispatch(new SendAgentCreationEmailJob($details, $name, $password));
             }
+
             return response()->json(['success' => 'Data is successfully added']);
         } else {
             $validator = \Validator::make($request->all(), [
@@ -121,7 +119,7 @@ class AgentController extends Controller
     public function downloadSampleFile($file_name)
     {
         $file_path = public_path('files/downloads/' . $file_name);
+
         return response()->download($file_path);
     }
 }
-

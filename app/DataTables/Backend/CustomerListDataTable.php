@@ -2,10 +2,10 @@
 
 namespace App\DataTables\Backend;
 
-use App\Models\Backend\CustomerList;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Services\DataTable;
+use App\Models\Backend\CustomerList;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class CustomerListDataTable extends DataTable
 {
@@ -32,6 +32,7 @@ class CustomerListDataTable extends DataTable
     {
         $builder = $model->newQuery();
         $builder->with(['customerGroup'])->where('customer_group_id', $request->route()->parameter('customerGroup'));
+
         return $builder;
     }
 

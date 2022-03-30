@@ -3,11 +3,10 @@
 namespace App\Imports;
 
 use App\Models\Backend\CompetitiveSurvey;
-use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithStartRow;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class CompetitiveSurveyImport implements WithHeadingRow,WithStartRow
+class CompetitiveSurveyImport implements WithHeadingRow, WithStartRow
 {
     public function startRow(): int
     {

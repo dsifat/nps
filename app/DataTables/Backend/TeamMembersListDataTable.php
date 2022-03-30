@@ -3,11 +3,10 @@
 
 namespace App\DataTables\Backend;
 
-use App\Models\Backend\Team;
 use App\Models\Backend\User;
 use Illuminate\Http\Request;
-use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class TeamMembersListDataTable extends DataTable
 {

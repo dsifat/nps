@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * Class Subject
  * @package App\Models\Backend
@@ -15,15 +13,13 @@ use Eloquent as Model;
  */
 class Subject extends Model
 {
-
-
     public $table = 'subjects';
 
 
 
 
     public $fillable = [
-        'name'
+        'name',
     ];
 
     /**
@@ -33,7 +29,7 @@ class Subject extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
     ];
 
     /**
@@ -49,6 +45,4 @@ class Subject extends Model
     {
         return $this->hasMany(Question::class);
     }
-
-
 }

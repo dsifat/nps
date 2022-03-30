@@ -5,7 +5,6 @@ namespace App\Http\Requests\Backend;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Http\FormRequest;
 
-
 class UpdateCustomerGroupRequest extends FormRequest
 {
     /**

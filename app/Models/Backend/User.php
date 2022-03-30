@@ -66,7 +66,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'isp_id', 'phone_number', 'meta_data'
+        'name', 'email', 'password', 'isp_id', 'phone_number', 'meta_data',
     ];
 
     /**
@@ -108,7 +108,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $role = Role::where('role_name', $role)->firstOrFail();
         }
 
-        if (!$role) {
+        if (! $role) {
             $this->roles()->delete();
         } else {
             $this->roles()->sync($role);

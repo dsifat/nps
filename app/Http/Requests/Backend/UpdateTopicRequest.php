@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\Backend;
 
-use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Backend\Topic;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTopicRequest extends FormRequest
 {
@@ -30,8 +30,8 @@ class UpdateTopicRequest extends FormRequest
         return [
             'name' => 'required',
             'parent_id' => [
-                Rule::unique('topics')->where('name', $this->name)
-            ]
+                Rule::unique('topics')->where('name', $this->name),
+            ],
         ];
     }
 

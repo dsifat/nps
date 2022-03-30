@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use App\Imports\CompetitiveSurveyImport;
-use App\Imports\UsersImport;
-use App\Jobs\SendAgentCreationEmailJob;
-use App\Models\Backend\CompetitiveSurvey;
 use App\Models\Backend\User;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Excel;
-use Maatwebsite\Excel\HeadingRowImport;
+use App\Http\Controllers\Controller;
+use App\Imports\CompetitiveSurveyImport;
+use App\Models\Backend\CompetitiveSurvey;
 
 class CompetitiveSurveyController extends Controller
 {
@@ -61,10 +57,10 @@ class CompetitiveSurveyController extends Controller
                 'question' => $item['question'],
                 'user_response' => $item['user_response'],
                 'survey_date' => $this->transformDate($item['survey_date']),
-                'nps_status' => $item['nps_status']
+                'nps_status' => $item['nps_status'],
             ]);
         }
-//dd('here');
+        //dd('here');
         return response()->json(['success' => 'Data is successfully added']);
     }
 
