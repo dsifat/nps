@@ -1251,7 +1251,6 @@ function setSideMenuInit() {
     }
   }
   else{
-    console.log("hello");
     document.body.classList.remove("menu-collapsed", "menu-expanded");
     document.body.classList.add(localStorage.getItem("menuStyle"));
   }

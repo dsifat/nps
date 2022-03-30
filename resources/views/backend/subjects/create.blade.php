@@ -11,12 +11,12 @@
                         <h4 class="card-title">Create Subject</h4>
                     </div>
                     
-                    {!! Form::open(['route' => 'backend.subjects.store']) !!}
+                    {!! Form::open(['route' => 'backend.subjects.store', 'files' => true]) !!}
 
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')
                         <div class="row">
-                            
+                            @include('backend.subjects.fields')
                         </div>
                     </div>
 

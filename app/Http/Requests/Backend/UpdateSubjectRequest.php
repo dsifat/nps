@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\Backend;
 
-use App\Models\Backend\Subject;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Backend\Subject;
 
 class UpdateSubjectRequest extends FormRequest
 {

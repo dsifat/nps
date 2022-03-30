@@ -87,9 +87,6 @@ Route::get('/privacy-policy', function () {
     return view('content.privacy-policy.privacyPolicy');
 });
 
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
-});
 
 
 Route::group(['prefix' => 'backend'], function () {
@@ -114,4 +111,13 @@ Route::group(['prefix' => 'backend'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('settings', 'Backend\SettingsController', ["as" => 'backend']);
+});
+
+
+
+
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
 });

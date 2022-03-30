@@ -45,7 +45,6 @@
 
       <div class="content-body">
         {{-- Include Page Content --}}
-        {{ $configData['sidebarClass'] }}
         @yield('content')
       </div>
     </div>

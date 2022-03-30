@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Flash;
-use Response;
-use App\Models\Backend\Subject;
-use App\Http\Controllers\AppBaseController;
 use App\DataTables\Backend\SubjectDataTable;
+use App\Http\Requests\Backend;
 use App\Http\Requests\Backend\CreateSubjectRequest;
 use App\Http\Requests\Backend\UpdateSubjectRequest;
+use App\Models\Backend\Subject;
+use Flash;
+use App\Http\Controllers\AppBaseController;
+use Response;
 
 class SubjectController extends AppBaseController
 {

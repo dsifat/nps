@@ -4,22 +4,28 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
+
+
 /**
  * Class Subject
  * @package App\Models\Backend
- * @version December 15, 2021, 12:17 am +06
+ * @version March 30, 2022, 1:20 am +06
  *
  * @property string $name
+ * @property string $logo
  */
 class Subject extends Model
 {
-    public $table = 'subjects';
 
+
+    public $table = 'subjects';
+    
 
 
 
     public $fillable = [
         'name',
+        'logo'
     ];
 
     /**
@@ -30,6 +36,7 @@ class Subject extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
+        'logo' => 'string'
     ];
 
     /**
@@ -38,11 +45,8 @@ class Subject extends Model
      * @var array
      */
     public static $rules = [
-
+        
     ];
 
-    public function questions()
-    {
-        return $this->hasMany(Question::class);
-    }
+    
 }

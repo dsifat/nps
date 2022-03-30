@@ -42,7 +42,13 @@ class SettingsController extends AppBaseController
      */
     public function create()
     {
-        return view('backend.settings.create');
+        $settings = Settings::latest('id')->first();
+        $data = [];
+        if (!empty($settings)) {
+            $data = $settings;
+        }
+        // dd($data);
+        return view('backend.settings.create')->with('data', $data);
     }
 
     /**
@@ -54,15 +60,67 @@ class SettingsController extends AppBaseController
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'logo' => 'mimes:jpeg,png,jpg,gif,svg',
+        ]);
         $input = $request->all();
+        $settings = Settings::first();
+        if(empty($settings)){
+            $settings = Settings::create($input);
+        }
+        else{
+            $settings->fill($input);
+            $settings->save();
+        }
 
-        dd($request);
-        /** @var Settings $settings */
-        $settings = Settings::create($input);
+
+        // $app = $input['app'];
+        // $email = $input['email'];
+        // $copyright = $input['copyright'];
+        // $msad = $input['msad'];
+        // $logo = $input['logo']? $input['logo']: null;
+        // if($logo){
+        //     $imageName = time().'.'.$logo->extension();
+        //     $logo->move(public_path('settings/logo/'), $imageName);
+        // }
+        // $data = [
+        //     'app' => $app,
+        //     'logo' => $imageName,
+        //     'email' => $email,
+        //     'copyright' => $copyright,
+        //     'msad' => $msad
+        // ];
+        
+        // if (empty($settings)){
+        //     $settings = Settings::create([
+        //         'data' => json_encode($data), 
+        //     ]);
+        // }
+        // else{
+        //     $existingdata = json_decode($settings->data);
+        //     if (!empty($logo)){
+        //         $existingdata->logo = $imageName;
+        //     }
+        //     if (!empty($name)){
+        //         $existingdata->name = $name;
+        //     }
+        //     if (!empty($email)){
+        //         $existingdata->email = $email;
+        //     }
+        //     if (!empty($copyright)){
+        //         $existingdata->copyright = $copyright;
+        //     }
+        //     if (!empty($msad)){
+        //         $existingdata->msad = $msad;
+        //     }
+        //     $settings->data = json_encode($existingdata);
+        //     $settings->save();
+        // }
 
         Flash::success('Settings saved successfully.');
 
-        return redirect(route('backend.settings.index'));
+        return view('backend.settings.create')->with('data', $settings);
     }
 
     /**
@@ -96,7 +154,9 @@ class SettingsController extends AppBaseController
     public function edit($id)
     {
         /** @var Settings $settings */
-        $settings = Settings::find($id);
+        $settings = Settings::latest('id')->first();
+        $data = json_decode($settings->data);
+        // dd($data->app);  
 
         if (empty($settings)) {
             Flash::error('Settings not found');
@@ -104,7 +164,7 @@ class SettingsController extends AppBaseController
             return redirect(route('backend.settings.index'));
         }
 
-        return view('backend.settings.edit')->with('settings', $settings);
+        return view('backend.settings.edit')->with('settings', $settings)->with('data', $data);
     }
 
     /**

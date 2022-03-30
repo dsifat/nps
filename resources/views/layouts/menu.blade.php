@@ -39,13 +39,6 @@
 </li>
 
 
-<li class="nav-item">
-    <a href="{{ route('backend.subjects.index') }}"
-       class="nav-link {{ Request::is('backend/subjects*') ? 'active' : '' }}">
-        <p>Subjects</p>
-    </a>
-</li>
-
 
 <li class="nav-item">
     <a href="{{ route('backend.questions.index') }}"
@@ -110,6 +103,19 @@
     <a href="{{ route('backend.settings.index') }}"
        class="nav-link {{ Request::is('backend/settings*') ? 'active' : '' }}">
         <p>Settings</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+<li class="nav-item">
+    <a href="{{ route('backend.subjects.index') }}"
+       class="nav-link {{ Request::is('backend/subjects*') ? 'active' : '' }}">
+        <p>Subjects</p>
     </a>
 </li>
 

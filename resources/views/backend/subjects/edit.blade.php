@@ -11,7 +11,7 @@
                         <h4 class="card-title">Edit Subject</h4>
                     </div>
 
-                    {!! Form::model($subject, ['route' => ['backend.subjects.update', $subject->id], 'method' => 'patch']) !!}
+                    {!! Form::model($subject, ['route' => ['backend.subjects.update', $subject->id], 'method' => 'patch', 'files' => true]) !!}
 
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')

@@ -23,7 +23,9 @@ class Settings extends Model
 
 
     public $fillable = [
-        'data'
+        'data',
+        'logo',
+        'name'
     ];
 
     /**
@@ -32,9 +34,17 @@ class Settings extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer'
+        'id' => 'integer',
+        'data' => 'string',
+        'name' => 'string',
+        'logo' => 'string'
     ];
 
+    protected $attributes = [
+        // 'data' => '{}',
+        // 'name' => '',
+        // 'logo' => ''
+    ];
     /**
      * Validation rules
      *

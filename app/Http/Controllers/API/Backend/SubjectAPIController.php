@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use Response;
-use Illuminate\Http\Request;
-use App\Models\Backend\Subject;
-use App\Http\Controllers\AppBaseController;
-use App\Http\Resources\Backend\SubjectResource;
 use App\Http\Requests\API\Backend\CreateSubjectAPIRequest;
 use App\Http\Requests\API\Backend\UpdateSubjectAPIRequest;
+use App\Models\Backend\Subject;
+use Illuminate\Http\Request;
+use App\Http\Controllers\AppBaseController;
+use App\Http\Resources\Backend\SubjectResource;
+use Response;
 
 /**
  * Class SubjectController
