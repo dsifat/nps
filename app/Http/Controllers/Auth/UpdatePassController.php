@@ -30,7 +30,7 @@ class UpdatePassController extends Controller
     {
         //        dd("asdasd");
         $request->validate([
-            // 'old_password' => ['required', new MatchOldPassword],
+            'old_password' => ['required', new MatchOldPassword],
             'new_password' => [
                 'required',
                 'string',
@@ -39,7 +39,6 @@ class UpdatePassController extends Controller
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 // 'regex:/[@$!%*#?&]/', // must contain a special character
-                'confirmed',
             ],
             'confirm_password' => ['same:new_password'],
         ]);
