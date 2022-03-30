@@ -1,6 +1,6 @@
 @extends('layouts.contentLayoutMaster')
 
-@section('title', 'Edit Subject')
+@section('title', 'Create Settings')
 
 @section('content')
     <section id="basic-horizontal-layouts">
@@ -8,21 +8,21 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header border-bottom">
-                        <h4 class="card-title">Edit Subject</h4>
+                        <h4 class="card-title">Create Settings</h4>
                     </div>
-
-                    {!! Form::model($subject, ['route' => ['backend.subjects.update', $subject->id], 'method' => 'patch', 'files' => true]) !!}
+                    
+                    {!! Form::open(['route' => 'backend.settings.store', 'files' => true]) !!}
 
                     <div class="card-body">
                         @include('adminlte-templates::common.errors')
-                        <div class="row">
-                            @include('backend.subjects.fields')
-                        </div>
+                        <!-- <div class="row"> -->
+                        @include('backend.settings.fields')
+                        <!-- </div> -->
                     </div>
 
                     <div class="card-footer">
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                        <a href="{{ route('backend.subjects.index') }}" class="btn btn-outline-secondary waves-effect">Cancel</a>
+                        <a href="{{ route('backend.settings.index') }}" class="btn btn-outline-secondary waves-effect">Cancel</a>
                     </div>
 
                     {!! Form::close() !!}

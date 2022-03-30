@@ -7,25 +7,25 @@ use Eloquent as Model;
 
 
 /**
- * Class Subject
+ * Class Settings
  * @package App\Models\Backend
- * @version March 30, 2022, 1:20 am +06
+ * @version March 24, 2022, 2:21 am +06
  *
- * @property string $name
- * @property string $logo
+ * @property string $data
  */
-class Subject extends Model
+class Settings extends Model
 {
 
 
-    public $table = 'subjects';
+    public $table = 'settings';
     
 
 
 
     public $fillable = [
-        'name',
-        'logo'
+        'data',
+        'logo',
+        'name'
     ];
 
     /**
@@ -35,10 +35,16 @@ class Subject extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'data' => 'string',
         'name' => 'string',
         'logo' => 'string'
     ];
 
+    protected $attributes = [
+        // 'data' => '{}',
+        // 'name' => '',
+        // 'logo' => ''
+    ];
     /**
      * Validation rules
      *

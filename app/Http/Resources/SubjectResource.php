@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Backend;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +19,7 @@ class SubjectResource extends JsonResource
             'name' => $this->name,
             'logo' => $this->logo,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'updated_at' => $this->updated_at
         ];
     }
 }

@@ -38,9 +38,10 @@ Route::middleware(['auth', 'can:SUPER-ADMIN'])->group(function () {
     )->name('io_generator_builder_generate_from_file');
 });
 
-Route::get('password/otp/validate', [OTPController::class, 'index']);
+Route::get('password/otp/validate',[OTPController::class, 'index']);
 
-Route::get('password/change', [UpdatePassController::class, 'index']);
+Route::get('password/change',[UpdatePassController::class, 'index'])->name('change-password');
+Route::post('password/change',[UpdatePassController::class, 'store'])->name('change-password-post');
 
 Route::get('survey/competitive', [CompetitiveSurveyController::class, 'index']);
 Route::post('survey/competitive/store', [CompetitiveSurveyController::class, 'store']);
@@ -84,9 +85,6 @@ Route::get('/privacy-policy', function () {
     return view('content.privacy-policy.privacyPolicy');
 });
 
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
-});
 
 
 Route::group(['prefix' => 'backend'], function () {
@@ -107,4 +105,18 @@ Route::group(['prefix' => 'backend'], function () {
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('teams', 'Backend\TeamController', ["as" => 'backend']);
     Route::get('teams/create/bulk', 'Backend\TeamController@createBulkTeam', ["as" => 'backend']);
+});
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('settings', 'Backend\SettingsController', ["as" => 'backend']);
+});
+
+
+
+
+
+
+Route::group(['prefix' => 'backend'], function () {
+    Route::resource('subjects', 'Backend\SubjectController', ["as" => 'backend']);
 });

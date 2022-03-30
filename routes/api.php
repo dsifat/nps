@@ -35,36 +35,46 @@ Route::group(['prefix' => 'backend'], function () {
     Route::resource('subjects', 'Backend\SubjectAPIController');
 });
 
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('questions', App\Http\Controllers\API\Backend\QuestionAPIController::class);
+//});
+//
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('topics', App\Http\Controllers\API\Backend\TopicAPIController::class);
+//});
+//
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('email_groups', App\Http\Controllers\API\Backend\EmailGroupAPIController::class);
+//});
+//
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('phone_groups', App\Http\Controllers\API\Backend\PhoneGroupAPIController::class);
+//});
+//
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('phones', App\Http\Controllers\API\Backend\PhoneAPIController::class);
+//});
+//
+//
+//
+//
+//
+//
+//Route::group(['prefix' => 'backend'], function () {
+//    Route::resource('surveys', App\Http\Controllers\API\Backend\SurveyAPIController::class);
+//});
+
 
 Route::group(['prefix' => 'backend'], function () {
-    Route::resource('questions', App\Http\Controllers\API\Backend\Backend\QuestionAPIController::class);
+    Route::resource('competitive_surveys', App\Http\Controllers\API\Backend\Backend\CompetitiveSurveyAPIController::class);
 });
 
 
 Route::group(['prefix' => 'backend'], function () {
-    Route::resource('topics', App\Http\Controllers\API\Backend\Backend\TopicAPIController::class);
-});
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('email_groups', App\Http\Controllers\API\Backend\Backend\EmailGroupAPIController::class);
-});
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('phone_groups', App\Http\Controllers\API\Backend\Backend\PhoneGroupAPIController::class);
-});
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('phones', App\Http\Controllers\API\Backend\Backend\PhoneAPIController::class);
-});
-
-
-
-
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('surveys', App\Http\Controllers\API\Backend\Backend\SurveyAPIController::class);
+    Route::resource('settings', App\Http\Controllers\API\Backend\Backend\SettingsAPIController::class);
 });

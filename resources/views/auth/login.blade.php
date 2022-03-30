@@ -30,8 +30,7 @@
             <label for="login-password">Password</label>
           </div>
           <div class="input-group input-group-merge form-password-toggle">
-            <input type="password" class="form-control form-control-merge"
-                   id="login-password" name="password" tabindex="2"
+            <input type="password" class="form-control form-control-merge" id="login-password" name="password" tabindex="2"
                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                    aria-describedby="login-password"/>
             <div class="input-group-append">
