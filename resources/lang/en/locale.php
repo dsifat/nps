@@ -192,8 +192,6 @@ return [
     "Partners" => "Partners",
     "Topics" => "Topics",
     "Questions" => "Question",
-    "Phone Groups" => "Phone Groups",
-    "Email-Groups" => "Email-Groups",
     "Telephonic Survey" => "Telephonic Survey",
     "Create Blank Survey" => "Create Blank Survey",
     "Using Template" => "Using Template",

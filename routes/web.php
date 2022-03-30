@@ -76,7 +76,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/roles', 'Backend\RoleController', ["as" => 'backend']);
     Route::resource('/permissions', 'Backend\PermissionController', ["as" => 'backend']);
     Route::resource('/users', 'Backend\UserController', ["as" => 'backend']);
-    Route::resource('/emailGroups', 'Backend\EmailGroupController', ["as" => 'backend']);
     Route::post('/scheduleTasks/runTaskNow/{id}', 'Backend\ScheduleTaskController@runTaskNow')->name('backend.scheduleTasks.runTaskNow');
     Route::resource('/scheduleTasks', 'Backend\ScheduleTaskController', ["as" => 'backend']);
 });
@@ -97,16 +96,6 @@ Route::group(['prefix' => 'backend'], function () {
 
 Route::group(['prefix' => 'backend'], function () {
     Route::resource('topics', 'Backend\TopicController', ["as" => 'backend']);
-});
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('phoneGroups', 'Backend\PhoneGroupController', ["as" => 'backend']);
-});
-
-
-Route::group(['prefix' => 'backend'], function () {
-    Route::resource('phones', 'Backend\PhoneController', ["as" => 'backend']);
 });
 
 
