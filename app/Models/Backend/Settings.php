@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * Class Settings
  * @package App\Models\Backend
@@ -15,8 +13,6 @@ use Eloquent as Model;
  */
 class Settings extends Model
 {
-
-
     public $table = 'settings';
     
 
@@ -25,7 +21,7 @@ class Settings extends Model
     public $fillable = [
         'data',
         'logo',
-        'name'
+        'name',
     ];
 
     /**
@@ -37,7 +33,7 @@ class Settings extends Model
         'id' => 'integer',
         'data' => 'string',
         'name' => 'string',
-        'logo' => 'string'
+        'logo' => 'string',
     ];
 
     protected $attributes = [
@@ -53,6 +49,4 @@ class Settings extends Model
     public static $rules = [
         
     ];
-
-    
 }

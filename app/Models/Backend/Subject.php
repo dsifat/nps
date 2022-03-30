@@ -4,8 +4,6 @@ namespace App\Models\Backend;
 
 use Eloquent as Model;
 
-
-
 /**
  * Class Subject
  * @package App\Models\Backend
@@ -16,8 +14,6 @@ use Eloquent as Model;
  */
 class Subject extends Model
 {
-
-
     public $table = 'subjects';
     
 
@@ -25,7 +21,7 @@ class Subject extends Model
 
     public $fillable = [
         'name',
-        'logo'
+        'logo',
     ];
 
     /**
@@ -36,7 +32,7 @@ class Subject extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'logo' => 'string'
+        'logo' => 'string',
     ];
 
     /**
@@ -47,6 +43,4 @@ class Subject extends Model
     public static $rules = [
         
     ];
-
-    
 }

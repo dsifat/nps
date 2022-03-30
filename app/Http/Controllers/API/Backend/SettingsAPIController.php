@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\API\Backend;
 
-use App\Http\Requests\API\Backend\CreateSettingsAPIRequest;
-use App\Http\Requests\API\Backend\UpdateSettingsAPIRequest;
-use App\Models\Backend\Settings;
+use Response;
 use Illuminate\Http\Request;
+use App\Models\Backend\Settings;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Resources\Backend\SettingsResource;
-use Response;
+use App\Http\Requests\API\Backend\CreateSettingsAPIRequest;
+use App\Http\Requests\API\Backend\UpdateSettingsAPIRequest;
 
 /**
  * Class SettingsController

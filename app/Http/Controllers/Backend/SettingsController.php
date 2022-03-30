@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Requests\Backend\CreateSettingsRequest;
-use App\Http\Requests\Backend\UpdateSettingsRequest;
-use App\Http\Controllers\AppBaseController;
-use App\Models\Backend\Settings;
-use Illuminate\Http\Request;
 use Flash;
 use Response;
+use Illuminate\Http\Request;
+use App\Models\Backend\Settings;
+use App\Http\Controllers\AppBaseController;
+use App\Http\Requests\Backend\CreateSettingsRequest;
+use App\Http\Requests\Backend\UpdateSettingsRequest;
 
 class SettingsController extends AppBaseController
 {
@@ -44,7 +44,7 @@ class SettingsController extends AppBaseController
     {
         $settings = Settings::latest('id')->first();
         $data = [];
-        if (!empty($settings)) {
+        if (! empty($settings)) {
             $data = $settings;
         }
         // dd($data);
@@ -66,10 +66,9 @@ class SettingsController extends AppBaseController
         ]);
         $input = $request->all();
         $settings = Settings::first();
-        if(empty($settings)){
+        if (empty($settings)) {
             $settings = Settings::create($input);
-        }
-        else{
+        } else {
             $settings->fill($input);
             $settings->save();
         }
@@ -94,7 +93,7 @@ class SettingsController extends AppBaseController
         
         // if (empty($settings)){
         //     $settings = Settings::create([
-        //         'data' => json_encode($data), 
+        //         'data' => json_encode($data),
         //     ]);
         // }
         // else{
@@ -156,7 +155,7 @@ class SettingsController extends AppBaseController
         /** @var Settings $settings */
         $settings = Settings::latest('id')->first();
         $data = json_decode($settings->data);
-        // dd($data->app);  
+        // dd($data->app);
 
         if (empty($settings)) {
             Flash::error('Settings not found');
